@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -51,18 +52,23 @@ public class HomeController {
         try {
             if (!usernameField.getText().isBlank() && !passwordField.getText().isBlank()) {
                 userService.saveUser(new User(usernameField.getText(), passwordField.getText()));
-                BasePane.setDisable(true);
-                BasePane.setOpacity(0.3);
-                Alert.setVisible(true);
-                alertText.setText("Sikeres regisztráció!");
-            }
 
+                Alert alert5=new Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
+                alert5.setTitle("Belépési információ");
+                alert5.setHeaderText(null);
+                alert5.setContentText("Sikeres regisztráció!");
+                alert5.showAndWait();
+
+            }
         }catch (Exception e){
-            BasePane.setDisable(true);
-            BasePane.setOpacity(0.3);
-            Alert.setVisible(true);
-            alertText.setText("Ez a felhasználónév már foglalt!");
-        }
+
+            Alert alert6=new Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
+            alert6.setTitle("Belépési információ");
+            alert6.setHeaderText(null);
+            alert6.setContentText("Ez a felhasználónév már foglalt!");
+            alert6.showAndWait();
+
+           }
     }
 
     @FXML
@@ -81,7 +87,12 @@ public class HomeController {
                 boolean isRegistered = userService.isRegistered(new User(usernameField.getText(), passwordField.getText()));
 
                 if (isRegistered) {
-                    System.out.println("User is registered!");
+
+                    Alert alert4=new Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
+                    alert4.setTitle("Belépési információ");
+                    alert4.setHeaderText(null);
+                    alert4.setContentText("Sikeres belépés");
+                    alert4.showAndWait();
 
                     if (actionEvent.getSource() == loginButton) {
 
@@ -99,21 +110,33 @@ public class HomeController {
                         }
                     }
                 } else {
-                    BasePane.setDisable(true);
-                    BasePane.setOpacity(0.3);
-                    Alert.setVisible(true);
-                    alertText.setText("A felhaszáló nincs regisztrálva, kérlek kattints a regisztrálás gombra!");
+
+                    Alert alert=new Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
+                    alert.setTitle("Belépési információ");
+                    alert.setHeaderText(null);
+                    alert.setContentText("A felhaszáló nincs regisztrálva, kérlek regisztrálj a belépéshez!");
+                    alert.showAndWait();
+
+                    usernameField.clear();
+                    passwordField.clear();
+
                 }
             }else if(usernameField.getText().isBlank()){
-                BasePane.setDisable(true);
-                BasePane.setOpacity(0.3);
-                Alert.setVisible(true);
-                alertText.setText("Nem adtál meg felhasználónevet!");
+
+                Alert alert2=new Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
+                alert2.setTitle("Belépési információ");
+                alert2.setHeaderText(null);
+                alert2.setContentText("Nem adtál meg felhasználónevet!");
+                alert2.showAndWait();
+
             } else if(passwordField.getText().isBlank()){
-                BasePane.setDisable(true);
-                BasePane.setOpacity(0.3);
-                Alert.setVisible(true);
-                alertText.setText("Nem adtál meg jelszót!");
+
+                Alert alert3=new Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
+                alert3.setTitle("Belépési információ");
+                alert3.setHeaderText(null);
+                alert3.setContentText("Nem adtál meg jelszót!");
+                alert3.showAndWait();
+
             }
         }catch (Exception e){
             System.err.println(e.getMessage());
