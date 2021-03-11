@@ -44,7 +44,6 @@
             <font>
                <Font name="System Bold" size="13.0" />
             </font></Label>
-         <Button fx:id="AlertButton" layoutX="176.0" layoutY="96.0" mnemonicParsing="false" onAction="#AlertButton" text="OK" />
         </children>
     </Pane>
 </AnchorPane>

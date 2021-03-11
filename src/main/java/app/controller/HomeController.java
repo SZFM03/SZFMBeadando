@@ -20,15 +20,6 @@ import java.io.IOException;
 public class HomeController {
 
     @FXML
-    private Pane BasePane;
-
-    @FXML
-    private Pane Alert;
-
-    @FXML
-    private Label alertText;
-
-    @FXML
     public TextField usernameField;
 
     @FXML
@@ -41,9 +32,6 @@ public class HomeController {
     public Button registerButton;
 
     @FXML
-    public Button AlertButton;
-
-    @FXML
     public Label usernameLabel;
 
     private final UserService userService = new UserService(new UserRepository());
@@ -53,11 +41,7 @@ public class HomeController {
             if (!usernameField.getText().isBlank() && !passwordField.getText().isBlank()) {
                 userService.saveUser(new User(usernameField.getText(), passwordField.getText()));
 
-                Alert alert5=new Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
-                alert5.setTitle("Belépési információ");
-                alert5.setHeaderText(null);
-                alert5.setContentText("Sikeres regisztráció!");
-                alert5.showAndWait();
+                alert("Sikeres regisztráció!");
 
             }
         }catch (Exception e){
@@ -71,12 +55,12 @@ public class HomeController {
            }
     }
 
-    @FXML
-    void AlertButton(ActionEvent event) {
-        BasePane.setDisable(false);
-        BasePane.setOpacity(1);
-        Alert.setVisible(false);
-        alertText.setText("");
+    public void alert(String message){
+        Alert alert6=new Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
+        alert6.setTitle("Belépési információ");
+        alert6.setHeaderText(null);
+        alert6.setContentText(message);
+        alert6.showAndWait();
     }
 
     public void login(ActionEvent actionEvent) {
@@ -87,12 +71,7 @@ public class HomeController {
                 boolean isRegistered = userService.isRegistered(new User(usernameField.getText(), passwordField.getText()));
 
                 if (isRegistered) {
-
-                    Alert alert4=new Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
-                    alert4.setTitle("Belépési információ");
-                    alert4.setHeaderText(null);
-                    alert4.setContentText("Sikeres belépés");
-                    alert4.showAndWait();
+                    alert("Sikeres belépés");
 
                     if (actionEvent.getSource() == loginButton) {
 
@@ -111,31 +90,18 @@ public class HomeController {
                     }
                 } else {
 
-                    Alert alert=new Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
-                    alert.setTitle("Belépési információ");
-                    alert.setHeaderText(null);
-                    alert.setContentText("A felhaszáló nincs regisztrálva, kérlek regisztrálj a belépéshez!");
-                    alert.showAndWait();
+                    alert("A felhaszáló nincs regisztrálva, kérlek regisztrálj a belépéshez!");
 
                     usernameField.clear();
                     passwordField.clear();
 
                 }
             }else if(usernameField.getText().isBlank()){
-
-                Alert alert2=new Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
-                alert2.setTitle("Belépési információ");
-                alert2.setHeaderText(null);
-                alert2.setContentText("Nem adtál meg felhasználónevet!");
-                alert2.showAndWait();
+                alert("Nem adtál meg felhasználónevet!");
 
             } else if(passwordField.getText().isBlank()){
 
-                Alert alert3=new Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
-                alert3.setTitle("Belépési információ");
-                alert3.setHeaderText(null);
-                alert3.setContentText("Nem adtál meg jelszót!");
-                alert3.showAndWait();
+               alert("Nem adtál meg jelszót!");
 
             }
         }catch (Exception e){
