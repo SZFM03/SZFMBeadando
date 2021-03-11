@@ -1,5 +1,6 @@
 package app.controller;
 
+import app.service.KilepVisszalep;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -75,49 +76,14 @@ public class LeckekonyvController {
     @FXML
     private Button kilep;
 
+    private final KilepVisszalep kilepes = new KilepVisszalep();
 
     public void vButtonAction(MouseEvent mouseEvent) {
-        if (mouseEvent.getSource() == visszabtn) {
-
-            try {
-
-                Node node = (Node) mouseEvent.getSource();
-                Stage stage = (Stage) node.getScene().getWindow();
-                stage.close();
-
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/fooldal.fxml")));
-                stage.setScene(scene);
-                stage.show();
-
-            } catch (IOException ex) {
-                System.err.println(ex.getMessage());
-            }
-
-
-        }
+        kilepes.kilepvisszalep(mouseEvent, visszabtn, "/fooldal.fxml");
     }
 
     public void logout(MouseEvent mouseEvent){
-
-        if (mouseEvent.getSource() == kilep) {
-
-            try {
-
-                Node node = (Node) mouseEvent.getSource();
-                Stage stage = (Stage) node.getScene().getWindow();
-                stage.close();
-
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/home.fxml")));
-                stage.setScene(scene);
-                stage.show();
-
-            } catch (IOException ex) {
-                System.err.println(ex.getMessage());
-
-            }
-
-
-        }
+        kilepes.kilepvisszalep(mouseEvent, kilep, "/home.fxml");
     }
 
 }

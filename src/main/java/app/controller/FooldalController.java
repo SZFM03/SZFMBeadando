@@ -1,5 +1,6 @@
 package app.controller;
 
+import app.service.KilepVisszalep;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -24,91 +25,22 @@ public class FooldalController{
     @FXML
     private Button kilep;
 
+    private final KilepVisszalep oldalLeptetes = new KilepVisszalep();
+
     public void hButtonAction(MouseEvent mouseEvent) {
-
-        if (mouseEvent.getSource() == hallgbtn) {
-
-            try {
-                    Node node = (Node) mouseEvent.getSource();
-                    Stage stage = (Stage) node.getScene().getWindow();
-                    stage.close();
-
-                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/hallgato.fxml")));
-                    stage.setScene(scene);
-                    stage.show();
-
-                } catch (IOException ex) {
-                    System.err.println(ex.getMessage());
-                }
-        }
-
+        oldalLeptetes.kilepvisszalep(mouseEvent, hallgbtn, "/hallgato.fxml");
     }
 
     public void tButtonAction(MouseEvent mouseEvent) {
-
-        if (mouseEvent.getSource() == targybtn) {
-
-            try {
-                Node node = (Node) mouseEvent.getSource();
-                Stage stage = (Stage) node.getScene().getWindow();
-                stage.close();
-
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/tantargyak.fxml")));
-                stage.setScene(scene);
-                stage.show();
-
-            } catch (IOException ex) {
-                System.err.println(ex.getMessage());
-            }
-        }
+        oldalLeptetes.kilepvisszalep(mouseEvent, targybtn, "/tantargyak.fxml");
     }
 
     public void lButtonAction(MouseEvent mouseEvent) {
-
-        if (mouseEvent.getSource() == leckekonyvbtn) {
-
-            try {
-
-
-                Node node = (Node) mouseEvent.getSource();
-                Stage stage = (Stage) node.getScene().getWindow();
-                stage.close();
-
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/leckekonyv.fxml")));
-                stage.setScene(scene);
-                stage.show();
-
-            } catch (IOException ex) {
-                System.err.println(ex.getMessage());
-            }
-
-
-        }
+        oldalLeptetes.kilepvisszalep(mouseEvent, leckekonyvbtn, "/leckekonyv.fxml");
     }
 
     public void logout(MouseEvent mouseEvent){
-
-        if (mouseEvent.getSource() == kilep) {
-
-            try {
-
-                Node node = (Node) mouseEvent.getSource();
-                Stage stage = (Stage) node.getScene().getWindow();
-                stage.close();
-
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/home.fxml")));
-                stage.setScene(scene);
-                stage.show();
-
-            } catch (IOException ex) {
-                System.err.println(ex.getMessage());
-
-            }
-
-
-        }
+        oldalLeptetes.kilepvisszalep(mouseEvent, kilep, "/home.fxml");
     }
-
-
 
 }

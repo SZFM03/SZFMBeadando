@@ -2,7 +2,9 @@ package app.controller;
 
 import app.entity.Hallgato;
 import app.repository.HallgatoRepository;
+import app.service.AlertS;
 import app.service.HallgatoService;
+import app.service.KilepVisszalep;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -257,23 +259,12 @@ public class HallgatoController implements Initializable {
 
     private final HallgatoService hallgatoService = new HallgatoService(new HallgatoRepository());
 
+    private final KilepVisszalep kilepes = new KilepVisszalep();
+
+    private final AlertS alert = new AlertS();
+
     public void vButtonAction(MouseEvent mouseEvent) {
-        if (mouseEvent.getSource() == visszabtn) {
-
-            try {
-
-                Node node = (Node) mouseEvent.getSource();
-                Stage stage = (Stage) node.getScene().getWindow();
-                stage.close();
-
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/fooldal.fxml")));
-                stage.setScene(scene);
-                stage.show();
-
-            } catch (IOException ex) {
-                System.err.println(ex.getMessage());
-            }
-        }
+        kilepes.kilepvisszalep(mouseEvent, visszabtn, "/fooldal.fxml");
     }
 
     public void register(ActionEvent actionEvent) {
@@ -285,11 +276,7 @@ public class HallgatoController implements Initializable {
                 neptunAddText.clear();
                 szuletesiEvAddText.clear();
 
-                Alert alert2=new Alert(Alert.AlertType.INFORMATION);
-                alert2.setTitle("Regisztrációs információ");
-                alert2.setHeaderText(null);
-                alert2.setContentText("Sikeresen regisztráltál egy hallgatót!");
-                alert2.showAndWait();
+                alert.alert("Regisztrációs információ", "Sikeresen regisztráltál egy hallgatót!");
 
             }
         }catch (Exception e){
@@ -302,11 +289,7 @@ public class HallgatoController implements Initializable {
             hallgatoService.deleteHallgato(neptunTorlesText.getText());
             neptunTorlesText.clear();
 
-            Alert alert=new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Törlés információ");
-            alert.setHeaderText(null);
-            alert.setContentText("Sikeresen törölted a hallgatót az adatbázisból!");
-            alert.showAndWait();
+            alert.alert("Törlés információa", "Sikeresen törölted a hallgatót az adatbázisból!");
         }
     }
 
@@ -320,24 +303,7 @@ public class HallgatoController implements Initializable {
 
     public void logout(MouseEvent mouseEvent){
 
-        if (mouseEvent.getSource() == kilep) {
-
-            try {
-
-                Node node = (Node) mouseEvent.getSource();
-                Stage stage = (Stage) node.getScene().getWindow();
-                stage.close();
-
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/home.fxml")));
-                stage.setScene(scene);
-                stage.show();
-
-            } catch (IOException ex) {
-                System.err.println(ex.getMessage());
-
-            }
-
-        }
+        kilepes.kilepvisszalep(mouseEvent, kilep, "/home.fxml");
     }
 
     public void lekerdez(ActionEvent actionEvent) {

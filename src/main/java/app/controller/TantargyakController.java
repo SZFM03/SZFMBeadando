@@ -4,7 +4,9 @@ import app.entity.Hallgato;
 import app.entity.Tantargyak;
 import app.repository.HallgatoRepository;
 import app.repository.TantargyakRepository;
+import app.service.AlertS;
 import app.service.HallgatoService;
+import app.service.KilepVisszalep;
 import app.service.TantargyakService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -113,26 +115,12 @@ public class TantargyakController {
 
     private final TantargyakService tantargyakService = new TantargyakService(new TantargyakRepository());
 
+    private final KilepVisszalep kilepes = new KilepVisszalep();
+
+    private final AlertS alert = new AlertS();
+
     public void vButtonAction(MouseEvent mouseEvent) {
-        if (mouseEvent.getSource() == visszabtn) {
-
-            try {
-
-                Node node = (Node) mouseEvent.getSource();
-                Stage stage = (Stage) node.getScene().getWindow();
-                stage.close();
-
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/fooldal.fxml")));
-                stage.setScene(scene);
-                stage.show();
-
-            } catch (IOException ex) {
-                System.err.println(ex.getMessage());
-
-            }
-
-
-        }
+        kilepes.kilepvisszalep(mouseEvent, visszabtn, "/fooldal.fxml");
     }
 
     public void registertantargy(ActionEvent actionEvent) {
@@ -140,11 +128,7 @@ public class TantargyakController {
             if (!targykodAddText.getText().isBlank() && !targyneveAddText.getText().isBlank() && !kreditAddText.getText().isBlank()) {
                 tantargyakService.saveTantargyak(new Tantargyak(targyneveAddText.getText(), targykodAddText.getText(), kreditAddText.getText()));
 
-                Alert alert2=new Alert(Alert.AlertType.INFORMATION);
-                alert2.setTitle("Tantárgy hozzáadása információ");
-                alert2.setHeaderText(null);
-                alert2.setContentText("Sikeresen hozzáadtál egy tantárgyat!");
-                alert2.showAndWait();
+                alert.alert("Tantárgy hozzáadása információ", "Sikeresen hozzáadtál egy tantárgyat!");
 
                 targykodAddText.clear();
                 targyneveAddText.clear();
@@ -152,31 +136,17 @@ public class TantargyakController {
             }
         } catch (Exception e) {
             System.err.println(e.getMessage());
-
+        } if (targykodAddText.getText().isBlank()){
+            alert.alert("Tantárgy hozzáadása információ", "Nem adtál meg Tárgykódot!");
+        } else if(targyneveAddText.getText().isBlank()){
+            alert.alert("Tantárgy hozzáadása információ", "Nem adtad meg a tárgy nevét!");
+        } else if (kreditAddText.getText().isBlank()){
+            alert.alert("Tantárgy hozzáadása információ", "Nem adtad meg a kreditszámot!");
         }
     }
 
     public void logout(MouseEvent mouseEvent){
-
-        if (mouseEvent.getSource() == kilep) {
-
-            try {
-
-                Node node = (Node) mouseEvent.getSource();
-                Stage stage = (Stage) node.getScene().getWindow();
-                stage.close();
-
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/home.fxml")));
-                stage.setScene(scene);
-                stage.show();
-
-            } catch (IOException ex) {
-                System.err.println(ex.getMessage());
-
-            }
-
-
-        }
+        kilepes.kilepvisszalep(mouseEvent, kilep, "/home.fxml");
     }
 
 }
