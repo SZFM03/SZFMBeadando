@@ -10,15 +10,14 @@ public class Hallgato {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long ID;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String nev;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String szuletesi_ev;
 
     @Column(unique = true, nullable = false)
     private String neptun_kod;
-
 
     public Hallgato() {
     }

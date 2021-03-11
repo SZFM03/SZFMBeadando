@@ -19,9 +19,9 @@ public class HallgatoRepository {
 
     public boolean hallgatoModositasa(String nev, String ev, String neptunKod) {
         try {
-            Hallgato hallgato = (Hallgato) entityManager.createQuery("UPDATE Hallgato h SET h.nev = :nev, h.szuletesi_ev = :szuletesi_ev WHERE h.neptun_kod = :neptun_kod")
+            Hallgato hallgato = (Hallgato) entityManager.createQuery("UPDATE Hallgato h SET h.nev = :nev WHERE h.neptun_kod = :neptun_kod")
                     .setParameter("nev", nev)
-                    .setParameter("szuletesi_ev", ev)
+                    //.setParameter("szuletesi_ev", ev)
                     .setParameter("neptun_kod", neptunKod)
                     .getSingleResult();
             entityManager.getTransaction().begin();

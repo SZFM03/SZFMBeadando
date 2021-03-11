@@ -11,13 +11,13 @@ public class Tantargyak {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long ID;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String nev;
 
     @Column(unique = true, nullable = false)
     private String kod;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String kreditszam;
 
     public Tantargyak() {
