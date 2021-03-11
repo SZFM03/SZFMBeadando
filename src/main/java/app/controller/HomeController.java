@@ -52,6 +52,10 @@ public class HomeController {
         try {
             if (!usernameField.getText().isBlank() && !passwordField.getText().isBlank()) {
                 userService.saveUser(new User(usernameField.getText(), passwordField.getText()));
+                BasePane.setDisable(true);
+                BasePane.setOpacity(0.3);
+                Alert.setVisible(true);
+                alertText.setText("Sikeres regisztráció!");
             }
         }catch (Exception e){
             System.err.println(e.getMessage());
@@ -97,7 +101,6 @@ public class HomeController {
                     Alert.setVisible(true);
                     alertText.setText("A felhaszáló nincs regisztrálva, kérlek kattints a regisztrálás gombra!");
                 }
-
             }else if(usernameField.getText().isBlank()){
                 BasePane.setDisable(true);
                 BasePane.setOpacity(0.3);
