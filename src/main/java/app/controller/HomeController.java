@@ -56,6 +56,7 @@ public class HomeController {
                 Alert.setVisible(true);
                 alertText.setText("Sikeres regisztráció!");
             }
+
         }catch (Exception e){
             BasePane.setDisable(true);
             BasePane.setOpacity(0.3);

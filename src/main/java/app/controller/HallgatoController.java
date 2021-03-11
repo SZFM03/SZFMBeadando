@@ -266,11 +266,16 @@ public class HallgatoController implements Initializable {
         try {
             if (!nevAddText.getText().isBlank() && !neptunAddText.getText().isBlank() && !szuletesiEvAddText.getText().isBlank()) {
                 hallgatoService.saveHallgato(new Hallgato(nevAddText.getText(), szuletesiEvAddText.getText(), neptunAddText.getText()));
-                System.out.println("Sikeresen regisztráltál egy új hallgatót!");
 
                 nevAddText.clear();
                 neptunAddText.clear();
                 szuletesiEvAddText.clear();
+
+                Alert alert2=new Alert(Alert.AlertType.INFORMATION);
+                alert2.setTitle("Regisztrációs információ");
+                alert2.setHeaderText(null);
+                alert2.setContentText("Sikeresen regisztráltál egy hallgatót!");
+                alert2.showAndWait();
 
             }
         }catch (Exception e){
@@ -278,10 +283,16 @@ public class HallgatoController implements Initializable {
         }
     }
 
-    public void deleteTorles(ActionEvent actionEvent) {
+    public void deleteTorles(ActionEvent actionEvent) throws InterruptedException {
         if (!neptunTorlesText.getText().isBlank()){
             hallgatoService.deleteHallgato(neptunTorlesText.getText());
-            System.out.println("Sikeresen törölted a hallgatót az adatbázisból!");
+            neptunTorlesText.clear();
+
+            Alert alert=new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Törlés információ");
+            alert.setHeaderText(null);
+            alert.setContentText("Sikeresen törölted a hallgatót az adatbázisból!");
+            alert.showAndWait();
         }
     }
 

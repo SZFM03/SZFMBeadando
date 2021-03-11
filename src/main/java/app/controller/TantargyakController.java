@@ -17,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -123,6 +124,7 @@ public class TantargyakController {
 
             } catch (IOException ex) {
                 System.err.println(ex.getMessage());
+
             }
 
 
@@ -133,14 +135,20 @@ public class TantargyakController {
         try {
             if (!targykodAddText.getText().isBlank() && !targyneveAddText.getText().isBlank() && !kreditAddText.getText().isBlank()) {
                 tantargyakService.saveTantargyak(new Tantargyak(targyneveAddText.getText(), targykodAddText.getText(), kreditAddText.getText()));
-                System.out.println("Sikeresen regisztráltál egy új tantárgyat!");
+
+                Alert alert2=new Alert(Alert.AlertType.INFORMATION);
+                alert2.setTitle("Tantárgy hozzáadása információ");
+                alert2.setHeaderText(null);
+                alert2.setContentText("Sikeresen hozzáadtál egy tantárgyat!");
+                alert2.showAndWait();
 
                 targykodAddText.clear();
                 targyneveAddText.clear();
                 kreditAddText.clear();
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
+
         }
     }
 
