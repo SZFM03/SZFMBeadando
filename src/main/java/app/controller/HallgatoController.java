@@ -220,6 +220,22 @@ public class HallgatoController implements Initializable {
     @FXML
     private Button loadAdatButton;
 
+    @FXML
+    private TextField neptunbevitelText;
+
+    @FXML
+    private TextField neptunadatText;
+
+    @FXML
+    private TextField nevadatText;
+
+    @FXML
+    private TextField szuletesievadatText;
+
+    @FXML
+    private Button kilep;
+
+
 
     @FXML
     void addAStudent(ActionEvent event) {
@@ -297,9 +313,33 @@ public class HallgatoController implements Initializable {
     }
 
     public void modosit(ActionEvent actionEvent) {
-        if(!nevAdatText.getText().isBlank() && !neptunAdatText.getText().isBlank() && !szuletesiEvAdatText.getText().isBlank()){
+
+      if(!nevAdatText.getText().isBlank() && !neptunAdatText.getText().isBlank() && !szuletesiEvAdatText.getText().isBlank()){
             hallgatoService.modositHallgato(""+nevAdatText, ""+szuletesiEvAdatText, ""+neptunAdatText);
         }
 
+    }
+
+    public void logout(MouseEvent mouseEvent){
+
+        if (mouseEvent.getSource() == kilep) {
+
+            try {
+
+                Node node = (Node) mouseEvent.getSource();
+                Stage stage = (Stage) node.getScene().getWindow();
+                stage.close();
+
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/home.fxml")));
+                stage.setScene(scene);
+                stage.show();
+
+            } catch (IOException ex) {
+                System.err.println(ex.getMessage());
+
+            }
+
+
+        }
     }
 }

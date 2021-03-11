@@ -44,6 +44,7 @@ public class HomeController {
                 alert("Sikeres regisztráció!");
 
             }
+
         }catch (Exception e){
 
             Alert alert6=new Alert(javafx.scene.control.Alert.AlertType.INFORMATION);

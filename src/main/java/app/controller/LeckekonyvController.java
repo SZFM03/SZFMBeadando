@@ -72,6 +72,9 @@ public class LeckekonyvController {
     @FXML
     private Button leckekonyvbtn;
 
+    @FXML
+    private Button kilep;
+
 
     public void vButtonAction(MouseEvent mouseEvent) {
         if (mouseEvent.getSource() == visszabtn) {
@@ -88,6 +91,29 @@ public class LeckekonyvController {
 
             } catch (IOException ex) {
                 System.err.println(ex.getMessage());
+            }
+
+
+        }
+    }
+
+    public void logout(MouseEvent mouseEvent){
+
+        if (mouseEvent.getSource() == kilep) {
+
+            try {
+
+                Node node = (Node) mouseEvent.getSource();
+                Stage stage = (Stage) node.getScene().getWindow();
+                stage.close();
+
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/home.fxml")));
+                stage.setScene(scene);
+                stage.show();
+
+            } catch (IOException ex) {
+                System.err.println(ex.getMessage());
+
             }
 
 

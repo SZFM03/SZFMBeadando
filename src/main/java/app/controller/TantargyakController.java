@@ -107,6 +107,10 @@ public class TantargyakController {
     @FXML
     private TextField kreditAddText;
 
+    @FXML
+    private Button kilep;
+
+
     private final TantargyakService tantargyakService = new TantargyakService(new TantargyakRepository());
 
     public void vButtonAction(MouseEvent mouseEvent) {
@@ -148,6 +152,29 @@ public class TantargyakController {
             }
         } catch (Exception e) {
             System.err.println(e.getMessage());
+
+        }
+    }
+
+    public void logout(MouseEvent mouseEvent){
+
+        if (mouseEvent.getSource() == kilep) {
+
+            try {
+
+                Node node = (Node) mouseEvent.getSource();
+                Stage stage = (Stage) node.getScene().getWindow();
+                stage.close();
+
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/home.fxml")));
+                stage.setScene(scene);
+                stage.show();
+
+            } catch (IOException ex) {
+                System.err.println(ex.getMessage());
+
+            }
+
 
         }
     }
