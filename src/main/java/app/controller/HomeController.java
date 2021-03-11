@@ -47,7 +47,6 @@ public class HomeController {
 
     private final UserService userService = new UserService(new UserRepository());
 
-
     public void register(ActionEvent actionEvent) {
         try {
             if (!usernameField.getText().isBlank() && !passwordField.getText().isBlank()) {
@@ -58,7 +57,10 @@ public class HomeController {
                 alertText.setText("Sikeres regisztráció!");
             }
         }catch (Exception e){
-            System.err.println(e.getMessage());
+            BasePane.setDisable(true);
+            BasePane.setOpacity(0.3);
+            Alert.setVisible(true);
+            alertText.setText("Ez a felhasználó már foglalt!");
         }
     }
 
