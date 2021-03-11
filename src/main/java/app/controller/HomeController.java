@@ -101,7 +101,6 @@ public class HomeController {
                     Alert.setVisible(true);
                     alertText.setText("A felhaszáló nincs regisztrálva, kérlek kattints a regisztrálás gombra!");
                 }
-
             }else if(usernameField.getText().isBlank()){
                 BasePane.setDisable(true);
                 BasePane.setOpacity(0.3);
