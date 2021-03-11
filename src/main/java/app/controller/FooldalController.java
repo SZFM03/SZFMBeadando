@@ -21,6 +21,9 @@ public class FooldalController{
     @FXML
     private Button leckekonyvbtn;
 
+    @FXML
+    private Button kilep;
+
     public void hButtonAction(MouseEvent mouseEvent) {
 
         if (mouseEvent.getSource() == hallgbtn) {
@@ -39,10 +42,7 @@ public class FooldalController{
                 } catch (IOException ex) {
                     System.err.println(ex.getMessage());
                 }
-
-
         }
-
 
     }
 
@@ -91,6 +91,30 @@ public class FooldalController{
 
         }
     }
+
+    public void logout(MouseEvent mouseEvent){
+
+        if (mouseEvent.getSource() == kilep) {
+
+            try {
+
+                Node node = (Node) mouseEvent.getSource();
+                Stage stage = (Stage) node.getScene().getWindow();
+                stage.close();
+
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/home.fxml")));
+                stage.setScene(scene);
+                stage.show();
+
+            } catch (IOException ex) {
+                System.err.println(ex.getMessage());
+
+            }
+
+
+        }
+    }
+
 
 
 }

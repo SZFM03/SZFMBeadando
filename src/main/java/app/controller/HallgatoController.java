@@ -339,7 +339,6 @@ public class HallgatoController implements Initializable {
 
             }
 
-
         }
     }
 }

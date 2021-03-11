@@ -17,15 +17,20 @@
             <Font name="Segoe UI" size="25.0" />
          </font>
       </Label>
-    <Button fx:id="hallgbtn" layoutX="438.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#hButtonAction" prefHeight="81.0" prefWidth="325.0" text="Hallgatók">
+    <Button fx:id="hallgbtn" layoutX="438.0" layoutY="129.0" mnemonicParsing="false" onMouseClicked="#hButtonAction" prefHeight="81.0" prefWidth="325.0" text="Hallgatók">
          <font>
             <Font size="22.0" />
          </font></Button>
-        <Button fx:id="targybtn" layoutX="438.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#tButtonAction" prefHeight="81.0" prefWidth="325.0" text="Tantárgyak">
+        <Button fx:id="targybtn" layoutX="438.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#tButtonAction" prefHeight="81.0" prefWidth="325.0" text="Tantárgyak">
          <font>
             <Font size="22.0" />
          </font></Button>
-      <Button fx:id="leckekonyvbtn" layoutX="438.0" layoutY="460.0" mnemonicParsing="false" onMouseClicked="#lButtonAction" prefHeight="81.0" prefWidth="325.0" text="Leckekönyv">
+      <Button fx:id="leckekonyvbtn" layoutX="438.0" layoutY="359.0" mnemonicParsing="false" onMouseClicked="#lButtonAction" prefHeight="81.0" prefWidth="325.0" text="Leckekönyv">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Button fx:id="kilep" layoutX="438.0" layoutY="568.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="81.0" prefWidth="325.0" text="Kilépés">
          <font>
             <Font size="22.0" />
          </font>
