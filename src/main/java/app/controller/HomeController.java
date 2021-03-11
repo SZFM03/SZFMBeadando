@@ -60,7 +60,7 @@ public class HomeController {
             BasePane.setDisable(true);
             BasePane.setOpacity(0.3);
             Alert.setVisible(true);
-            alertText.setText("Ez a felhasználó már foglalt!");
+            alertText.setText("Ez a felhasználónév már foglalt!");
         }
     }
 
