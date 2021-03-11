@@ -13,7 +13,7 @@ public class User {
     @Column(unique = true, nullable = false)
     private String nev;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String jelszo;
 
     public User() {
