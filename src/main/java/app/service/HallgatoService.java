@@ -21,10 +21,18 @@ public class HallgatoService {
         }
         return false;
     }
+
     public boolean modositHallgato(String nev, String ev, String neptunKod){
         if(!nev.isBlank() && !ev.isBlank() && !neptunKod.isBlank()){
             return hallgatoRepository.hallgatoModositasa(nev, ev, neptunKod);
         }
         return false;
+    }
+
+    public Hallgato lekerdezHallgato(String neptunKod){
+        if (!neptunKod.isBlank()) {
+            return hallgatoRepository.selectHallgato(neptunKod);
+        }
+       throw new RuntimeException("Nem adtál meg neptunkódot");
     }
 }

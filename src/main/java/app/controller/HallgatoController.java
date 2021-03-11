@@ -235,8 +235,6 @@ public class HallgatoController implements Initializable {
     @FXML
     private Button kilep;
 
-
-
     @FXML
     void addAStudent(ActionEvent event) {
 
@@ -314,8 +312,8 @@ public class HallgatoController implements Initializable {
 
     public void modosit(ActionEvent actionEvent) {
 
-      if(!nevAdatText.getText().isBlank() && !neptunAdatText.getText().isBlank() && !szuletesiEvAdatText.getText().isBlank()){
-            hallgatoService.modositHallgato(""+nevAdatText, ""+szuletesiEvAdatText, ""+neptunAdatText);
+      if(!nevadatText.getText().isBlank() && !neptunadatText.getText().isBlank() && !szuletesievadatText.getText().isBlank()){
+            hallgatoService.modositHallgato(nevadatText.getText(), szuletesievadatText.getText(), neptunadatText.getText());
         }
 
     }
@@ -340,5 +338,16 @@ public class HallgatoController implements Initializable {
             }
 
         }
+    }
+
+    public void lekerdez(ActionEvent actionEvent) {
+        if(!neptunbevitelText.getText().isBlank()){
+           Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunbevitelText.getText());
+           nevadatText.setText(hallgato.getNev());
+           szuletesievadatText.setText(hallgato.getSzuletesi_ev());
+           neptunadatText.setText(hallgato.getNeptun_kod());
+           neptunadatText.setDisable(true);
+        }
+
     }
 }

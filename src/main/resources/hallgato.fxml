@@ -231,7 +231,7 @@
                                     <Font size="20.0" />
                                  </font>
                               </Button>
-                              <Button fx:id="saveAdatButton1" mnemonicParsing="false" onAction="#modosit" text="Lekérdez" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                              <Button fx:id="saveAdatButton1" mnemonicParsing="false" onAction="#lekerdez" text="Lekérdez" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                  <font>
                                     <Font size="20.0" />
                                  </font>

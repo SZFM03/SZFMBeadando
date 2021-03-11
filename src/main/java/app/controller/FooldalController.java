@@ -29,8 +29,6 @@ public class FooldalController{
         if (mouseEvent.getSource() == hallgbtn) {
 
             try {
-
-
                     Node node = (Node) mouseEvent.getSource();
                     Stage stage = (Stage) node.getScene().getWindow();
                     stage.close();
@@ -51,8 +49,6 @@ public class FooldalController{
         if (mouseEvent.getSource() == targybtn) {
 
             try {
-
-
                 Node node = (Node) mouseEvent.getSource();
                 Stage stage = (Stage) node.getScene().getWindow();
                 stage.close();
@@ -64,8 +60,6 @@ public class FooldalController{
             } catch (IOException ex) {
                 System.err.println(ex.getMessage());
             }
-
-
         }
     }
 

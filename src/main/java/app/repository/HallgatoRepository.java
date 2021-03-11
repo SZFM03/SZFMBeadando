@@ -19,13 +19,14 @@ public class HallgatoRepository {
 
     public boolean hallgatoModositasa(String nev, String ev, String neptunKod) {
         try {
-            Hallgato hallgato = (Hallgato) entityManager.createQuery("UPDATE Hallgato h SET h.nev = :nev WHERE h.neptun_kod = :neptun_kod")
-                    .setParameter("nev", nev)
-                    //.setParameter("szuletesi_ev", ev)
-                    .setParameter("neptun_kod", neptunKod)
-                    .getSingleResult();
+
+            Hallgato hallgato = selectHallgato(neptunKod);
+
+            hallgato.setNev(nev);
+            hallgato.setSzuletesi_ev(ev);
+
             entityManager.getTransaction().begin();
-            entityManager.refresh(hallgato);
+            entityManager.merge(hallgato);
             entityManager.getTransaction().commit();
             return true;
         } catch (Exception e) {
@@ -34,11 +35,19 @@ public class HallgatoRepository {
         }
     }
 
-    public boolean hallgatoTorles(String neptunKod){
-        try{
-            Hallgato hallgato = (Hallgato) entityManager.createQuery("SELECT h FROM Hallgato h WHERE h.neptun_kod = :neptun_kod")
+    public Hallgato selectHallgato(String neptunKod) {
+        try {
+            return (Hallgato) entityManager.createQuery("SELECT h FROM Hallgato h WHERE h.neptun_kod = :neptun_kod")
                     .setParameter("neptun_kod", neptunKod)
                     .getSingleResult();
+        }catch (Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
+    public boolean hallgatoTorles(String neptunKod){
+        try{
+            Hallgato hallgato = selectHallgato(neptunKod);
             entityManager.getTransaction().begin();
             entityManager.remove(hallgato);
             entityManager.getTransaction().commit();

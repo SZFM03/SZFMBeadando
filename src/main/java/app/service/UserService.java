@@ -20,6 +20,7 @@ public class UserService {
         validateUser(user);
         return userRepository.existsByNameAndPassword(user.getNev(), user.getJelszo());
     }
+
     private void validateUser(User user) {
         if (user == null) {
            throw new RuntimeException("User cannot be null!");
