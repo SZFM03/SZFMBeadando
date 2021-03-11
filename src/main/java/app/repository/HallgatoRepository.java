@@ -2,7 +2,6 @@ package app.repository;
 
 import app.entity.Hallgato;
 import app.entitymanager.CustomEntityManager;
-
 import javax.persistence.EntityManager;
 
 public class HallgatoRepository {

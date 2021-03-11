@@ -4,6 +4,7 @@ import app.entity.Hallgato;
 import app.repository.HallgatoRepository;
 
 public class HallgatoService {
+
     private final HallgatoRepository hallgatoRepository;
 
     public HallgatoService(HallgatoRepository hallgatoRepository) {

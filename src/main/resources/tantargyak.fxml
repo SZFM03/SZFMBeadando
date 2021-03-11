@@ -117,7 +117,7 @@
                                     <Insets right="15.0" />
                                  </padding>
                               </Label>
-                              <Button fx:id="tantargyAddButton" mnemonicParsing="false" text="Add" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                              <Button fx:id="tantargyAddButton" mnemonicParsing="false" onAction="#registertantargy" text="Add" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
