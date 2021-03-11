@@ -8,4 +8,4 @@ public class Main {
         Application.launch(HallgatoiAdatbazisKezeloRendszer.class, args);
     }
 }
-//teszt
+
