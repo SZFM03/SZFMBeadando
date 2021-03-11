@@ -134,9 +134,14 @@ public class TantargyakController {
             if (!targykodAddText.getText().isBlank() && !targyneveAddText.getText().isBlank() && !kreditAddText.getText().isBlank()) {
                 tantargyakService.saveTantargyak(new Tantargyak(targyneveAddText.getText(), targykodAddText.getText(), kreditAddText.getText()));
                 System.out.println("Sikeresen regisztráltál egy új tantárgyat!");
+
+                targykodAddText.clear();
+                targyneveAddText.clear();
+                kreditAddText.clear();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
+
 }

@@ -267,6 +267,11 @@ public class HallgatoController implements Initializable {
             if (!nevAddText.getText().isBlank() && !neptunAddText.getText().isBlank() && !szuletesiEvAddText.getText().isBlank()) {
                 hallgatoService.saveHallgato(new Hallgato(nevAddText.getText(), szuletesiEvAddText.getText(), neptunAddText.getText()));
                 System.out.println("Sikeresen regisztráltál egy új hallgatót!");
+
+                nevAddText.clear();
+                neptunAddText.clear();
+                szuletesiEvAddText.clear();
+
             }
         }catch (Exception e){
             System.out.println(e.getMessage());
