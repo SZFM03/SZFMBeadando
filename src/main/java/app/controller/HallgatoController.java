@@ -289,7 +289,7 @@ public class HallgatoController implements Initializable {
             hallgatoService.deleteHallgato(neptunTorlesText.getText());
             neptunTorlesText.clear();
 
-            alert.alert("Törlés információa", "Sikeresen törölted a hallgatót az adatbázisból!");
+            alert.alert("Törlés információ", "Sikeresen törölted a hallgatót az adatbázisból!");
         }
     }
 
