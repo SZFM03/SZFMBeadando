@@ -16,6 +16,8 @@ public class TantargyakController {
 
     @FXML
     private Button visszabtn;
+    @FXML
+    private Button hvisszabtn;
 
     @FXML
     private AnchorPane tantargyakPane;
@@ -101,6 +103,8 @@ public class TantargyakController {
     @FXML
     private Button kilep;
 
+    @FXML
+    private Button hkilep;
 
     private final TantargyakService tantargyakService = new TantargyakService(new TantargyakRepository());
 

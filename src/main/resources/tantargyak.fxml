@@ -29,7 +29,7 @@
         <tabs>
           <Tab fx:id="tantargyakTab" text="Tantárgyak">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="564.0" prefWidth="1200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="501.0" prefWidth="1121.0">
                      <children>
                         <GridPane layoutX="186.0" layoutY="170.0" prefHeight="462.0" prefWidth="820.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="45.0">
                           <columnConstraints>
@@ -75,9 +75,9 @@
           </Tab>
             <Tab fx:id="tantargyAddTab" text="Tantárgy hozzáadása">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="526.0" prefWidth="1200.0">
                      <children>
-                        <GridPane fx:id="addTantargyTablazat" layoutX="479.0" layoutY="180.0" prefHeight="513.0" prefWidth="1110.0" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="45.0">
+                        <GridPane fx:id="addTantargyTablazat" layoutX="479.0" layoutY="180.0" prefHeight="460.0" prefWidth="1070.0" AnchorPane.bottomAnchor="102.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="45.0">
                           <columnConstraints>
                             <ColumnConstraints fx:id="tantargyAdd0oszlop" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints fx:id="tantargyAdd1oszlop" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -124,6 +124,8 @@
                               <TextField fx:id="kreditAddText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            </children>
                         </GridPane>
+                        <Button fx:id="hvisszabtn" layoutX="912.0" layoutY="556.0" mnemonicParsing="false" onMouseClicked="#vButtonAction" prefHeight="25.0" prefWidth="130.0" text="Vissza a főoldalra" />
+                        <Button fx:id="hkilep" layoutX="1053.0" layoutY="556.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="25.0" prefWidth="131.0" text="Kilépés" />
                      </children>
                   </AnchorPane>
               </content>
