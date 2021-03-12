@@ -1,4 +1,4 @@
-package app.service;
+package app.controller;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;

@@ -2,8 +2,6 @@ package app.controller;
 
 import app.entity.User;
 import app.repository.UserRepository;
-import app.service.AlertS;
-import app.service.KilepVisszalep;
 import app.service.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,7 +39,7 @@ public class HomeController {
             if (!usernameField.getText().isBlank() && !passwordField.getText().isBlank()) {
                 userService.saveUser(new User(usernameField.getText(), passwordField.getText()));
 
-                alert.alert(BELÉPÉSI_INFORMÁCIÓ,"Sikeres belépés");
+                alert.alert(BELÉPÉSI_INFORMÁCIÓ,"Sikeres regisztráció");
 
             }
 
@@ -80,8 +78,8 @@ public class HomeController {
 
                     alert.alert(BELÉPÉSI_INFORMÁCIÓ,"A felhaszáló nincs regisztrálva, kérlek regisztrálj a belépéshez!");
 
-                    usernameField.clear();
-                    passwordField.clear();
+                   // usernameField.clear();
+                   // passwordField.clear();
 
                 }
             } else if (usernameField.getText().isBlank()) {

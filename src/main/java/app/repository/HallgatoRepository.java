@@ -17,7 +17,17 @@ public class HallgatoRepository {
         entityManager.getTransaction().commit();
     }
 
-    public boolean hallgatoModositasa(String nev, String ev, String neptunKod) {
+    public Hallgato selectHallgato(String neptunKod) {
+        try {
+            return (Hallgato) entityManager.createQuery("SELECT h FROM Hallgato h WHERE h.neptun_kod = :neptun_kod")
+                    .setParameter("neptun_kod", neptunKod)
+                    .getSingleResult();
+        }catch (Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
+    public boolean updateHallgato(String nev, String ev, String neptunKod) {
         try {
 
             Hallgato hallgato = selectHallgato(neptunKod);
@@ -32,16 +42,6 @@ public class HallgatoRepository {
         } catch (Exception e) {
             System.err.println(e.getMessage());
             return false;
-        }
-    }
-
-    public Hallgato selectHallgato(String neptunKod) {
-        try {
-            return (Hallgato) entityManager.createQuery("SELECT h FROM Hallgato h WHERE h.neptun_kod = :neptun_kod")
-                    .setParameter("neptun_kod", neptunKod)
-                    .getSingleResult();
-        }catch (Exception e){
-            throw new RuntimeException(e.getMessage());
         }
     }
 

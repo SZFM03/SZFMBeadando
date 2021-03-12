@@ -1,27 +1,16 @@
 package app.controller;
 
-import app.entity.Hallgato;
 import app.entity.Tantargyak;
-import app.repository.HallgatoRepository;
 import app.repository.TantargyakRepository;
-import app.service.AlertS;
-import app.service.HallgatoService;
-import app.service.KilepVisszalep;
 import app.service.TantargyakService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
-import javafx.scene.text.TextFlow;
-import javafx.stage.Stage;
-import java.io.IOException;
 
 public class TantargyakController {
 

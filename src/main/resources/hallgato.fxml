@@ -81,7 +81,7 @@
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="loadKeresoButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Betölt" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                              <Button fx:id="loadKeresoButton" onAction="#kereso" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Betölt" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                  <font>
                                     <Font size="20.0" />
                                  </font>

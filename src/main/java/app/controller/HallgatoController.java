@@ -2,24 +2,17 @@ package app.controller;
 
 import app.entity.Hallgato;
 import app.repository.HallgatoRepository;
-import app.service.AlertS;
 import app.service.HallgatoService;
-import app.service.KilepVisszalep;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -281,6 +274,12 @@ public class HallgatoController implements Initializable {
             }
         }catch (Exception e){
             System.out.println(e.getMessage());
+        } if(nevAddText.getText().isBlank()){
+            alert.alert("Regisztrációs információ", "Nem adtál meg Nevet!");
+        } else if (szuletesiEvAddText.getText().isBlank()){
+            alert.alert("Regisztrációs információ","Nem adtál meg születési évet!");
+        } else if(neptunAddText.getText().isBlank()){
+            alert.alert("Regisztrációs informáicó", "Nem adtál meg Neptun-kódot!");
         }
     }
 
@@ -313,6 +312,25 @@ public class HallgatoController implements Initializable {
            szuletesievadatText.setText(hallgato.getSzuletesi_ev());
            neptunadatText.setText(hallgato.getNeptun_kod());
            neptunadatText.setDisable(true);
+        }
+
+    }
+
+    public void kereso(ActionEvent actionEvent) {
+        try {
+            if (!keresoText.getText().isBlank()) {
+                Hallgato hallgato = hallgatoService.lekerdezHallgato(keresoText.getText());
+                nevKeresoText.setText(hallgato.getNev());
+                szuletesiEvKeresoText.setText(hallgato.getSzuletesi_ev());
+                neptunKeresoText.setText(hallgato.getNeptun_kod());
+                nevKeresoText.setDisable(true);
+                szuletesiEvKeresoText.setDisable(true);
+                neptunKeresoText.setDisable(true);
+            } else if(keresoText.getText().isBlank()){
+                alert.alert("Kereső információ","Nem adtál meg Neptun-kódot!");
+            }
+        }catch (Exception e){
+            alert.alert("Kereső információ","A megadott Neptun-kód nem található az adatbázisban!");
         }
 
     }

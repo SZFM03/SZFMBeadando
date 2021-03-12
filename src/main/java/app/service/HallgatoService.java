@@ -24,7 +24,7 @@ public class HallgatoService {
 
     public boolean modositHallgato(String nev, String ev, String neptunKod){
         if(!nev.isBlank() && !ev.isBlank() && !neptunKod.isBlank()){
-            return hallgatoRepository.hallgatoModositasa(nev, ev, neptunKod);
+            return hallgatoRepository.updateHallgato(nev, ev, neptunKod);
         }
         return false;
     }
