@@ -265,10 +265,6 @@ public class HallgatoController implements Initializable {
             if (!nevAddText.getText().isBlank() && !neptunAddText.getText().isBlank() && !szuletesiEvAddText.getText().isBlank()) {
                 hallgatoService.saveHallgato(new Hallgato(nevAddText.getText(), szuletesiEvAddText.getText(), neptunAddText.getText()));
 
-                nevAddText.clear();
-                neptunAddText.clear();
-                szuletesiEvAddText.clear();
-
                 alert.alert("Regisztrációs információ", "Sikeresen regisztráltál egy hallgatót!");
 
             }
@@ -281,6 +277,9 @@ public class HallgatoController implements Initializable {
         } else if(neptunAddText.getText().isBlank()){
             alert.alert("Regisztrációs informáicó", "Nem adtál meg Neptun-kódot!");
         }
+        nevAddText.clear();
+        neptunAddText.clear();
+        szuletesiEvAddText.clear();
     }
 
     public void deleteTorles(ActionEvent actionEvent) throws InterruptedException {

@@ -123,9 +123,6 @@ public class TantargyakController {
 
                 alert.alert("Tantárgy hozzáadása információ", "Sikeresen hozzáadtál egy tantárgyat!");
 
-                targykodAddText.clear();
-                targyneveAddText.clear();
-                kreditAddText.clear();
             }
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -136,6 +133,9 @@ public class TantargyakController {
         } else if (kreditAddText.getText().isBlank()){
             alert.alert("Tantárgy hozzáadása információ", "Nem adtad meg a kreditszámot!");
         }
+        targykodAddText.clear();
+        targyneveAddText.clear();
+        kreditAddText.clear();
     }
 
     public void logout(MouseEvent mouseEvent){
