@@ -273,7 +273,7 @@ public class HallgatoController implements Initializable {
 
             }
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            alert.alert("Regisztrációs információ", "Ez a Neptun-kód már foglalt!");
         } if(nevAddText.getText().isBlank()){
             alert.alert("Regisztrációs információ", "Nem adtál meg Nevet!");
         } else if (szuletesiEvAddText.getText().isBlank()){
