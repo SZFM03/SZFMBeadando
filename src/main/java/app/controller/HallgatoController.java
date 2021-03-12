@@ -306,12 +306,18 @@ public class HallgatoController implements Initializable {
     }
 
     public void lekerdez(ActionEvent actionEvent) {
-        if(!neptunbevitelText.getText().isBlank()){
-           Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunbevitelText.getText());
-           nevadatText.setText(hallgato.getNev());
-           szuletesievadatText.setText(hallgato.getSzuletesi_ev());
-           neptunadatText.setText(hallgato.getNeptun_kod());
-           neptunadatText.setDisable(true);
+        try {
+            if (!neptunbevitelText.getText().isBlank()) {
+                Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunbevitelText.getText());
+                nevadatText.setText(hallgato.getNev());
+                szuletesievadatText.setText(hallgato.getSzuletesi_ev());
+                neptunadatText.setText(hallgato.getNeptun_kod());
+                neptunadatText.setDisable(true);
+            }else if(keresoText.getText().isBlank()){
+                alert.alert("Kereső információ","Nem adtál meg Neptun-kódot!");
+            }
+        }catch (Exception e){
+            alert.alert("Kereső információ","A megadott Neptun-kód nem található az adatbázisban!");
         }
 
     }
