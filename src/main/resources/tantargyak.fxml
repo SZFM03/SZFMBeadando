@@ -5,7 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -31,42 +32,18 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="631.0" prefWidth="1200.0">
                      <children>
-                        <GridPane layoutX="186.0" layoutY="170.0" prefHeight="462.0" prefWidth="820.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="45.0">
-                          <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.066650390625" minWidth="10.0" prefWidth="245.60000610351562" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="718.6666870117188" minWidth="10.0" prefWidth="525.1333740234375" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="458.40008544921875" minWidth="10.0" prefWidth="88.86662597656255" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="461.3333679199219" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <TextArea fx:id="targykodText" prefHeight="400.0" prefWidth="192.0" GridPane.rowIndex="1" />
-                              <TextArea fx:id="targyneveText" prefHeight="454.0" prefWidth="512.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextArea fx:id="kreditText" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <Label fx:id="targykodTantargyakLabel" text="Tárgykód" GridPane.halignment="CENTER">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="targyneveTantargyakLabel" text="Tárgy neve" GridPane.columnIndex="1" GridPane.halignment="CENTER">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="kreditLabel" text="Kredit" GridPane.columnIndex="2" GridPane.halignment="CENTER">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </GridPane>
                         <Button fx:id="loadTantargyakButton" layoutX="546.0" layoutY="533.0" mnemonicParsing="false" text="Betöltés">
                            <font>
                               <Font size="22.0" />
                            </font>
                         </Button>
+                        <TableView layoutX="471.0" layoutY="122.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="400.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="31.0">
+                          <columns>
+                            <TableColumn maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Tárgykód" />
+                            <TableColumn maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Tárgy neve" />
+                              <TableColumn maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Kredit" />
+                          </columns>
+                        </TableView>
 
                      </children>
                   </AnchorPane>
