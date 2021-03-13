@@ -37,11 +37,11 @@
                               <Font size="22.0" />
                            </font>
                         </Button>
-                        <TableView layoutX="471.0" layoutY="122.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="400.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="31.0">
+                        <TableView fx:id="tantargyTable" layoutX="471.0" layoutY="122.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="400.0" minWidth="392.0" prefHeight="484.0" prefWidth="392.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="390.0" AnchorPane.rightAnchor="390.0" AnchorPane.topAnchor="30.0">
                           <columns>
-                            <TableColumn maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Tárgykód" />
-                            <TableColumn maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Tárgy neve" />
-                              <TableColumn maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Kredit" />
+                            <TableColumn fx:id="targykTantargyColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Tárgykód" />
+                            <TableColumn fx:id="targynTantargyColumn" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Tárgy neve" />
+                              <TableColumn fx:id="kreditTantargyColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Kredit" />
                           </columns>
                         </TableView>
 
