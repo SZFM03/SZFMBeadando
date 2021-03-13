@@ -45,7 +45,7 @@ public class HomeController {
 
         } catch (Exception e) {
 
-            alert.alert(BELÉPÉSI_INFORMÁCIÓ,"Sikeres belépés");
+            alert.alert(BELÉPÉSI_INFORMÁCIÓ,"A felhasználónév már foglalt!");
         }
     }
 

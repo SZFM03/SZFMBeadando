@@ -3,6 +3,8 @@ package app.service;
 import app.entity.Hallgato;
 import app.repository.HallgatoRepository;
 
+import java.util.List;
+
 public class HallgatoService {
 
     private final HallgatoRepository hallgatoRepository;
@@ -34,5 +36,11 @@ public class HallgatoService {
             return hallgatoRepository.selectHallgato(neptunKod);
         }
        throw new RuntimeException("Nem adtál meg neptunkódot");
+    }
+
+    public List<Object[]> MindenHallgato(){
+
+        return hallgatoRepository.selectMindenHallgato();
+
     }
 }

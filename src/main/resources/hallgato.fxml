@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -14,245 +16,262 @@
 
 <AnchorPane id="AnchorPane" fx:id="hallgatoPane" maxHeight="700.0" maxWidth="1200.0" minHeight="700.0" minWidth="1200.0" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.HallgatoController">
     <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="32.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ff14;" text="Hallgatói Adminisztrációs Központ" textAlignment="CENTER" textFill="#252424" AnchorPane.rightAnchor="0.0">
-         <font>
-            <Font name="Segoe UI" size="25.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ff14;" text="Debreceni Egyetem" textAlignment="CENTER" textFill="#252424">
-         <font>
-            <Font name="Segoe UI" size="25.0" />
-         </font>
-      </Label>
-      <TabPane fx:id="hallgatoTabPane" layoutY="64.0" maxHeight="636.0" maxWidth="1200.0" minHeight="585.0" minWidth="1200.0" prefHeight="585.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab fx:id="keresoTab" text="Kereső">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="520.0" prefWidth="1200.0">
-                     <children>
-                        <GridPane fx:id="keresoTablazat" layoutX="41.0" layoutY="20.0" prefHeight="483.0" prefWidth="1086.0" AnchorPane.bottomAnchor="104.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="73.0" AnchorPane.topAnchor="20.0">
-                          <columnConstraints>
-                            <ColumnConstraints fx:id="kereso0oszlopTablazat" hgrow="SOMETIMES" maxWidth="371.066650390625" minWidth="10.0" prefWidth="368.933349609375" />
-                            <ColumnConstraints fx:id="kersso1oszlopTablazat" hgrow="SOMETIMES" maxWidth="387.46667480468756" minWidth="10.0" prefWidth="384.0" />
-                              <ColumnConstraints fx:id="kereso2oszlopTablazat" hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="356.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints fx:id="kereso0SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints fx:id="kereso1SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints fx:id="kereso2SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints fx:id="kereso3SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Button fx:id="leckekonyvKeresoButton" mnemonicParsing="false" text="Tovább a leckekönyvre" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Button>
-                              <Label fx:id="nevKeresoLabel" text="Név:" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
-                                 <padding>
-                                    <Insets right="15.0" />
-                                 </padding>
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="neptunKeresoLabel" text="Neptun-kód:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
-                                 <padding>
-                                    <Insets right="15.0" />
-                                 </padding>
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="szuletesiEvKeresoLabel" text="Születési év:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
-                                 <padding>
-                                    <Insets right="15.0" />
-                                 </padding>
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="nevKeresoText" GridPane.columnIndex="2" />
-                              <TextField fx:id="neptunKeresoText" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <TextField fx:id="szuletesiEvKeresoText" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <TextField fx:id="keresoText" GridPane.rowIndex="1" />
-                              <Label fx:id="neptunLabel" prefHeight="32.0" prefWidth="246.0" text="Adja meg a Neptun-kódot" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Button fx:id="loadKeresoButton" onAction="#kereso" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Betölt" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </GridPane>
-                     </children></AnchorPane>
-            </content>
-          </Tab>
-          <Tab fx:id="addTab" text="Hallgató hozzáadása">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <GridPane fx:id="addTablazat" layoutX="288.0" layoutY="137.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="45.0">
-                          <columnConstraints>
-                            <ColumnConstraints fx:id="adat0oszlopTablazat" hgrow="SOMETIMES" maxWidth="371.066650390625" minWidth="10.0" prefWidth="368.933349609375" />
-                            <ColumnConstraints fx:id="adat1oszlopTablazat2" hgrow="SOMETIMES" maxWidth="387.46667480468756" minWidth="10.0" prefWidth="380.00000000000006" />
-                              <ColumnConstraints fx:id="adat2oszlopTablazat" hgrow="SOMETIMES" maxWidth="358.0" minWidth="10.0" prefWidth="358.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints fx:id="add0SorTalazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints fx:id="add1SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints fx:id="add2SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints fx:id="add3SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Label fx:id="nevAddLabel" text="Név:" GridPane.halignment="RIGHT">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                                 <GridPane.margin>
-                                    <Insets right="15.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Label fx:id="neptunAddLabel" text="Neptun-kód:" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                                 <GridPane.margin>
-                                    <Insets right="15.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Label fx:id="szuletesiEvAddLabel" text="Születési év:" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                                 <GridPane.margin>
-                                    <Insets right="15.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <Button fx:id="addButton" mnemonicParsing="false" onAction="#register" prefHeight="48.0" prefWidth="190.0" text="Hozzáad" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Button>
-                              <TextField fx:id="nevAddText" GridPane.columnIndex="1" />
-                              <TextField fx:id="neptunAddText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField fx:id="szuletesiEvAddText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                           </children>
-                        </GridPane>
-                     </children></AnchorPane>
-            </content>
-          </Tab>
-            <Tab fx:id="torlesTab" text="Hallgató törlése">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <GridPane fx:id="torlesTablazat" layoutX="263.0" layoutY="119.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="45.0">
-                          <columnConstraints>
-                            <ColumnConstraints fx:id="torles0oszlopTablazat" hgrow="SOMETIMES" maxWidth="371.066650390625" minWidth="10.0" prefWidth="368.933349609375" />
-                            <ColumnConstraints fx:id="torles1oszlopTablazat" hgrow="SOMETIMES" maxWidth="387.46667480468756" minWidth="10.0" prefWidth="380.00000000000006" />
-                              <ColumnConstraints fx:id="torles2oszlopTablazat" hgrow="SOMETIMES" maxWidth="358.0" minWidth="10.0" prefWidth="358.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints fx:id="torles0SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints fx:id="torles1SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints fx:id="torles2SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Button fx:id="deleteTorlesButton" mnemonicParsing="false" onAction="#deleteTorles" text="Törlés" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Button>
-                              <Label fx:id="neptunTorlesLabel" text="Neptun-kód:" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets right="15.0" />
-                                 </padding>
-                              </Label>
-                              <TextField fx:id="neptunTorlesText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                           </children>
-                        </GridPane>
-                     </children></AnchorPane>
-              </content>
-            </Tab>
-            <Tab fx:id="adatTab" text="Hallgató adatainak módosítása">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <GridPane fx:id="adatTabkazat" layoutX="367.0" layoutY="213.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="45.0">
-                          <columnConstraints>
-                            <ColumnConstraints fx:id="adatoszlopTablazat1" hgrow="SOMETIMES" maxWidth="371.066650390625" minWidth="10.0" prefWidth="368.933349609375" />
-                            <ColumnConstraints fx:id="adatoszlopTablazat2" hgrow="SOMETIMES" maxWidth="387.46667480468756" minWidth="10.0" prefWidth="380.00000000000006" />
-                              <ColumnConstraints fx:id="adatoszlopTablazat3" hgrow="SOMETIMES" maxWidth="358.0" minWidth="10.0" prefWidth="358.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints fx:id="adat0SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints fx:id="adat1SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints fx:id="adat2SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints fx:id="adat3SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Label fx:id="nevAdatLabel" text="Neptun-kód:" GridPane.halignment="RIGHT">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets right="15.0" />
-                                 </padding>
-                              </Label>
-                              <Label fx:id="neptunAdatLabel" text="Neptun-kód" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets right="15.0" />
-                                 </padding>
-                              </Label>
-                              <Label fx:id="szuletesiEvAdatLabel" text="Születési év" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets right="15.0" />
-                                 </padding>
-                              </Label>
-                              <TextField fx:id="neptunbevitelText" GridPane.columnIndex="1" />
-                              <TextField fx:id="neptunadatText" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP" />
-                              <TextField fx:id="nevadatText" prefHeight="25.0" prefWidth="297.0" GridPane.rowIndex="4" GridPane.valignment="TOP" />
-                              <Button fx:id="saveAdatButton" mnemonicParsing="false" onAction="#modosit" text="Módosít" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Button>
-                              <Button fx:id="saveAdatButton1" mnemonicParsing="false" onAction="#lekerdez" text="Lekérdez" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Button>
-                              <Label fx:id="neptunAdatLabel1" text="Név" GridPane.rowIndex="3">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets right="15.0" />
-                                 </padding>
-                              </Label>
-                              <TextField fx:id="szuletesievadatText" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.valignment="TOP" />
-                           </children>
-                        </GridPane>
-                     </children></AnchorPane>
-              </content>
-            </Tab>
-        </tabs>
-      </TabPane>
-      <Button fx:id="visszabtn" layoutX="872.0" layoutY="649.0" mnemonicParsing="false" onMouseClicked="#vButtonAction" prefHeight="32.0" prefWidth="144.0" text="Vissza a főoldalra" />
-      <Button fx:id="kilep" layoutX="1027.0" layoutY="649.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="32.0" prefWidth="144.0" text="Kilépés" />
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="32.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ff14;" text="Hallgatói Adminisztrációs Központ" textAlignment="CENTER" textFill="#252424" AnchorPane.rightAnchor="0.0">
+            <font>
+                <Font name="Segoe UI" size="25.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ff14;" text="Debreceni Egyetem" textAlignment="CENTER" textFill="#252424">
+            <font>
+                <Font name="Segoe UI" size="25.0" />
+            </font>
+        </Label>
+        <TabPane fx:id="hallgatoTabPane" layoutY="64.0" maxHeight="636.0" maxWidth="1200.0" minHeight="585.0" minWidth="1200.0" prefHeight="585.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="keresoTab" text="Kereső">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="520.0" prefWidth="1200.0">
+                            <children>
+                                <GridPane fx:id="keresoTablazat" layoutX="41.0" layoutY="20.0" prefHeight="483.0" prefWidth="1086.0" AnchorPane.bottomAnchor="104.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="73.0" AnchorPane.topAnchor="20.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints fx:id="kereso0oszlopTablazat" hgrow="SOMETIMES" maxWidth="371.066650390625" minWidth="10.0" prefWidth="368.933349609375" />
+                                        <ColumnConstraints fx:id="kersso1oszlopTablazat" hgrow="SOMETIMES" maxWidth="387.46667480468756" minWidth="10.0" prefWidth="384.0" />
+                                        <ColumnConstraints fx:id="kereso2oszlopTablazat" hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="356.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints fx:id="kereso0SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints fx:id="kereso1SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints fx:id="kereso2SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints fx:id="kereso3SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Button fx:id="leckekonyvKeresoButton" mnemonicParsing="false" text="Tovább a leckekönyvre" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Button>
+                                        <Label fx:id="nevKeresoLabel" text="Név:" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                                            <padding>
+                                                <Insets right="15.0" />
+                                            </padding>
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="neptunKeresoLabel" text="Neptun-kód:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                            <padding>
+                                                <Insets right="15.0" />
+                                            </padding>
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="szuletesiEvKeresoLabel" text="Születési év:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                            <padding>
+                                                <Insets right="15.0" />
+                                            </padding>
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="nevKeresoText" GridPane.columnIndex="2" />
+                                        <TextField fx:id="neptunKeresoText" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                        <TextField fx:id="szuletesiEvKeresoText" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                        <TextField fx:id="keresoText" GridPane.rowIndex="1" />
+                                        <Label fx:id="neptunLabel" prefHeight="32.0" prefWidth="246.0" text="Adja meg a Neptun-kódot" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="loadKeresoButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#kereso" text="Betölt" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </GridPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="addTab" text="Hallgató hozzáadása">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <GridPane fx:id="addTablazat" layoutX="288.0" layoutY="137.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="45.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints fx:id="adat0oszlopTablazat" hgrow="SOMETIMES" maxWidth="371.066650390625" minWidth="10.0" prefWidth="368.933349609375" />
+                                        <ColumnConstraints fx:id="adat1oszlopTablazat2" hgrow="SOMETIMES" maxWidth="387.46667480468756" minWidth="10.0" prefWidth="380.00000000000006" />
+                                        <ColumnConstraints fx:id="adat2oszlopTablazat" hgrow="SOMETIMES" maxWidth="358.0" minWidth="10.0" prefWidth="358.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints fx:id="add0SorTalazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints fx:id="add1SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints fx:id="add2SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints fx:id="add3SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label fx:id="nevAddLabel" text="Név:" GridPane.halignment="RIGHT">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                            <GridPane.margin>
+                                                <Insets right="15.0" />
+                                            </GridPane.margin>
+                                        </Label>
+                                        <Label fx:id="neptunAddLabel" text="Neptun-kód:" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                            <GridPane.margin>
+                                                <Insets right="15.0" />
+                                            </GridPane.margin>
+                                        </Label>
+                                        <Label fx:id="szuletesiEvAddLabel" text="Születési év:" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                            <GridPane.margin>
+                                                <Insets right="15.0" />
+                                            </GridPane.margin>
+                                        </Label>
+                                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#register" prefHeight="48.0" prefWidth="190.0" text="Hozzáad" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Button>
+                                        <TextField fx:id="nevAddText" GridPane.columnIndex="1" />
+                                        <TextField fx:id="neptunAddText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <TextField fx:id="szuletesiEvAddText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    </children>
+                                </GridPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="torlesTab" text="Hallgató törlése">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <GridPane fx:id="torlesTablazat" layoutX="263.0" layoutY="119.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="45.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints fx:id="torles0oszlopTablazat" hgrow="SOMETIMES" maxWidth="371.066650390625" minWidth="10.0" prefWidth="368.933349609375" />
+                                        <ColumnConstraints fx:id="torles1oszlopTablazat" hgrow="SOMETIMES" maxWidth="387.46667480468756" minWidth="10.0" prefWidth="380.00000000000006" />
+                                        <ColumnConstraints fx:id="torles2oszlopTablazat" hgrow="SOMETIMES" maxWidth="358.0" minWidth="10.0" prefWidth="358.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints fx:id="torles0SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints fx:id="torles1SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints fx:id="torles2SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Button fx:id="deleteTorlesButton" mnemonicParsing="false" onAction="#deleteTorles" text="Törlés" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Button>
+                                        <Label fx:id="neptunTorlesLabel" text="Neptun-kód:" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets right="15.0" />
+                                            </padding>
+                                        </Label>
+                                        <TextField fx:id="neptunTorlesText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="adatTab" text="Hallgató adatainak módosítása">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <GridPane fx:id="adatTabkazat" layoutX="367.0" layoutY="213.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="45.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints fx:id="adatoszlopTablazat1" hgrow="SOMETIMES" maxWidth="371.066650390625" minWidth="10.0" prefWidth="368.933349609375" />
+                                        <ColumnConstraints fx:id="adatoszlopTablazat2" hgrow="SOMETIMES" maxWidth="387.46667480468756" minWidth="10.0" prefWidth="380.00000000000006" />
+                                        <ColumnConstraints fx:id="adatoszlopTablazat3" hgrow="SOMETIMES" maxWidth="358.0" minWidth="10.0" prefWidth="358.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints fx:id="adat0SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints fx:id="adat1SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints fx:id="adat2SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints fx:id="adat3SorTablazat" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label fx:id="nevAdatLabel" text="Neptun-kód:" GridPane.halignment="RIGHT">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets right="15.0" />
+                                            </padding>
+                                        </Label>
+                                        <Label fx:id="neptunAdatLabel" text="Neptun-kód" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets right="15.0" />
+                                            </padding>
+                                        </Label>
+                                        <Label fx:id="szuletesiEvAdatLabel" text="Születési év" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets right="15.0" />
+                                            </padding>
+                                        </Label>
+                                        <TextField fx:id="neptunbevitelText" GridPane.columnIndex="1" />
+                                        <TextField fx:id="neptunadatText" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+                                        <TextField fx:id="nevadatText" prefHeight="25.0" prefWidth="297.0" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+                                        <Button fx:id="saveAdatButton" mnemonicParsing="false" onAction="#modosit" text="Módosít" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Button>
+                                        <Button fx:id="saveAdatButton1" mnemonicParsing="false" onAction="#lekerdez" text="Lekérdez" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Button>
+                                        <Label fx:id="neptunAdatLabel1" text="Név" GridPane.rowIndex="3">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets right="15.0" />
+                                            </padding>
+                                        </Label>
+                                        <TextField fx:id="szuletesievadatText" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+                                    </children>
+                                </GridPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Minden hallgató">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Button fx:id="hallgatobetoltes" layoutX="489.0" layoutY="510.0" mnemonicParsing="false" onAction="#lekerdezMindenHallgato" prefHeight="32.0" prefWidth="223.0" text="Hallgatók betöltése" />
+                                <TableView fx:id="hallgatotabla" layoutX="329.0" layoutY="31.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="446.0" prefWidth="542.0" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="329.0" AnchorPane.rightAnchor="329.0" AnchorPane.topAnchor="31.0">
+                                    <columns>
+                                        <TableColumn fx:id="oszlopnev" prefWidth="193.0" minWidth="0.0" maxWidth="193.0" text="Név" />
+                                        <TableColumn fx:id="neptunoszlop" minWidth="0.0" maxWidth="193.0" prefWidth="247.0" text="Neptun-kód" />
+                                        <TableColumn fx:id="szuletesievoszlop" minWidth="0.0" maxWidth="100" prefWidth="100.0" text="Születési év" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Button fx:id="visszabtn" layoutX="872.0" layoutY="649.0" mnemonicParsing="false" onMouseClicked="#vButtonAction" prefHeight="32.0" prefWidth="144.0" text="Vissza a főoldalra" />
+        <Button fx:id="kilep" layoutX="1027.0" layoutY="649.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="32.0" prefWidth="144.0" text="Kilépés" />
     </children>
 </AnchorPane>
+

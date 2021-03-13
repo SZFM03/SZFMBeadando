@@ -3,10 +3,13 @@ package app.controller;
 import app.entity.Hallgato;
 import app.repository.HallgatoRepository;
 import app.service.HallgatoService;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
@@ -14,10 +17,16 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class HallgatoController implements Initializable {
 
+    public Button hallgatobetoltes;
+    public TableView hallgatotabla;
+    public TableColumn oszlopnev;
+    public TableColumn neptunoszlop;
+    public TableColumn szuletesievoszlop;
     @FXML
     private Button visszabtn;
     @FXML
@@ -338,5 +347,24 @@ public class HallgatoController implements Initializable {
             alert.alert("Kereső információ","A megadott Neptun-kód nem található az adatbázisban!");
         }
 
+    }
+
+    public void lekerdezMindenHallgato(ActionEvent actionEvent) {
+        try {
+            ObservableList<Hallgato> getHallgatok = FXCollections.observableArrayList();
+            List<Object[]> hallgatok = hallgatoService.MindenHallgato();
+            for(Object[] h : hallgatok){
+                getHallgatok.add(new Hallgato(""+h[0], ""+h[1], ""+h[2]));
+            }
+            oszlopnev.setCellValueFactory(new PropertyValueFactory<>("nev"));
+            szuletesievoszlop.setCellValueFactory(new PropertyValueFactory<>("szuletesi_ev"));
+            neptunoszlop.setCellValueFactory(new PropertyValueFactory<>("neptun_kod"));
+            hallgatotabla.setItems(getHallgatok);
+            if(getHallgatok.isEmpty()){
+                alert.alert("Minden hallgató infó", "Nincs az adatbázisban egy hallgató sem!");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
     }
 }
