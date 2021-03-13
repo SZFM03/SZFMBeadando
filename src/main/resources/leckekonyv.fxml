@@ -86,13 +86,23 @@
                               <Font size="20.0" />
                            </font>
                         </Button>
-                        <Button fx:id="kilep" layoutX="1042.0" layoutY="570.0" maxHeight="25.0" maxWidth="144.0" minHeight="25.0" minWidth="144.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="25.0" prefWidth="144.0" text="Kilépés" />
-                        <Button fx:id="visszabtn" layoutX="882.0" layoutY="570.0" maxHeight="25.0" maxWidth="144.0" minHeight="25.0" minWidth="144.0" mnemonicParsing="false" onMouseClicked="#vButtonAction" prefHeight="25.0" prefWidth="144.0" text="Vissza a főoldalra" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
+            <Tab text="Tárgyfelvétel">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab text="Jegybeírás">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
+      <Button fx:id="visszabtn" layoutX="872.0" layoutY="649.0" maxHeight="32.0" maxWidth="144.0" minHeight="32.0" minWidth="144.0" mnemonicParsing="false" onMouseClicked="#vButtonAction" prefHeight="32.0" prefWidth="144.0" text="Vissza a főoldalra" />
+      <Button fx:id="kilep" layoutX="1027.0" layoutY="649.0" maxHeight="32.0" maxWidth="144.0" minHeight="32.0" minWidth="144.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="32.0" prefWidth="144.0" text="Kilépés" />
    </children>
 </AnchorPane>
