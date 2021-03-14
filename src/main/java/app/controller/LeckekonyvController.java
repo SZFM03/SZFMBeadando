@@ -1,5 +1,9 @@
 package app.controller;
 
+import app.entity.Hallgato;
+import app.entity.Tantargyak;
+import app.service.TantargyakService;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -46,25 +50,14 @@ public class LeckekonyvController {
     private TextArea felevLeckekonyvText;
 
     @FXML
-    private Label neptunLeckekonyvLabel;
-
-    @FXML
-    private Label tantargyLeckekonyvLabel;
-
-    @FXML
-    private Label jegyLeckekonyvLabel;
-
-    @FXML
-    private Label felvetelekLeckekonyvLabel;
-
-    @FXML
-    private Label vizsgakLeckekonyvLabel;
-
-    @FXML
-    private Label felevLeckekonyvLabel;
-
-    @FXML
     private Button leckekonyvbtn;
+
+    @FXML
+    private Button targylekerdez;
+
+    @FXML
+    private TextArea neptunTargyfelvetelText;
+
 
     @FXML
     private Button kilep;

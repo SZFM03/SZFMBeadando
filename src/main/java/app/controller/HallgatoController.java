@@ -254,6 +254,12 @@ public class HallgatoController implements Initializable {
 
     }
 
+    private final KilepVisszalep oldalLeptetes = new KilepVisszalep();
+
+    public void lButtonAction(MouseEvent mouseEvent) {
+        oldalLeptetes.kilepvisszalep(mouseEvent, leckekonyvKeresoButton, "/leckekonyv.fxml");
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -303,7 +309,12 @@ public class HallgatoController implements Initializable {
     public void modosit(ActionEvent actionEvent) {
 
       if(!nevadatText.getText().isBlank() && !neptunadatText.getText().isBlank() && !szuletesievadatText.getText().isBlank()){
-            hallgatoService.modositHallgato(nevadatText.getText(), szuletesievadatText.getText(), neptunadatText.getText());
+          hallgatoService.modositHallgato(nevadatText.getText(), szuletesievadatText.getText(), neptunadatText.getText());
+          nevadatText.clear();
+          neptunadatText.clear();
+          szuletesievadatText.clear();
+
+          alert.alert("Módosítási információ", "Sikeres adatmódosítás!");
         }
 
     }
@@ -321,6 +332,8 @@ public class HallgatoController implements Initializable {
                 szuletesievadatText.setText(hallgato.getSzuletesi_ev());
                 neptunadatText.setText(hallgato.getNeptun_kod());
                 neptunadatText.setDisable(true);
+
+                neptunbevitelText.clear();
             }else if(keresoText.getText().isBlank()){
                 alert.alert("Kereső információ","Nem adtál meg Neptun-kódot!");
             }
@@ -340,6 +353,8 @@ public class HallgatoController implements Initializable {
                 nevKeresoText.setDisable(true);
                 szuletesiEvKeresoText.setDisable(true);
                 neptunKeresoText.setDisable(true);
+
+                keresoText.clear();
             } else if(keresoText.getText().isBlank()){
                 alert.alert("Kereső információ","Nem adtál meg Neptun-kódot!");
             }

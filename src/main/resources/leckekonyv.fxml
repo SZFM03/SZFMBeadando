@@ -83,7 +83,7 @@
                                     <Insets right="15.0" />
                                  </padding>
                               </Label>
-                              <TextField fx:id="neptunTargyfelvetelText" GridPane.columnIndex="1" GridPane.valignment="TOP">
+                              <TextField fx:id="" GridPane.columnIndex="1" GridPane.valignment="TOP">
                                  <GridPane.margin>
                                     <Insets left="15.0" right="15.0" />
                                  </GridPane.margin></TextField>
@@ -91,7 +91,7 @@
                                  <GridPane.margin>
                                     <Insets left="15.0" right="15.0" />
                                  </GridPane.margin></TextField>
-                              <Button mnemonicParsing="false" text="Lekérdez" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                              <Button fx:id="targylekerdez" mnemonicParsing="false" text="Lekérdez" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                  <font>
                                     <Font size="20.0" />
                                  </font>

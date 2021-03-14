@@ -1,18 +1,30 @@
 package app.controller;
 
+import app.entity.Hallgato;
 import app.entity.Tantargyak;
 import app.repository.TantargyakRepository;
 import app.service.TantargyakService;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 
+import java.util.List;
+
 public class TantargyakController {
+
+    public Button loadTantargyakButton;
+    public TableView tantargyTable;
+    public TableColumn targykTantargyColumn;
+    public TableColumn targynTantargyColumn;
+    public TableColumn kreditTantargyColumn;
 
     @FXML
     private Button visszabtn;
@@ -45,9 +57,6 @@ public class TantargyakController {
 
     @FXML
     private Label kreditLabel;
-
-    @FXML
-    private Button loadTantargyakButton;
 
     @FXML
     private Tab tantargyAddTab;
@@ -136,6 +145,25 @@ public class TantargyakController {
         targykodAddText.clear();
         targyneveAddText.clear();
         kreditAddText.clear();
+    }
+
+    public void lekerdezMindenTantargy(ActionEvent actionEvent) {
+        try {
+            ObservableList<Tantargyak> getTantargyak = FXCollections.observableArrayList();
+            List<Object[]> tantargy = tantargyakService.MindenTantargy();
+            for(Object[] t : tantargy){
+                getTantargyak.add(new Tantargyak(""+t[0], ""+t[1], ""+t[2]));
+            }
+            targynTantargyColumn.setCellValueFactory(new PropertyValueFactory<>("nev"));
+            targykTantargyColumn.setCellValueFactory(new PropertyValueFactory<>("kreditszam"));
+            kreditTantargyColumn.setCellValueFactory(new PropertyValueFactory<>("kod"));
+            tantargyTable.setItems(getTantargyak);
+            if(getTantargyak.isEmpty()){
+                alert.alert("Minden tantárgy információ", "Nincs az adatbázisban egy tantárgy sem!");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
     }
 
     public void logout(MouseEvent mouseEvent){
