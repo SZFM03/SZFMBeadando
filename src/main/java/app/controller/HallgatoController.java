@@ -308,13 +308,13 @@ public class HallgatoController implements Initializable {
 
     public void modosit(ActionEvent actionEvent) {
 
-      if(!nevadatText.getText().isBlank() && !neptunadatText.getText().isBlank() && !szuletesievadatText.getText().isBlank()){
-          hallgatoService.modositHallgato(nevadatText.getText(), szuletesievadatText.getText(), neptunadatText.getText());
-          nevadatText.clear();
-          neptunadatText.clear();
-          szuletesievadatText.clear();
+        if(!nevadatText.getText().isBlank() && !neptunadatText.getText().isBlank() && !szuletesievadatText.getText().isBlank()){
+            hallgatoService.modositHallgato(nevadatText.getText(), szuletesievadatText.getText(), neptunadatText.getText());
+            nevadatText.clear();
+            neptunadatText.clear();
+            szuletesievadatText.clear();
 
-          alert.alert("Módosítási információ", "Sikeres adatmódosítás!");
+            alert.alert("Módosítási információ", "Sikeres adatmódosítás!");
         }
 
     }
@@ -367,19 +367,18 @@ public class HallgatoController implements Initializable {
     public void lekerdezMindenHallgato(ActionEvent actionEvent) {
         try {
             ObservableList<Hallgato> getHallgatok = FXCollections.observableArrayList();
-            List<Object[]> hallgatok = hallgatoService.MindenHallgato();
-            for(Object[] h : hallgatok){
-                getHallgatok.add(new Hallgato(""+h[0], ""+h[1], ""+h[2]));
+            List<Hallgato> hallgatok = hallgatoService.MindenHallgato();
+            if(hallgatok.isEmpty()){
+                alert.alert("Minden hallgató infó", "Nincs az adatbázisban egy hallgató sem!");
             }
+            getHallgatok.addAll(hallgatok);
             oszlopnev.setCellValueFactory(new PropertyValueFactory<>("nev"));
             szuletesievoszlop.setCellValueFactory(new PropertyValueFactory<>("szuletesi_ev"));
             neptunoszlop.setCellValueFactory(new PropertyValueFactory<>("neptun_kod"));
             hallgatotabla.setItems(getHallgatok);
-            if(getHallgatok.isEmpty()){
-                alert.alert("Minden hallgató infó", "Nincs az adatbázisban egy hallgató sem!");
-            }
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }
     }
+
 }

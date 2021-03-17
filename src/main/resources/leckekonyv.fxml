@@ -16,213 +16,202 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="leckekonyvPane" maxHeight="700.0" maxWidth="1200.0" minHeight="700.0" minWidth="1200.0" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.LeckekonyvController">
-   <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-2.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ff14;" text="Debreceni Egyetem" textAlignment="CENTER" textFill="#252424">
-         <font>
-            <Font name="Segoe UI" size="25.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="30.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ff14;" text="Hallgatói Adminisztrációs Központ" textAlignment="CENTER" textFill="#252424">
-         <font>
-            <Font name="Segoe UI" size="25.0" />
-         </font>
-      </Label>
-      <TabPane fx:id="leckekonyvTabPane" layoutY="60.0" maxHeight="636.0" maxWidth="1200.0" minHeight="636.0" minWidth="1200.0" prefHeight="636.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab fx:id="leckekonyvTab" text="Leckekönyv">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="542.0" prefWidth="1200.0">
-                     <children>
-                        <Button fx:id="leckekonyvbtn" layoutX="546.0" layoutY="538.0" mnemonicParsing="false" text="Betöltés">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Button>
-                        <TableView layoutX="482.0" layoutY="124.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="260.0" AnchorPane.topAnchor="30.0">
-                          <columns>
-                            <TableColumn fx:id="neptunlkColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Neptun-kód" />
-                            <TableColumn fx:id="targylkColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Tárgykód" />
-                              <TableColumn fx:id="jegylkColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Jegy" />
-                              <TableColumn fx:id="felvetellkColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Felvételek száma" />
-                              <TableColumn fx:id="vizsgalkColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Vizsgák száma" />
-                              <TableColumn fx:id="felevlkColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Félév" />
-                          </columns>
-                        </TableView>
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-            <Tab text="Tárgyfelvétel">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <GridPane layoutX="83.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="477.0" prefWidth="1072.0" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="45.0">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.60003662109375" minWidth="10.0" prefWidth="154.6" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="489.2000274658203" minWidth="10.0" prefWidth="230.60000000000005" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="512.3999816894532" minWidth="10.0" prefWidth="191.0666717529296" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="626.4666015624999" minWidth="10.0" prefWidth="303.4000366210937" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints maxHeight="163.8666748046875" minHeight="0.0" prefHeight="39.80001525878906" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="409.8666961669922" minHeight="10.0" prefHeight="85.39998474121094" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="435.7333511352539" minHeight="10.0" prefHeight="41.20002441406248" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="435.7333511352539" minHeight="10.0" prefHeight="313.1999755859375" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <Label text="Neptun-kód:" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label text="Tárgykód:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets right="15.0" />
-                                 </padding>
-                              </Label>
-                              <TextField fx:id="" GridPane.columnIndex="1" GridPane.valignment="TOP">
-                                 <GridPane.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </GridPane.margin></TextField>
-                              <TextField fx:id="targyHozzaadTargyfelvetelText" GridPane.columnIndex="3" GridPane.valignment="TOP">
-                                 <GridPane.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </GridPane.margin></TextField>
-                              <Button fx:id="targylekerdez" mnemonicParsing="false" text="Lekérdez" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Button>
-                              <Button mnemonicParsing="false" text="Hozzáad" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Button>
-                              <Label text="Hallgató neve" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="hallgatoTargyfelvetelText" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                                 <GridPane.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </GridPane.margin></TextField>
-                              <TableView fx:id="targyfelvetelTable" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                                <columns>
-                                  <TableColumn fx:id="targyTargyfelvetelColumn" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Tárgykód" />
-                                </columns>
-                                 <cursor>
-                                    <Cursor fx:constant="CROSSHAIR" />
-                                 </cursor>
-                              </TableView>
-                           </children>
-                        </GridPane>
-                     </children></AnchorPane>
-              </content>
-            </Tab>
-            <Tab text="Jegybeírás">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <GridPane layoutX="461.0" layoutY="198.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="45.0">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints maxHeight="170.0" minHeight="0.0" prefHeight="91.00000762939453" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="340.0" minHeight="0.0" prefHeight="117.59998779296875" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="445.20000000000005" minHeight="10.0" prefHeight="37.600012207031256" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="445.20000000000005" minHeight="10.0" prefHeight="69.99998779296877" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="445.20000000000005" minHeight="10.0" prefHeight="207.60001220703128" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Label text="Neptun-kód:" GridPane.halignment="RIGHT">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label text="Tárgykód:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="neptunJegylkText" GridPane.columnIndex="1">
-                                 <GridPane.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </GridPane.margin>
-                              </TextField>
-                              <TextField fx:id="targyJegylktext" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                                 <GridPane.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </GridPane.margin>
-                              </TextField>
-                              <Button fx:id="lekerdezJegyBtn" mnemonicParsing="false" text="Lekérdez" GridPane.columnIndex="2" GridPane.halignment="CENTER">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                                 <GridPane.margin>
-                                    <Insets />
-                                 </GridPane.margin>
-                              </Button>
-                              <Label text="Név" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label text="Neptun-kód" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label text="Tárgykód" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <Label text="Jegy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="nevJegyText" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                                 <GridPane.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </GridPane.margin>
-                              </TextField>
-                              <TextField fx:id="neptunJegyText" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                                 <GridPane.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </GridPane.margin>
-                              </TextField>
-                              <TextField fx:id="targyJegyText" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                                 <GridPane.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </GridPane.margin>
-                              </TextField>
-                              <TextField fx:id="jegyJegyText" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                                 <GridPane.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </GridPane.margin>
-                              </TextField>
-                              <Button fx:id="modositJegyBtn" mnemonicParsing="false" text="Módosít" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </GridPane>
-                     </children></AnchorPane>
-              </content>
-            </Tab>
-        </tabs>
-      </TabPane>
-      <Button fx:id="visszabtn" layoutX="872.0" layoutY="649.0" maxHeight="32.0" maxWidth="144.0" minHeight="32.0" minWidth="144.0" mnemonicParsing="false" onMouseClicked="#vButtonAction" prefHeight="32.0" prefWidth="144.0" text="Vissza a főoldalra" />
-      <Button fx:id="kilep" layoutX="1027.0" layoutY="649.0" maxHeight="32.0" maxWidth="144.0" minHeight="32.0" minWidth="144.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="32.0" prefWidth="144.0" text="Kilépés" />
-   </children>
+    <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-2.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ff14;" text="Debreceni Egyetem" textAlignment="CENTER" textFill="#252424">
+            <font>
+                <Font name="Segoe UI" size="25.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="30.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ff14;" text="Hallgatói Adminisztrációs Központ" textAlignment="CENTER" textFill="#252424">
+            <font>
+                <Font name="Segoe UI" size="25.0" />
+            </font>
+        </Label>
+        <TabPane fx:id="leckekonyvTabPane" layoutY="60.0" maxHeight="636.0" maxWidth="1200.0" minHeight="636.0" minWidth="1200.0" prefHeight="636.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="leckekonyvTab" text="Leckekönyv">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="542.0" prefWidth="1200.0">
+                            <children>
+                                <Button fx:id="leckekonyvbtn" layoutX="546.0" layoutY="538.0" mnemonicParsing="false" text="Betöltés">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Button>
+                                <TableView layoutX="482.0" layoutY="124.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="260.0" AnchorPane.topAnchor="30.0">
+                                    <columns>
+                                        <TableColumn fx:id="neptunlkColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Neptun-kód" />
+                                        <TableColumn fx:id="targylkColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Tárgykód" />
+                                        <TableColumn fx:id="jegylkColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Jegy" />
+                                        <TableColumn fx:id="felvetellkColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Felvételek száma" />
+                                        <TableColumn fx:id="vizsgalkColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Vizsgák száma" />
+                                        <TableColumn fx:id="felevlkColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Félév" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Tárgyfelvétel">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextField fx:id="neptunkodbevitel" layoutX="431.0" layoutY="40.0" />
+                                <Label layoutX="323.0" layoutY="43.0" text="Neptun-kód:">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="targylekerdez" layoutX="449.0" layoutY="87.0" mnemonicParsing="false" onAction="#kereso" prefHeight="25.0" prefWidth="106.0" text="Lekérdez" />
+                                <TextField fx:id="hallgatoTargyfelvetelText" disable="true" layoutX="757.0" layoutY="40.0" />
+                                <Label layoutX="659.0" layoutY="42.0" text="Hallgató neve">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="targyaklistazasa" layoutX="714.0" layoutY="487.0" mnemonicParsing="false" onAction="#lekerdezMindenTantargy" prefHeight="24.0" prefWidth="176.0" text="Tárgyak listázása" />
+                                <TableView fx:id="targyfelvetelTable2" layoutX="690.0" layoutY="180.0" maxWidth="484.0" minWidth="200.0" prefHeight="293.0" prefWidth="432.0">
+                                    <columns>
+                                        <TableColumn fx:id="targykodfelvetel" maxWidth="270.0" minWidth="34.0" prefWidth="135.0" text="Tárgykód" />
+                                        <TableColumn fx:id="targynevfelvetel" prefWidth="221.0" text="Tárgy neve" />
+                                        <TableColumn fx:id="kreditoszlop" prefWidth="74.0" text="Kredit" />
+                                    </columns>
+                                    <cursor>
+                                        <Cursor fx:constant="CROSSHAIR" />
+                                    </cursor>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                </TableView>
+                                <Button fx:id="listafrissitese" layoutX="173.0" layoutY="487.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="176.0" text="Lista frissítése" />
+                                <Button fx:id="targyhozzaadas" layoutX="913.0" layoutY="487.0" mnemonicParsing="false" onAction="#kivalasztottadatatadasa" prefHeight="24.0" prefWidth="176.0" text="Tárgy hozzáadása" />
+                                <TableView fx:id="targyfelvetelTable1" editable="true" layoutX="152.0" layoutY="182.0" maxWidth="657.0" minWidth="200.0" prefHeight="290.0" prefWidth="240.0">
+                                    <columns>
+                                        <TableColumn fx:id="targykod" maxWidth="200.0" minWidth="79.0" prefWidth="79.0" text="Tárgykód" />
+                                        <TableColumn fx:id="targynev" prefWidth="83.0" text="Tárgyneve" />
+                                        <TableColumn fx:id="kredit" minWidth="0.0" prefWidth="76.0" text="Kredit" />
+                                    </columns>
+                                    <cursor>
+                                        <Cursor fx:constant="CROSSHAIR" />
+                                    </cursor>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                </TableView>
+                                <Label layoutX="205.0" layoutY="152.0" text="Felvett tantárgyak">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="829.0" layoutY="152.0" text="További tárgyak felvétele">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="töröl" layoutX="216.0" layoutY="525.0" mnemonicParsing="false" onAction="#töröl" text="Tárgy leadása" />
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Jegybeírás">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <GridPane layoutX="461.0" layoutY="198.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="45.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="170.0" minHeight="0.0" prefHeight="91.00000762939453" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="340.0" minHeight="0.0" prefHeight="117.59998779296875" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="445.20000000000005" minHeight="10.0" prefHeight="37.600012207031256" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="445.20000000000005" minHeight="10.0" prefHeight="69.99998779296877" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="445.20000000000005" minHeight="10.0" prefHeight="207.60001220703128" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="Neptun-kód:" GridPane.halignment="RIGHT">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="Tárgykód:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="neptunJegylkText" GridPane.columnIndex="1">
+                                            <GridPane.margin>
+                                                <Insets left="15.0" right="15.0" />
+                                            </GridPane.margin>
+                                        </TextField>
+                                        <TextField fx:id="targyJegylktext" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                            <GridPane.margin>
+                                                <Insets left="15.0" right="15.0" />
+                                            </GridPane.margin>
+                                        </TextField>
+                                        <Button fx:id="lekerdezJegyBtn" mnemonicParsing="false" text="Lekérdez" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                            <GridPane.margin>
+                                                <Insets />
+                                            </GridPane.margin>
+                                        </Button>
+                                        <Label text="Név" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="Neptun-kód" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="Tárgykód" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="Jegy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="nevJegyText" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                            <GridPane.margin>
+                                                <Insets left="15.0" right="15.0" />
+                                            </GridPane.margin>
+                                        </TextField>
+                                        <TextField fx:id="neptunJegyText" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                            <GridPane.margin>
+                                                <Insets left="15.0" right="15.0" />
+                                            </GridPane.margin>
+                                        </TextField>
+                                        <TextField fx:id="targyJegyText" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                            <GridPane.margin>
+                                                <Insets left="15.0" right="15.0" />
+                                            </GridPane.margin>
+                                        </TextField>
+                                        <TextField fx:id="jegyJegyText" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                            <GridPane.margin>
+                                                <Insets left="15.0" right="15.0" />
+                                            </GridPane.margin>
+                                        </TextField>
+                                        <Button fx:id="modositJegyBtn" mnemonicParsing="false" text="Módosít" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </GridPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Button fx:id="visszabtn" layoutX="872.0" layoutY="657.0" maxHeight="32.0" maxWidth="144.0" minHeight="24.0" minWidth="144.0" mnemonicParsing="false" onMouseClicked="#vButtonAction" prefHeight="24.0" prefWidth="144.0" text="Vissza a főoldalra" />
+        <Button fx:id="kilep" layoutX="1027.0" layoutY="657.0" maxHeight="32.0" maxWidth="144.0" minHeight="24.0" minWidth="144.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="24.0" prefWidth="144.0" text="Kilépés" />
+    </children>
 </AnchorPane>

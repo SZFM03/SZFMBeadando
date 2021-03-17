@@ -1,6 +1,7 @@
 package app.service;
 
 import app.entity.Hallgato;
+import app.entity.Tantargy;
 import app.repository.HallgatoRepository;
 
 import java.util.List;
@@ -35,10 +36,10 @@ public class HallgatoService {
         if (!neptunKod.isBlank()) {
             return hallgatoRepository.selectHallgato(neptunKod);
         }
-       throw new RuntimeException("Nem adtál meg neptunkódot");
+        throw new RuntimeException("Nem adtál meg neptunkódot");
     }
 
-    public List<Object[]> MindenHallgato(){
+    public List<Hallgato> MindenHallgato(){
 
         return hallgatoRepository.selectMindenHallgato();
 

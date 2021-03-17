@@ -1,10 +1,12 @@
 package app.repository;
 
 import app.entity.Hallgato;
+import app.entity.Tantargy;
 import app.entitymanager.CustomEntityManager;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class HallgatoRepository {
     private static final EntityManager entityManager;
@@ -13,7 +15,7 @@ public class HallgatoRepository {
         entityManager = CustomEntityManager.getInstance();
     }
 
-    public void save (Hallgato hallgato){
+    public void save(Hallgato hallgato) {
         entityManager.getTransaction().begin();
         entityManager.persist(hallgato);
         entityManager.getTransaction().commit();
@@ -24,7 +26,7 @@ public class HallgatoRepository {
             return (Hallgato) entityManager.createQuery("SELECT h FROM Hallgato h WHERE h.neptun_kod = :neptun_kod")
                     .setParameter("neptun_kod", neptunKod)
                     .getSingleResult();
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }
     }
@@ -47,30 +49,57 @@ public class HallgatoRepository {
         }
     }
 
-    public boolean hallgatoTorles(String neptunKod){
-        try{
+    public boolean hallgatoTorles(String neptunKod) {
+        try {
             Hallgato hallgato = selectHallgato(neptunKod);
             entityManager.getTransaction().begin();
             entityManager.remove(hallgato);
             entityManager.getTransaction().commit();
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             System.err.println(e.getMessage());
             return false;
         }
 
     }
-    public List<Object[]> selectMindenHallgato() {
+
+    public List<Hallgato> selectMindenHallgato() {
 
         try {
-            entityManager.getTransaction().begin();
-            Query q = entityManager.createNativeQuery("SELECT h.nev, h.szuletesi_ev, h.neptun_kod  FROM hallgatok h");
-            List<Object[]> hallgatokList = q.getResultList();
-            entityManager.getTransaction().commit();
-            return hallgatokList;
+            return entityManager.createQuery("SELECT h FROM Hallgato h")
+                    .getResultList();
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }
     }
 
+    public void saveTantargyak(String neptun_kod, List<Tantargy> tantargy){
+        try{
+            Hallgato hallgato = (Hallgato) entityManager.createQuery("SELECT h FROM Hallgato h WHERE neptun_kod = :neptun_kod")
+                    .setParameter("neptun_kod", neptun_kod)
+                    .getSingleResult();
+            hallgato.setTantargyak(tantargy);
+           // System.out.println(hallgato);
+            entityManager.getTransaction().begin();
+            entityManager.persist(hallgato);
+            entityManager.getTransaction().commit();
+        }catch (Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
+    public void removeTantargyak(String neptun_kod, List<Tantargy> tantargy){
+        try{
+            Hallgato hallgato = (Hallgato) entityManager.createQuery("SELECT h FROM Hallgato h WHERE neptun_kod = :neptun_kod")
+                    .setParameter("neptun_kod", neptun_kod)
+                    .getSingleResult();
+            hallgato.removeTantargyak(tantargy);
+            // System.out.println(hallgato);
+            entityManager.getTransaction().begin();
+            entityManager.persist(hallgato);
+            entityManager.getTransaction().commit();
+        }catch (Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
+    }
 }

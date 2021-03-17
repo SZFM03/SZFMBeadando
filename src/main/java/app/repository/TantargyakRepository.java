@@ -1,6 +1,6 @@
 package app.repository;
 
-import app.entity.Tantargyak;
+import app.entity.Tantargy;
 import app.entitymanager.CustomEntityManager;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -14,21 +14,17 @@ public class TantargyakRepository {
         entityManager = CustomEntityManager.getInstance();
     }
 
-    public void save (Tantargyak tantargyak){
+    public void save (Tantargy tantargy){
         entityManager.getTransaction().begin();
-        entityManager.persist(tantargyak);
+        entityManager.persist(tantargy);
         entityManager.getTransaction().commit();
     }
 
-    public List<Object[]> selectMindenTantargy() {
+    public List<Tantargy> selectMindenTantargy() {
 
         try {
-            entityManager.getTransaction().begin();
-            Query q = entityManager.createNativeQuery("SELECT t.nev, t.kreditszam, t.kod  FROM tantargyak t");
-            List<Object[]> tantargyList = q.getResultList();
-            entityManager.getTransaction().commit();
-            return tantargyList;
-
+            return entityManager.createQuery("SELECT t FROM Tantargy t")
+                    .getResultList();
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }

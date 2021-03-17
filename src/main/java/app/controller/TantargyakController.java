@@ -1,7 +1,6 @@
 package app.controller;
 
-import app.entity.Hallgato;
-import app.entity.Tantargyak;
+import app.entity.Tantargy;
 import app.repository.TantargyakRepository;
 import app.service.TantargyakService;
 import javafx.collections.FXCollections;
@@ -28,8 +27,6 @@ public class TantargyakController {
 
     @FXML
     private Button visszabtn;
-    @FXML
-    private Button hvisszabtn;
 
     @FXML
     private AnchorPane tantargyakPane;
@@ -112,9 +109,6 @@ public class TantargyakController {
     @FXML
     private Button kilep;
 
-    @FXML
-    private Button hkilep;
-
     private final TantargyakService tantargyakService = new TantargyakService(new TantargyakRepository());
 
     private final KilepVisszalep kilepes = new KilepVisszalep();
@@ -128,7 +122,7 @@ public class TantargyakController {
     public void registertantargy(ActionEvent actionEvent) {
         try {
             if (!targykodAddText.getText().isBlank() && !targyneveAddText.getText().isBlank() && !kreditAddText.getText().isBlank()) {
-                tantargyakService.saveTantargyak(new Tantargyak(targyneveAddText.getText(), targykodAddText.getText(), kreditAddText.getText()));
+                tantargyakService.saveTantargyak(new Tantargy(targyneveAddText.getText(), targykodAddText.getText(), kreditAddText.getText()));
 
                 alert.alert("Tantárgy hozzáadása információ", "Sikeresen hozzáadtál egy tantárgyat!");
 
@@ -149,16 +143,14 @@ public class TantargyakController {
 
     public void lekerdezMindenTantargy(ActionEvent actionEvent) {
         try {
-            ObservableList<Tantargyak> getTantargyak = FXCollections.observableArrayList();
-            List<Object[]> tantargy = tantargyakService.MindenTantargy();
-            for(Object[] t : tantargy){
-                getTantargyak.add(new Tantargyak(""+t[0], ""+t[1], ""+t[2]));
-            }
+            ObservableList<Tantargy> getTantargy = FXCollections.observableArrayList();
+            List<Tantargy> tantargy = tantargyakService.MindenTantargy();
+            getTantargy.addAll(tantargy);
             targynTantargyColumn.setCellValueFactory(new PropertyValueFactory<>("nev"));
             targykTantargyColumn.setCellValueFactory(new PropertyValueFactory<>("kreditszam"));
             kreditTantargyColumn.setCellValueFactory(new PropertyValueFactory<>("kod"));
-            tantargyTable.setItems(getTantargyak);
-            if(getTantargyak.isEmpty()){
+            tantargyTable.setItems(getTantargy);
+            if(getTantargy.isEmpty()){
                 alert.alert("Minden tantárgy információ", "Nincs az adatbázisban egy tantárgy sem!");
             }
         } catch (Exception e) {

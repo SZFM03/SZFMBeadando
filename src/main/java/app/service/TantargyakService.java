@@ -1,6 +1,6 @@
 package app.service;
 
-import app.entity.Tantargyak;
+import app.entity.Tantargy;
 import app.repository.TantargyakRepository;
 
 import java.util.List;
@@ -13,12 +13,12 @@ public class TantargyakService {
         this.tantargyakRepository = tantargyakRepository;
     }
 
-    public void saveTantargyak(Tantargyak tantargyak) {
-        tantargyakRepository.save(tantargyak);
+    public void saveTantargyak(Tantargy tantargy) {
+        tantargyakRepository.save(tantargy);
     }
 
 
-    public List<Object[]> MindenTantargy(){
+    public List<Tantargy> MindenTantargy(){
 
         return tantargyakRepository.selectMindenTantargy();
 
