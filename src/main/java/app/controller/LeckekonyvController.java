@@ -33,6 +33,18 @@ public class LeckekonyvController implements Initializable{
 
     @FXML
     public ComboBox TantargyComboBox;
+
+    @FXML
+    public ComboBox jegybecombo;
+
+    @FXML
+    private Label jegylabel;
+
+
+
+
+
+
     @FXML
     private AnchorPane leckekonyvPane;
 
@@ -294,13 +306,21 @@ public class LeckekonyvController implements Initializable{
         return tantargyNevLista;
     }
 
+
+    public void jegycombo(){
+
+         jegylabel.setText(jegybecombo.getValue().toString());
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+       jegybecombo.getItems().addAll("elégtelen","elégséges", "közepes", "jó", "jeles");
     }
 
 
     public void jegyHozzaad(ActionEvent actionEvent) {
+
 
 
     }

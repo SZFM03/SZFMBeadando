@@ -129,9 +129,10 @@
                                         <RowConstraints maxHeight="445.20000000000005" minHeight="10.0" prefHeight="207.60001220703128" vgrow="SOMETIMES" />
                                     </rowConstraints>
                                     <children>
+                              <ComboBox fx:id="jegybecombo" onAction="#jegycombo" prefWidth="150.0" promptText="Válassz" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP" />
                                         <Label text="Neptun-kód:" GridPane.halignment="RIGHT">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font size="14.0" />
                                             </font>
                                         </Label>
                                         <TextField fx:id="neptunJegylkText" GridPane.columnIndex="1">
@@ -141,7 +142,7 @@
                                         </TextField>
                                         <Button fx:id="lekerdezJegyBtn" mnemonicParsing="false" onAction="#lekerdez" text="Lekérdez" GridPane.columnIndex="2" GridPane.halignment="CENTER">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font size="15.0" />
                                             </font>
                                             <GridPane.margin>
                                                 <Insets />
@@ -149,22 +150,22 @@
                                         </Button>
                                         <Label text="Név" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font size="15.0" />
                                             </font>
                                         </Label>
                                         <Label text="Neptun-kód" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font size="15.0" />
                                             </font>
                                         </Label>
                                         <Label text="Tárgynév" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font size="15.0" />
                                             </font>
                                         </Label>
                                         <Label text="Jegy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font size="15.0" />
                                             </font>
                                         </Label>
                                         <TextField fx:id="nevJegyText" GridPane.rowIndex="3" GridPane.valignment="TOP">
@@ -177,17 +178,13 @@
                                                 <Insets left="15.0" right="15.0" />
                                             </GridPane.margin>
                                         </TextField>
-                                        <TextField fx:id="jegyJegyText" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                                            <GridPane.margin>
-                                                <Insets left="15.0" right="15.0" />
-                                            </GridPane.margin>
-                                        </TextField>
-                                        <Button fx:id="modositJegyBtn" onAction="#jegyHozzaad" mnemonicParsing="false" text="Módosít" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                        <Button fx:id="modositJegyBtn" mnemonicParsing="false" onAction="#jegyHozzaad" text="Módosít" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font size="15.0" />
                                             </font>
                                         </Button>
-                              <ComboBox fx:id="TantargyComboBox" prefWidth="150.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+                              <ComboBox fx:id="TantargyComboBox" prefWidth="150.0" promptText="Válassz" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+                              <Label fx:id="jegylabel" prefHeight="17.0" prefWidth="266.0" text="Kiválasztott jegy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
                                     </children>
                                 </GridPane>
                             </children></AnchorPane>

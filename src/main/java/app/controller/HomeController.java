@@ -57,7 +57,7 @@ public class HomeController {
                 boolean isRegistered = userService.isRegistered(new User(usernameField.getText(), passwordField.getText()));
 
                 if (isRegistered) {
-                    alert.alert(BELÉPÉSI_INFORMÁCIÓ,"Sikeres belépés");
+
 
                     if (actionEvent.getSource() == loginButton) {
 
