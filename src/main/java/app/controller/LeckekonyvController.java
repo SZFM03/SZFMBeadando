@@ -23,6 +23,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -315,23 +316,23 @@ public class LeckekonyvController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-       jegybecombo.getItems().addAll("elégtelen","elégséges", "közepes", "jó", "jeles");
+       jegybecombo.getItems().addAll("1","2", "3", "4", "5");
     }
 
 
     public void jegyHozzaad(ActionEvent actionEvent) {
         Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
-        String hallgato_id = String.valueOf(hallgato.getId());
+        long hallgato_id = hallgato.getId();
 
 
         String targyNev = (String) TantargyComboBox.getSelectionModel().getSelectedItem();
-        String tantargyID = "";
+        long tantargyID = 0;
         for (var tantargy : hallgato.getTantargyak()){
             if (tantargy.getNev().equals(targyNev)){
-                tantargyID = String.valueOf(tantargy.getId());
+                tantargyID = tantargy.getId();
             }
         }
-        String jegy = (String) jegybecombo.getSelectionModel().getSelectedItem();
+        int jegy = Integer.parseInt(String.valueOf(jegybecombo.getSelectionModel().getSelectedItem()))  ;
         leckekonyvRepository.updateJegy(hallgato_id, tantargyID, jegy);
 
     }

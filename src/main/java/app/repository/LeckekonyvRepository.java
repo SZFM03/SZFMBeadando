@@ -20,7 +20,7 @@ public class LeckekonyvRepository {
         entityManager.getTransaction().commit();
     }
 
-    public Leckekonyv selectHallgatoIDTantargyID(String hallgato_id, String tantargy_id){
+    public Leckekonyv selectHallgatoIDTantargyID(long hallgato_id, long tantargy_id){
      try {
          return (Leckekonyv) entityManager.createQuery("SELECT l FROM Leckekonyv l WHERE l.hallgato_id = :hallgato_id AND l.tantargy_id = :tantargy_id")
                  .setParameter("hallgato_id", hallgato_id)
@@ -31,7 +31,7 @@ public class LeckekonyvRepository {
      }
     }
 
-    public boolean updateJegy(String hallgato_id, String tantargy_id, String jegy){
+    public boolean updateJegy(long hallgato_id,long tantargy_id, Integer jegy){
         try{
             Leckekonyv leckekonyv = selectHallgatoIDTantargyID(hallgato_id, tantargy_id);
             System.out.println(leckekonyv);
