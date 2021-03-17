@@ -290,7 +290,6 @@ public class LeckekonyvController implements Initializable{
         nevJegyText.setDisable(true);
         neptunJegyText.setText(hallgato.getNeptun_kod());
         neptunJegyText.setDisable(true);
-        System.out.println(felvettTargyakBoxhoz());
         ObservableList<String> targyak = FXCollections.observableArrayList(felvettTargyakBoxhoz());
         TantargyComboBox.setItems(targyak);
 
@@ -323,8 +322,6 @@ public class LeckekonyvController implements Initializable{
     public void jegyHozzaad(ActionEvent actionEvent) {
         Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
         long hallgato_id = hallgato.getId();
-
-
         String targyNev = (String) TantargyComboBox.getSelectionModel().getSelectedItem();
         long tantargyID = 0;
         for (var tantargy : hallgato.getTantargyak()){
