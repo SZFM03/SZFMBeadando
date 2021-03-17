@@ -227,7 +227,7 @@ public class LeckekonyvController implements Initializable{
         Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunkodbevitel.getText());
 
         List<Tantargy> hallgatoTantargyak = hallgato.getTantargyak();
-        System.out.println(hallgato.getTantargyak().get(0));
+
         if(!hallgatoTantargyak.contains(getTantargyak.get(0))){
             String neptun_kod = neptunkodbevitel.getText();
 
@@ -239,6 +239,10 @@ public class LeckekonyvController implements Initializable{
             kredit.setCellValueFactory(new PropertyValueFactory<>("kreditszam"));
 
             targyfelvetelTable1.setItems(getTantargy2);
+            if (!neptunJegylkText.getText().isBlank()) {
+                ObservableList<String> targyak = FXCollections.observableArrayList(felvettTargyakBoxhoz());
+                TantargyComboBox.setItems(targyak);
+            }
         }else{
             alert.alert("Tantárgy felvétel!", "Ez a tantárgy már hozzá van rendelve a hallgatóhoz!");
         }
@@ -258,6 +262,10 @@ public class LeckekonyvController implements Initializable{
         kredit.setCellValueFactory(new PropertyValueFactory<>("kreditszam"));
 
         targyfelvetelTable1.setItems(getTantargy2);
+        if (!neptunJegylkText.getText().isBlank()) {
+            ObservableList<String> targyak = FXCollections.observableArrayList(felvettTargyakBoxhoz());
+            TantargyComboBox.setItems(targyak);
+        }
     }
 
 
@@ -269,6 +277,8 @@ public class LeckekonyvController implements Initializable{
         neptunJegyText.setText(hallgato.getNeptun_kod());
         neptunJegyText.setDisable(true);
         System.out.println(felvettTargyakBoxhoz());
+        ObservableList<String> targyak = FXCollections.observableArrayList(felvettTargyakBoxhoz());
+        TantargyComboBox.setItems(targyak);
 
 
     }
@@ -286,6 +296,12 @@ public class LeckekonyvController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-       TantargyComboBox.getItems().addAll("");
+
+    }
+
+
+    public void jegyHozzaad(ActionEvent actionEvent) {
+
+
     }
 }

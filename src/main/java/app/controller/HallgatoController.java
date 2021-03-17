@@ -282,9 +282,9 @@ public class HallgatoController implements Initializable {
     public void lButtonAction(MouseEvent mouseEvent) {
         oldalLeptetes.kilepvisszalep(mouseEvent, leckekonyvKeresoButton, "/leckekonyv.fxml");
         Hallgato hallgato = hallgatoService.lekerdezHallgato(keresoText.getText());
-        List<Tantargy> tantargyID = hallgato.getTantargyak();
-        for(var tantargy : tantargyID) {
-            leckekonyvService.saveLeckekonyv(new Leckekonyv(hallgato.getId(), tantargy.getId(), 1));
+        List<Tantargy> tantargyak = hallgato.getTantargyak();
+        for(var tantargy : tantargyak) {
+            leckekonyvService.saveLeckekonyv(new Leckekonyv(hallgato.getId(), tantargy.getId(), null));
         }
 
     }

@@ -182,12 +182,12 @@
                                                 <Insets left="15.0" right="15.0" />
                                             </GridPane.margin>
                                         </TextField>
-                                        <Button fx:id="modositJegyBtn" mnemonicParsing="false" text="Módosít" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                        <Button fx:id="modositJegyBtn" onAction="#jegyHozzaad" mnemonicParsing="false" text="Módosít" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                             <font>
                                                 <Font size="20.0" />
                                             </font>
                                         </Button>
-                              <ComboBox fx:id="TantargyComboBox" onAction="#tantargyBox" prefWidth="150.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+                              <ComboBox fx:id="TantargyComboBox" prefWidth="150.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP" />
                                     </children>
                                 </GridPane>
                             </children></AnchorPane>

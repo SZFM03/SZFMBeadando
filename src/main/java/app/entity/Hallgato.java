@@ -37,15 +37,15 @@ public class Hallgato {
         tantargy.getHallgatok().add(this);
     }
 
-    public void removeTantargy(Tantargy tantargy){
-        tantargyak.remove(tantargy);
-        tantargy.getHallgatok().remove(this);
-    }
-
     public void setTantargyak(List<Tantargy> tantargyak) {
         for (var tantargy : tantargyak){
             addTantargy(tantargy);
         }
+    }
+
+    public void removeTantargy(Tantargy tantargy){
+        tantargyak.remove(tantargy);
+        tantargy.getHallgatok().remove(this);
     }
 
     public void removeTantargyak(List<Tantargy> tantargyak){
