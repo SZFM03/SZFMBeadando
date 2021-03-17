@@ -13,6 +13,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -22,11 +23,16 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class LeckekonyvController {
+public class LeckekonyvController implements Initializable{
 
+    @FXML
+    public ComboBox TantargyComboBox;
     @FXML
     private AnchorPane leckekonyvPane;
 
@@ -255,4 +261,31 @@ public class LeckekonyvController {
     }
 
 
+    public void lekerdez(ActionEvent actionEvent) {
+        Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
+
+        nevJegyText.setText(hallgato.getNev());
+        nevJegyText.setDisable(true);
+        neptunJegyText.setText(hallgato.getNeptun_kod());
+        neptunJegyText.setDisable(true);
+        System.out.println(felvettTargyakBoxhoz());
+
+
+    }
+
+
+    public List<String> felvettTargyakBoxhoz (){
+        Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
+        List<Tantargy> tantargyak = hallgato.getTantargyak();
+        List<String> tantargyNevLista = new ArrayList<>();
+        for(var tantargy : tantargyak){
+            tantargyNevLista.add(tantargy.getNev());
+        }
+        return tantargyNevLista;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+       TantargyComboBox.getItems().addAll("");
+    }
 }

@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -138,7 +139,7 @@
                                                 <Insets left="15.0" right="15.0" />
                                             </GridPane.margin>
                                         </TextField>
-                                        <Button fx:id="lekerdezJegyBtn" mnemonicParsing="false" text="Lekérdez" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                                        <Button fx:id="lekerdezJegyBtn" mnemonicParsing="false" onAction="#lekerdez" text="Lekérdez" GridPane.columnIndex="2" GridPane.halignment="CENTER">
                                             <font>
                                                 <Font size="20.0" />
                                             </font>
@@ -176,11 +177,6 @@
                                                 <Insets left="15.0" right="15.0" />
                                             </GridPane.margin>
                                         </TextField>
-                                        <TextField fx:id="targyJegyText" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                                            <GridPane.margin>
-                                                <Insets left="15.0" right="15.0" />
-                                            </GridPane.margin>
-                                        </TextField>
                                         <TextField fx:id="jegyJegyText" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                             <GridPane.margin>
                                                 <Insets left="15.0" right="15.0" />
@@ -191,6 +187,7 @@
                                                 <Font size="20.0" />
                                             </font>
                                         </Button>
+                              <ComboBox fx:id="TantargyComboBox" onAction="#tantargyBox" prefWidth="150.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP" />
                                     </children>
                                 </GridPane>
                             </children></AnchorPane>
