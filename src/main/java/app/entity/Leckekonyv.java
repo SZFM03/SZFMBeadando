@@ -18,18 +18,18 @@ public class Leckekonyv {
     private Long tantargy_id;
 
     @Column
-    private Integer jegy;
+    private String jegy;
 
     public Leckekonyv() {
     }
 
-    public Leckekonyv(Long hallgato_id, Long tantargy_id, Integer jegy) {
+    public Leckekonyv(Long hallgato_id, Long tantargy_id, String jegy) {
         this.hallgato_id = hallgato_id;
         this.tantargy_id = tantargy_id;
         this.jegy = jegy;
     }
 
-    public Leckekonyv(Long id, Long hallgato_id, Long tantargy_id, Integer jegy) {
+    public Leckekonyv(Long id, Long hallgato_id, Long tantargy_id, String jegy) {
         this.id = id;
         this.hallgato_id = hallgato_id;
         this.tantargy_id = tantargy_id;
@@ -60,11 +60,11 @@ public class Leckekonyv {
         this.tantargy_id = tantargy_id;
     }
 
-    public Integer getJegy() {
+    public String getJegy() {
         return jegy;
     }
 
-    public void setJegy(Integer jegy) {
+    public void setJegy(String jegy) {
         this.jegy = jegy;
     }
 

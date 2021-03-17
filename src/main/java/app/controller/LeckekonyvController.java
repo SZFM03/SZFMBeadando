@@ -171,6 +171,8 @@ public class LeckekonyvController implements Initializable{
 
     private final HallgatoRepository hallgatoRepository = new HallgatoRepository();
 
+    private final LeckekonyvRepository leckekonyvRepository = new LeckekonyvRepository();
+
     public void vButtonAction(MouseEvent mouseEvent) {
         kilepes.kilepvisszalep(mouseEvent, visszabtn, "/fooldal.fxml");
     }
@@ -280,7 +282,6 @@ public class LeckekonyvController implements Initializable{
         }
     }
 
-
     public void lekerdez(ActionEvent actionEvent) {
         Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
 
@@ -291,7 +292,6 @@ public class LeckekonyvController implements Initializable{
         System.out.println(felvettTargyakBoxhoz());
         ObservableList<String> targyak = FXCollections.observableArrayList(felvettTargyakBoxhoz());
         TantargyComboBox.setItems(targyak);
-
 
     }
 
@@ -320,8 +320,19 @@ public class LeckekonyvController implements Initializable{
 
 
     public void jegyHozzaad(ActionEvent actionEvent) {
+        Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
+        String hallgato_id = String.valueOf(hallgato.getId());
 
 
+        String targyNev = (String) TantargyComboBox.getSelectionModel().getSelectedItem();
+        String tantargyID = "";
+        for (var tantargy : hallgato.getTantargyak()){
+            if (tantargy.getNev().equals(targyNev)){
+                tantargyID = String.valueOf(tantargy.getId());
+            }
+        }
+        String jegy = (String) jegybecombo.getSelectionModel().getSelectedItem();
+        leckekonyvRepository.updateJegy(hallgato_id, tantargyID, jegy);
 
     }
 }

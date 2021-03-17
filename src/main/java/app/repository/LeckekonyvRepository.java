@@ -31,9 +31,18 @@ public class LeckekonyvRepository {
      }
     }
 
-   /* public boolean updateJegy(String jegy){
+    public boolean updateJegy(String hallgato_id, String tantargy_id, String jegy){
         try{
-            Leckekonyv leckekonyv = selectHallgatoIDTantargyID();
+            Leckekonyv leckekonyv = selectHallgatoIDTantargyID(hallgato_id, tantargy_id);
+            System.out.println(leckekonyv);
+            leckekonyv.setJegy(jegy);
+            entityManager.getTransaction().begin();
+            entityManager.merge(leckekonyv);
+            entityManager.getTransaction().commit();
+            return true;
+        } catch (Exception e){
+            System.err.println(e.getMessage());
+            return false;
         }
-    }*/
+    }
 }
