@@ -1,8 +1,12 @@
 package app.controller;
 
 import app.entity.Hallgato;
+import app.entity.Leckekonyv;
+import app.entity.Tantargy;
 import app.repository.HallgatoRepository;
+import app.repository.LeckekonyvRepository;
 import app.service.HallgatoService;
+import app.service.LeckekonyvService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -256,9 +260,7 @@ public class HallgatoController implements Initializable {
 
     private final KilepVisszalep oldalLeptetes = new KilepVisszalep();
 
-    public void lButtonAction(MouseEvent mouseEvent) {
-        oldalLeptetes.kilepvisszalep(mouseEvent, leckekonyvKeresoButton, "/leckekonyv.fxml");
-    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -269,10 +271,22 @@ public class HallgatoController implements Initializable {
 
     private final KilepVisszalep kilepes = new KilepVisszalep();
 
+    private final LeckekonyvService leckekonyvService = new LeckekonyvService(new LeckekonyvRepository());
+
     private final AlertS alert = new AlertS();
 
     public void vButtonAction(MouseEvent mouseEvent) {
         kilepes.kilepvisszalep(mouseEvent, visszabtn, "/fooldal.fxml");
+    }
+
+    public void lButtonAction(MouseEvent mouseEvent) {
+        oldalLeptetes.kilepvisszalep(mouseEvent, leckekonyvKeresoButton, "/leckekonyv.fxml");
+        Hallgato hallgato = hallgatoService.lekerdezHallgato(keresoText.getText());
+        List<Tantargy> tantargyID = hallgato.getTantargyak();
+        for(var tantargy : tantargyID) {
+            leckekonyvService.saveLeckekonyv(new Leckekonyv(hallgato.getId(), tantargy.getId(), 1));
+        }
+
     }
 
     public void register(ActionEvent actionEvent) {

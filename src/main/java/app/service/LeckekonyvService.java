@@ -1,16 +1,16 @@
 package app.service;
 
 import app.entity.Hallgato;
+import app.entity.Leckekonyv;
 import app.repository.LeckekonyvRepository;
 
 import java.util.List;
 
 public class LeckekonyvService {
 
-    private final LeckekonyvRepository leckekonyvRepository;
-
     public LeckekonyvService(LeckekonyvRepository leckekonyvRepository) {
-        this.leckekonyvRepository = leckekonyvRepository;
     }
-
+    public void saveLeckekonyv(Leckekonyv leckekonyv) {
+        LeckekonyvRepository.save(leckekonyv);
+    }
 }

@@ -79,7 +79,6 @@ public class HallgatoRepository {
                     .setParameter("neptun_kod", neptun_kod)
                     .getSingleResult();
             hallgato.setTantargyak(tantargy);
-           // System.out.println(hallgato);
             entityManager.getTransaction().begin();
             entityManager.persist(hallgato);
             entityManager.getTransaction().commit();
@@ -94,7 +93,6 @@ public class HallgatoRepository {
                     .setParameter("neptun_kod", neptun_kod)
                     .getSingleResult();
             hallgato.removeTantargyak(tantargy);
-            // System.out.println(hallgato);
             entityManager.getTransaction().begin();
             entityManager.persist(hallgato);
             entityManager.getTransaction().commit();

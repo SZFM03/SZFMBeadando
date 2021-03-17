@@ -31,7 +31,7 @@ public class UserService {
         }
 
         if (user.getJelszo().length() < 4) {
-            throw new RuntimeException("Password must be longer than 4 chars!");
+            throw new RuntimeException("Password must be longer than 3 chars!");
         }
     }
 

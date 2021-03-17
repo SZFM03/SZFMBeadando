@@ -40,12 +40,9 @@
                                 </Button>
                                 <TableView layoutX="482.0" layoutY="124.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="260.0" AnchorPane.topAnchor="30.0">
                                     <columns>
-                                        <TableColumn fx:id="neptunlkColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Neptun-kód" />
-                                        <TableColumn fx:id="targylkColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Tárgykód" />
-                                        <TableColumn fx:id="jegylkColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Jegy" />
-                                        <TableColumn fx:id="felvetellkColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Felvételek száma" />
-                                        <TableColumn fx:id="vizsgalkColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Vizsgák száma" />
-                                        <TableColumn fx:id="felevlkColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Félév" />
+                                        <TableColumn fx:id="neptunlkColumn" maxWidth="153.0" minWidth="120.0" prefWidth="153.0" text="Neptun-kód" />
+                                        <TableColumn fx:id="targylkColumn" maxWidth="388.0" minWidth="120.0" prefWidth="382.0" text="Tárgynév" />
+                                        <TableColumn fx:id="jegylkColumn" maxWidth="371.0" minWidth="100.0" prefWidth="144.0" text="Jegy" />
                                     </columns>
                                 </TableView>
                             </children>
@@ -136,17 +133,7 @@
                                                 <Font size="20.0" />
                                             </font>
                                         </Label>
-                                        <Label text="Tárgykód:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                                            <font>
-                                                <Font size="20.0" />
-                                            </font>
-                                        </Label>
                                         <TextField fx:id="neptunJegylkText" GridPane.columnIndex="1">
-                                            <GridPane.margin>
-                                                <Insets left="15.0" right="15.0" />
-                                            </GridPane.margin>
-                                        </TextField>
-                                        <TextField fx:id="targyJegylktext" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                             <GridPane.margin>
                                                 <Insets left="15.0" right="15.0" />
                                             </GridPane.margin>
@@ -169,7 +156,7 @@
                                                 <Font size="20.0" />
                                             </font>
                                         </Label>
-                                        <Label text="Tárgykód" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                        <Label text="Tárgynév" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                             <font>
                                                 <Font size="20.0" />
                                             </font>

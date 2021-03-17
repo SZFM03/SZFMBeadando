@@ -221,6 +221,7 @@ public class LeckekonyvController {
         Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunkodbevitel.getText());
 
         List<Tantargy> hallgatoTantargyak = hallgato.getTantargyak();
+        System.out.println(hallgato.getTantargyak().get(0));
         if(!hallgatoTantargyak.contains(getTantargyak.get(0))){
             String neptun_kod = neptunkodbevitel.getText();
 
@@ -252,4 +253,6 @@ public class LeckekonyvController {
 
         targyfelvetelTable1.setItems(getTantargy2);
     }
+
+
 }

@@ -1,11 +1,10 @@
 package app.repository;
 
 import app.entity.Hallgato;
+import app.entity.Leckekonyv;
 import app.entitymanager.CustomEntityManager;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
-import java.util.List;
 
 public class LeckekonyvRepository {
 
@@ -15,6 +14,11 @@ public class LeckekonyvRepository {
         entityManager = CustomEntityManager.getInstance();
     }
 
+    public static void save(Leckekonyv leckekonyv) {
+        entityManager.getTransaction().begin();
+        entityManager.persist(leckekonyv);
+        entityManager.getTransaction().commit();
+    }
 
 
 }
