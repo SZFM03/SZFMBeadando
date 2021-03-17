@@ -34,11 +34,11 @@ public class LeckekonyvRepository {
     public boolean updateJegy(long hallgato_id,long tantargy_id, Integer jegy){
         try{
             Leckekonyv leckekonyv = selectHallgatoIDTantargyID(hallgato_id, tantargy_id);
-            System.out.println(leckekonyv);
             leckekonyv.setJegy(jegy);
             entityManager.getTransaction().begin();
             entityManager.merge(leckekonyv);
             entityManager.getTransaction().commit();
+            System.out.println(leckekonyv);
             return true;
         } catch (Exception e){
             System.err.println(e.getMessage());
