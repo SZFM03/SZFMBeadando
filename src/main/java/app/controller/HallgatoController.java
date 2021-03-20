@@ -1,9 +1,11 @@
 package app.controller;
 
 import app.entity.Hallgato;
+import app.entity.Jegy;
 import app.entity.Leckekonyv;
 import app.entity.Tantargy;
 import app.repository.HallgatoRepository;
+import app.repository.JegyRepository;
 import app.repository.LeckekonyvRepository;
 import app.service.HallgatoService;
 import app.service.LeckekonyvService;
@@ -21,6 +23,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -273,20 +276,35 @@ public class HallgatoController implements Initializable {
 
     private final LeckekonyvService leckekonyvService = new LeckekonyvService(new LeckekonyvRepository());
 
+    private final JegyRepository jegyRepository = new JegyRepository();
+
+    private final LeckekonyvRepository leckekonyvRepository = new LeckekonyvRepository();
+
     private final AlertS alert = new AlertS();
+
+    LeckekonyvController leckekonyvController = new LeckekonyvController();
 
     public void vButtonAction(MouseEvent mouseEvent) {
         kilepes.kilepvisszalep(mouseEvent, visszabtn, "/fooldal.fxml");
     }
 
     public void lButtonAction(MouseEvent mouseEvent) {
-        oldalLeptetes.kilepvisszalep(mouseEvent, leckekonyvKeresoButton, "/leckekonyv.fxml");
         Hallgato hallgato = hallgatoService.lekerdezHallgato(keresoText.getText());
+        long hallgato_id = hallgato.getId();
         List<Tantargy> tantargyak = hallgato.getTantargyak();
+        List<Leckekonyv> leckekonyv = new ArrayList<>();
         for(var tantargy : tantargyak) {
-            leckekonyvService.saveLeckekonyv(new Leckekonyv(hallgato.getId(), tantargy.getId(), null));
+            long tantargy_id = tantargy.getId();
+            Jegy jegy = jegyRepository.selectHallgatoIDTantargyID(hallgato_id, tantargy_id);
+                if (jegy.getJegy() == null) {
+                    leckekonyvService.saveLeckekonyv(new Leckekonyv(hallgato.getId(), tantargy.getId(), null));
+                    leckekonyv.add(new Leckekonyv(hallgato.getId(), tantargy.getId(), null));
+                } else {
+                    leckekonyvService.saveLeckekonyv(new Leckekonyv(hallgato.getId(), tantargy.getId(), jegy.getJegy()));
+                    leckekonyv.add(new Leckekonyv(hallgato.getId(), tantargy.getId(), jegy.getJegy()));
+                }
         }
-
+        oldalLeptetes.kilepvisszalep(mouseEvent, leckekonyvKeresoButton, "/leckekonyv.fxml");
     }
 
     public void register(ActionEvent actionEvent) {

@@ -1,32 +1,29 @@
 package app.controller;
 
 import app.entity.Hallgato;
+import app.entity.Jegy;
 import app.entity.Tantargy;
 import app.repository.HallgatoRepository;
+import app.repository.JegyRepository;
 import app.repository.LeckekonyvRepository;
 import app.repository.TantargyakRepository;
 import app.service.HallgatoService;
+import app.service.JegyService;
 import app.service.LeckekonyvService;
 import app.service.TantargyakService;
-import com.sun.scenario.effect.impl.sw.java.JSWBlend_SRC_OUTPeer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -40,11 +37,6 @@ public class LeckekonyvController implements Initializable{
 
     @FXML
     private Label jegylabel;
-
-
-
-
-
 
     @FXML
     private AnchorPane leckekonyvPane;
@@ -148,7 +140,6 @@ public class LeckekonyvController implements Initializable{
     @FXML
     private TextArea felvettarea;
 
-
     public Button targyaklistazasa;
 
     public TableView targyfelvetelTable1;
@@ -173,6 +164,10 @@ public class LeckekonyvController implements Initializable{
     private final HallgatoRepository hallgatoRepository = new HallgatoRepository();
 
     private final LeckekonyvRepository leckekonyvRepository = new LeckekonyvRepository();
+
+    private final JegyService jegyService = new JegyService(new JegyRepository());
+
+    private final JegyRepository jegyRepository = new JegyRepository();
 
     public void vButtonAction(MouseEvent mouseEvent) {
         kilepes.kilepvisszalep(mouseEvent, visszabtn, "/fooldal.fxml");
@@ -238,6 +233,7 @@ public class LeckekonyvController implements Initializable{
     public void kivalasztottadatatadasa(ActionEvent actionEvent) {
         ObservableList<Tantargy> getTantargyakbe = targyfelvetelTable2.getSelectionModel().getSelectedItems();
         List<Tantargy> getTantargyak = new ArrayList<>(getTantargyakbe);
+        Tantargy tantargy = getTantargyak.get(0);
 
         Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunkodbevitel.getText());
 
@@ -247,6 +243,7 @@ public class LeckekonyvController implements Initializable{
             String neptun_kod = neptunkodbevitel.getText();
 
             hallgatoRepository.saveTantargyak(neptun_kod, getTantargyak);
+            jegyService.saveJegy(new Jegy(hallgato.getId(), tantargy.getId(), null));
             ObservableList<Tantargy> getTantargy2 = FXCollections.observableArrayList();
             getTantargy2.addAll(hallgato.getTantargyak());
             targykod.setCellValueFactory(new PropertyValueFactory<>("kod"));
@@ -268,8 +265,18 @@ public class LeckekonyvController implements Initializable{
     public void töröl(ActionEvent actionEvent) {
         ObservableList<Tantargy> getTantargyakbe = targyfelvetelTable1.getSelectionModel().getSelectedItems();
         Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunkodbevitel.getText());
+        List<Tantargy> tantargyak = hallgato.getTantargyak();
+        long hallgato_id = hallgato.getId();
+        long tantargy_id = 0;
+        for(var tantargy : tantargyak) {
+        if (getTantargyakbe.get(0).getNev().equals(tantargy.getNev())){
+            tantargy_id = getTantargyakbe.get(0).getId();
+            break;
+             }
+        }
 
         hallgatoRepository.removeTantargyak(neptunkodbevitel.getText(), getTantargyakbe);
+        jegyRepository.removeJegy(hallgato_id, tantargy_id);
         ObservableList<Tantargy> getTantargy2 = FXCollections.observableArrayList();
         getTantargy2.addAll(hallgato.getTantargyak());
         targykod.setCellValueFactory(new PropertyValueFactory<>("kod"));
@@ -294,7 +301,6 @@ public class LeckekonyvController implements Initializable{
         TantargyComboBox.setItems(targyak);
 
     }
-
 
     public List<String> felvettTargyakBoxhoz (){
         Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
@@ -324,13 +330,15 @@ public class LeckekonyvController implements Initializable{
         long hallgato_id = hallgato.getId();
         String targyNev = (String) TantargyComboBox.getSelectionModel().getSelectedItem();
         long tantargyID = 0;
+
         for (var tantargy : hallgato.getTantargyak()){
             if (tantargy.getNev().equals(targyNev)){
                 tantargyID = tantargy.getId();
             }
         }
+
         int jegy = Integer.parseInt(String.valueOf(jegybecombo.getSelectionModel().getSelectedItem()))  ;
-        leckekonyvRepository.updateJegy(hallgato_id, tantargyID, jegy);
+        jegyRepository.updateJegy(hallgato_id, tantargyID, jegy);
 
     }
 }

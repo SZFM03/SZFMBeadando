@@ -1,6 +1,5 @@
 package app.repository;
 
-import app.entity.Hallgato;
 import app.entity.Leckekonyv;
 import app.entitymanager.CustomEntityManager;
 
@@ -21,28 +20,14 @@ public class LeckekonyvRepository {
     }
 
     public Leckekonyv selectHallgatoIDTantargyID(long hallgato_id, long tantargy_id){
-     try {
-         return (Leckekonyv) entityManager.createQuery("SELECT l FROM Leckekonyv l WHERE l.hallgato_id = :hallgato_id AND l.tantargy_id = :tantargy_id")
-                 .setParameter("hallgato_id", hallgato_id)
-                 .setParameter("tantargy_id", tantargy_id)
-                 .getSingleResult();
-     }catch (Exception e){
-         throw new RuntimeException(e.getMessage());
-     }
-    }
-
-    public boolean updateJegy(long hallgato_id,long tantargy_id, Integer jegy){
-        try{
-            Leckekonyv leckekonyv = selectHallgatoIDTantargyID(hallgato_id, tantargy_id);
-            leckekonyv.setJegy(jegy);
-            entityManager.getTransaction().begin();
-            entityManager.merge(leckekonyv);
-            entityManager.getTransaction().commit();
-            System.out.println(leckekonyv);
-            return true;
-        } catch (Exception e){
-            System.err.println(e.getMessage());
-            return false;
+        try {
+            return (Leckekonyv) entityManager.createQuery("SELECT l FROM Leckekonyv l WHERE l.hallgato_id = :hallgato_id AND l.tantargy_id = :tantargy_id")
+                    .setParameter("hallgato_id", hallgato_id)
+                    .setParameter("tantargy_id", tantargy_id)
+                    .getSingleResult();
+        }catch (Exception e){
+            throw new RuntimeException(e.getMessage());
         }
     }
+
 }
