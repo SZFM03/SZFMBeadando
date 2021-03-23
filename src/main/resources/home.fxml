@@ -11,28 +11,40 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1024.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.HomeController">
+<AnchorPane prefHeight="700.0" prefWidth="1024.0" style="-fx-background-color: #fff;" stylesheets="@home.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.HomeController">
    <Pane fx:id="BasePane" prefHeight="700.0" prefWidth="1200.0">
       <children>
-          <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-2.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ff14;" text="Debreceni Egyetem" textAlignment="CENTER" textFill="#252424">
+          <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-2.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ffab0d;" text="Debreceni Egyetem" textAlignment="CENTER" textFill="WHITE">
               <font>
                   <Font name="Segoe UI" size="25.0" />
               </font>
           </Label>
-          <Label alignment="CENTER" contentDisplay="CENTER" layoutY="30.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ff14;" text="Hallgatói Adminisztrációs Központ" textAlignment="CENTER" textFill="#252424">
+          <Label alignment="CENTER" contentDisplay="CENTER" layoutY="30.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ffab0d;" text="Hallgatói Adminisztrációs Központ" textAlignment="CENTER" textFill="WHITE">
               <font>
                   <Font name="Segoe UI" size="25.0" />
               </font>
           </Label>
           <TextField fx:id="usernameField" layoutX="909.0" layoutY="314.0" />
           <PasswordField fx:id="passwordField" layoutX="909.0" layoutY="379.0" />
-          <Label fx:id="usernameLabel" layoutX="909.0" layoutY="287.0" text="Felhasználónév" />
-          <Label layoutX="909.0" layoutY="350.0" text="Jelszó" />
-          <Button fx:id="registerButton" layoutX="944.0" layoutY="513.0" mnemonicParsing="false" onAction="#register" text="Regisztrálás" />
-          <Button fx:id="loginButton" layoutX="955.0" layoutY="473.0" mnemonicParsing="false" onAction="#login" text="Belépés" />
+          <Label fx:id="usernameLabel" layoutX="909.0" layoutY="287.0" text="Felhasználónév">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
+          <Label layoutX="909.0" layoutY="350.0" text="Jelszó">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
+          <Button fx:id="registerButton" layoutX="909.0" layoutY="520.0" mnemonicParsing="false" onAction="#register" text="Regisztrálás">
+            <font>
+               <Font size="15.0" />
+            </font></Button>
+          <Button fx:id="loginButton" layoutX="909.0" layoutY="473.0" mnemonicParsing="false" onAction="#login" text="Belépés">
+            <font>
+               <Font size="15.0" />
+            </font></Button>
          <ImageView fitHeight="406.0" fitWidth="600.0" layoutX="57.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@images/kep.jpg" />
+               <Image url="@../../../../../../../../Desktop/no_bg_students2.png" />
             </image>
          </ImageView>
       </children>

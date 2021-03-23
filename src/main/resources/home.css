@@ -1,0 +1,21 @@
+#BasePane {
+    -fx-background-color: linear-gradient(to bottom right, #ffab0d, #FFFFFF, #FFFFFF, #004735);
+}
+
+.button {
+    -fx-text-fill: white;
+    
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-pref-height: 28px;
+    -fx-pref-width: 150px;
+
+  }
+
+  #loginButton {
+    -fx-background-color: #ffab0d;
+  }
+
+  #registerButton {
+    -fx-background-color: #004735;
+  }
