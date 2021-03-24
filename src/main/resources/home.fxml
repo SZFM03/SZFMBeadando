@@ -43,7 +43,7 @@
             </font></Button>
          <ImageView fitHeight="406.0" fitWidth="600.0" layoutX="57.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@no_bg_students2.png" />
+               <Image url="@images/no_bg_students2.png" />
             </image>
          </ImageView>
       </children>
