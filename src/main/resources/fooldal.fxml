@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="fooldalPane" maxHeight="700.0" maxWidth="1200.0" minHeight="700.0" minWidth="1200.0" prefHeight="700.0" prefWidth="1200.0" stylesheets="@fooldal.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.FooldalController">
+<AnchorPane fx:id="fooldalPane" maxHeight="700.0" maxWidth="1200.0" minHeight="700.0" minWidth="1200.0" prefHeight="700.0" prefWidth="1200.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.FooldalController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-1.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ffab0d;" text="Debreceni Egyetem" textAlignment="CENTER" textFill="WHITE">
          <font>
@@ -18,23 +18,23 @@
             <Font name="Segoe UI" size="25.0" />
          </font>
       </Label>
-    <Button fx:id="hallgbtn" layoutX="515.0" layoutY="131.0" mnemonicParsing="false" onMouseClicked="#hButtonAction" prefHeight="81.0" prefWidth="325.0" text="Hallgatók" textFill="WHITE" AnchorPane.leftAnchor="515.0" AnchorPane.rightAnchor="534.6">
+    <Button fx:id="hallgbtn" layoutX="515.0" layoutY="131.0" mnemonicParsing="false" onMouseClicked="#hButtonAction" text="Hallgatók" textFill="WHITE" AnchorPane.leftAnchor="525.0" AnchorPane.rightAnchor="525.0">
          <font>
             <Font size="22.0" />
          </font>
          <cursor>
-            <Cursor fx:constant="OPEN_HAND" />
+            <Cursor fx:constant="DEFAULT" />
          </cursor></Button>
-        <Button fx:id="targybtn" layoutX="520.0" layoutY="242.0" mnemonicParsing="false" onMouseClicked="#tButtonAction" prefHeight="81.0" prefWidth="325.0" text="Tantárgyak" textFill="WHITE" AnchorPane.leftAnchor="515.0" AnchorPane.rightAnchor="534.6">
+        <Button fx:id="targybtn" layoutX="515.0" layoutY="242.0" mnemonicParsing="false" onMouseClicked="#tButtonAction" text="Tantárgyak" textFill="WHITE" AnchorPane.leftAnchor="525.0" AnchorPane.rightAnchor="525.0">
          <font>
             <Font size="22.0" />
          </font></Button>
-      <Button fx:id="leckekonyvbtn" layoutX="522.0" layoutY="359.0" mnemonicParsing="false" onMouseClicked="#lButtonAction" prefHeight="81.0" prefWidth="325.0" text="Leckekönyv" textFill="WHITE" AnchorPane.leftAnchor="515.0" AnchorPane.rightAnchor="534.6">
+      <Button fx:id="leckekonyvbtn" layoutX="515.0" layoutY="353.0" mnemonicParsing="false" onMouseClicked="#lButtonAction" text="Leckekönyv" textFill="WHITE" AnchorPane.leftAnchor="525.0" AnchorPane.rightAnchor="525.0">
          <font>
             <Font size="22.0" />
          </font>
       </Button>
-      <Button fx:id="kilep" layoutX="508.0" layoutY="577.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="81.0" prefWidth="325.0" text="Kilépés" textFill="WHITE" AnchorPane.leftAnchor="515.0" AnchorPane.rightAnchor="534.6">
+      <Button fx:id="kilep" layoutX="515.0" layoutY="577.0" mnemonicParsing="false" onMouseClicked="#logout" text="Kilépés" textFill="WHITE" AnchorPane.leftAnchor="525.0" AnchorPane.rightAnchor="525.0">
          <font>
             <Font size="22.0" />
          </font>

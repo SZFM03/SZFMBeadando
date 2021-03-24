@@ -8,11 +8,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1024.0" style="-fx-background-color: #fff;" stylesheets="@home.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.HomeController">
-   <Pane fx:id="BasePane" prefHeight="700.0" prefWidth="1200.0">
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #fff;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.HomeController">
+   <Pane fx:id="BasePane" maxHeight="700.0" maxWidth="1200.0" minHeight="700.0" minWidth="1200.0" prefHeight="700.0" prefWidth="1200.0">
       <children>
           <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-2.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ffab0d;" text="Debreceni Egyetem" textAlignment="CENTER" textFill="WHITE">
               <font>
@@ -38,7 +37,7 @@
             <font>
                <Font size="15.0" />
             </font></Button>
-          <Button fx:id="loginButton" layoutX="909.0" layoutY="473.0" mnemonicParsing="false" onAction="#login" text="Belépés">
+          <Button fx:id="loginButton" layoutX="909.0" layoutY="472.0" mnemonicParsing="false" onAction="#login" text="Belépés">
             <font>
                <Font size="15.0" />
             </font></Button>
@@ -49,13 +48,4 @@
          </ImageView>
       </children>
    </Pane>
-    <Pane fx:id="Alert" layoutX="390.0" layoutY="137.0" prefHeight="135.0" prefWidth="384.0" visible="false">
-        <children>
-            <Rectangle arcHeight="60.0" arcWidth="60.0" fill="#1fffd7" height="135.0" stroke="BLACK" strokeType="INSIDE" width="384.0" />
-            <Label fx:id="alertText" alignment="CENTER" contentDisplay="CENTER" layoutX="81.0" layoutY="8.0" prefHeight="87.0" prefWidth="238.0" text="afsdfsdf" textAlignment="CENTER" wrapText="true">
-            <font>
-               <Font name="System Bold" size="13.0" />
-            </font></Label>
-        </children>
-    </Pane>
 </AnchorPane>
