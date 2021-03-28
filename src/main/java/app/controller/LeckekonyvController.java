@@ -40,25 +40,7 @@ public class LeckekonyvController implements Initializable{
     private Label jegylabel;
 
     @FXML
-    private AnchorPane leckekonyvPane;
-
-    @FXML
-    private TabPane leckekonyvTabPane;
-
-    @FXML
-    private Tab leckekonyvTab;
-
-    @FXML
     private Button leckekonyvbtn;
-
-    @FXML
-    private TableColumn<?, ?> felvetellkColumn;
-
-    @FXML
-    private TableColumn<?, ?> vizsgalkColumn;
-
-    @FXML
-    private TableColumn<?, ?> felevlkColumn;
 
     @FXML
     private TextField neptunkodbevitel;
@@ -70,16 +52,7 @@ public class LeckekonyvController implements Initializable{
     private TextField hallgatoTargyfelvetelText;
 
     @FXML
-    private Button listafrissitese;
-
-    @FXML
-    private Button targyhozzaadas;
-
-    @FXML
     private TextField neptunJegylkText;
-
-    @FXML
-    private TextField targyJegylktext;
 
     @FXML
     private Button lekerdezJegyBtn;
@@ -93,15 +66,20 @@ public class LeckekonyvController implements Initializable{
     @FXML
     private TextField neptunbelk;
 
+    @FXML
+    private TextField neptunatlag;
 
     @FXML
-    private TextField targyJegyText;
+    private TextField atlaghatar;
 
     @FXML
-    private TextField jegyJegyText;
+    private TextField hallgneve;
 
     @FXML
-    private Button modositJegyBtn;
+    private TextField besorolas;
+
+    @FXML
+    private TextField hallgatoatlag;
 
     @FXML
     private Button visszabtn;
@@ -109,34 +87,10 @@ public class LeckekonyvController implements Initializable{
     @FXML
     private Button kilep;
 
-    @FXML
-    private GridPane leckekonyvTablazat;
-
-    @FXML
-    private TextArea neptunLeckekonyvText;
-
-    @FXML
-    private TextArea tantargyLeckekonyvText;
-
-    @FXML
-    private TextArea jegyLeckekonyvText;
-
-    @FXML
-    private TextArea felvetelekLeckekonyvText;
-
-    @FXML
-    private TextArea vizsgaLeckekonyvText;
-
-    @FXML
-    private TextArea felevLeckekonyvText;
-
-    @FXML
-    private TextArea neptunTargyfelvetelText;
-
-    @FXML
-    private TextArea felvettarea;
-
     public Button targyaklistazasa;
+
+    @FXML
+    public Button tanatlag;
 
     public TableView targyfelvetelTable1;
     public TableColumn targykod;
@@ -254,6 +208,53 @@ public class LeckekonyvController implements Initializable{
 
     }
 
+       public void tanulmanyiatlag(ActionEvent actionEvent) {
+
+        Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunatlag.getText());
+        long hallgato_id = hallgato.getId();
+        hallgneve.setText(hallgato.getNev());
+
+        double hatar= Double.parseDouble(atlaghatar.getText());
+
+        int osszeg=0;
+        int szorzat=0;
+        int kreditosszeg = 0;
+        double sulyozottatlag=0;
+
+        List<Tantargy> tantargyak = hallgato.getTantargyak();
+
+        for(var tantargy : tantargyak) {
+
+            long tantargy_id = tantargy.getId();
+
+           Jegy jegy = jegyRepository.selectHallgatoIDTantargyID(hallgato_id, tantargy_id);
+
+
+           szorzat=Integer.parseInt(tantargy.getKreditszam())*jegy.getJegy();
+
+           osszeg+=szorzat;
+
+           kreditosszeg+=Integer.parseInt(tantargy.getKreditszam());
+
+        }
+
+        sulyozottatlag=(double) osszeg/kreditosszeg;
+
+        hallgatoatlag.setText(String.valueOf(sulyozottatlag));
+
+
+
+        if(sulyozottatlag<hatar){
+
+            besorolas.setText("Önköltséges");
+        }else{
+
+
+            besorolas.setText("Államilag támogatott");
+        }
+
+    }
+
     public void lekerdezMindenTantargy(ActionEvent actionEvent) {
 
         List<Tantargy> getTantargy = tantargyakLekerdez();
@@ -363,6 +364,7 @@ public class LeckekonyvController implements Initializable{
         targylekerdez.setDefaultButton(true);
         lekerdezJegyBtn.setDefaultButton(true);
         leckekonyvbtn.setDefaultButton(true);
+        tanatlag.setDefaultButton(true);
 
     }
 
