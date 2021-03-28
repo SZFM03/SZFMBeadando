@@ -30,26 +30,6 @@
         </Label>
         <TabPane fx:id="leckekonyvTabPane" layoutY="64.0" maxHeight="636.0" maxWidth="1200.0" minHeight="636.0" minWidth="1200.0" prefHeight="636.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
-                <Tab fx:id="leckekonyvTab" text="Leckekönyv">
-                    <content>
-                        <AnchorPane fx:id="lkPane" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1200.0">
-                            <children>
-                                <Button fx:id="leckekonyvbtn" layoutX="527.0" layoutY="546.0" mnemonicParsing="false" text="Betöltés">
-                                    <font>
-                                        <Font size="15.0" />
-                                    </font>
-                                </Button>
-                                <TableView layoutX="482.0" layoutY="124.0" maxHeight="1.7976931348623157E308" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="30.0">
-                                    <columns>
-                                        <TableColumn fx:id="neptunlkColumn" maxWidth="153.0" minWidth="120.0" prefWidth="153.0" text="Neptun-kód" />
-                                        <TableColumn fx:id="targylkColumn" maxWidth="305.0" minWidth="305.0" prefWidth="305.0" text="Tárgy neve" />
-                                        <TableColumn fx:id="jegylkColumn" maxWidth="142.0" minWidth="142.0" prefWidth="142.0" text="Jegy" />
-                                    </columns>
-                                </TableView>
-                            </children>
-                        </AnchorPane>
-                    </content>
-                </Tab>
                 <Tab text="Tárgyfelvétel">
                     <content>
                         <AnchorPane fx:id="tfPane" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1200.0">
@@ -208,13 +188,35 @@
                                  <GridPane.margin>
                                     <Insets top="20.0" />
                                  </GridPane.margin></ComboBox>
-                              <Label fx:id="jegylabel" prefHeight="17.0" prefWidth="266.0" text="Kiválasztott jegy" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font></Label>
                                     </children>
                                 </GridPane>
                             </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="leckekonyvTab" text="Leckekönyv">
+                    <content>
+                        <AnchorPane fx:id="lkPane" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1200.0">
+                            <children>
+                                <Button fx:id="leckekonyvbtn" layoutX="148.0" layoutY="204.0" mnemonicParsing="false" onAction="#leckekonyvlekerdez" text="Betöltés">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Button>
+                                <TableView fx:id="leckekonyvtable" layoutX="423.0" layoutY="32.0" maxHeight="1.7976931348623157E308" AnchorPane.bottomAnchor="88.0" AnchorPane.leftAnchor="423.0" AnchorPane.rightAnchor="177.0" AnchorPane.topAnchor="32.0">
+                                    <columns>
+                                        <TableColumn fx:id="neptunlkColumn" maxWidth="153.0" minWidth="120.0" prefWidth="153.0" text="Neptun-kód" />
+                                        <TableColumn fx:id="targylkColumn" maxWidth="305.0" minWidth="305.0" prefWidth="305.0" text="Tárgy neve" />
+                                        <TableColumn fx:id="jegylkColumn" maxWidth="142.0" minWidth="142.0" prefWidth="142.0" text="Jegy" />
+                                    </columns>
+                                </TableView>
+                        <Label layoutX="178.0" layoutY="107.0" text="Neptun kód:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="neptunbelk" layoutX="145.0" layoutY="143.0" />
+                            </children>
+                        </AnchorPane>
                     </content>
                 </Tab>
             </tabs>

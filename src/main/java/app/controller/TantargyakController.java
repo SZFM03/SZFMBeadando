@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
@@ -15,9 +16,11 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class TantargyakController {
+public class TantargyakController implements Initializable {
 
     public Button loadTantargyakButton;
     public TableView tantargyTable;
@@ -162,4 +165,9 @@ public class TantargyakController {
         kilepes.kilepvisszalep(mouseEvent, kilep, "/home.fxml");
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        tantargyAddButton.setDefaultButton(true);
+    }
 }

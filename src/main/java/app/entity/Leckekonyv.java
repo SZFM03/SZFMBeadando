@@ -20,6 +20,12 @@ public class Leckekonyv {
     @Column
     private Integer jegy;
 
+    @Column
+    private String neptun_kod;
+
+    @Column
+    private String nev;
+
     public Leckekonyv() {
     }
 
@@ -34,6 +40,29 @@ public class Leckekonyv {
         this.hallgato_id = hallgato_id;
         this.tantargy_id = tantargy_id;
         this.jegy = jegy;
+    }
+
+    public Leckekonyv(String neptun_kod, String nev, Integer jegy) {
+        this.neptun_kod = neptun_kod;
+        this.nev = nev;
+        this.jegy = jegy;
+
+    }
+
+    public String getNeptun_kod() {
+        return neptun_kod;
+    }
+
+    public void setNeptun_kod(String neptun_kod) {
+        this.neptun_kod = neptun_kod;
+    }
+
+    public String getNev() {
+        return nev;
+    }
+
+    public void setNev(String nev) {
+        this.nev = nev;
     }
 
     public Long getId() {

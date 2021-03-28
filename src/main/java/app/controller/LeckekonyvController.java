@@ -2,6 +2,7 @@ package app.controller;
 
 import app.entity.Hallgato;
 import app.entity.Jegy;
+import app.entity.Leckekonyv;
 import app.entity.Tantargy;
 import app.repository.HallgatoRepository;
 import app.repository.JegyRepository;
@@ -51,15 +52,6 @@ public class LeckekonyvController implements Initializable{
     private Button leckekonyvbtn;
 
     @FXML
-    private TableColumn<?, ?> neptunlkColumn;
-
-    @FXML
-    private TableColumn<?, ?> targylkColumn;
-
-    @FXML
-    private TableColumn<?, ?> jegylkColumn;
-
-    @FXML
     private TableColumn<?, ?> felvetellkColumn;
 
     @FXML
@@ -97,6 +89,10 @@ public class LeckekonyvController implements Initializable{
 
     @FXML
     private TextField neptunJegyText;
+
+    @FXML
+    private TextField neptunbelk;
+
 
     @FXML
     private TextField targyJegyText;
@@ -153,6 +149,17 @@ public class LeckekonyvController implements Initializable{
     public TableColumn kreditoszlop;
 
     @FXML
+    public TableView leckekonyvtable;
+    @FXML
+    private TableColumn neptunlkColumn;
+
+    @FXML
+    private TableColumn targylkColumn;
+
+    @FXML
+    private TableColumn jegylkColumn;
+
+    @FXML
     private TableView<Tantargy> taview = new TableView<>();
 
     private final KilepVisszalep kilepes = new KilepVisszalep();
@@ -187,9 +194,10 @@ public class LeckekonyvController implements Initializable{
                 Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunkodbevitel.getText());
                 hallgatoTargyfelvetelText.setText(hallgato.getNev());
                 hallgatoTargyfelvetelText.setDisable(true);
-                List<Tantargy> getTantargy = hallgato.getTantargyak();
 
+                List<Tantargy> getTantargy = hallgato.getTantargyak();
                 ObservableList<Tantargy> getTantargy2 = FXCollections.observableArrayList();
+
                 getTantargy2.addAll(getTantargy);
                 targykod.setCellValueFactory(new PropertyValueFactory<>("kod"));
                 targynev.setCellValueFactory(new PropertyValueFactory<>("nev"));
@@ -203,6 +211,46 @@ public class LeckekonyvController implements Initializable{
         }catch (Exception e){
             alert.alert("Kereső információ", "A megadott neptun-kód nem található az adatbázisban!");
         }
+
+    }
+
+    public void lekerdez(ActionEvent actionEvent) {
+        Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
+
+        nevJegyText.setText(hallgato.getNev());
+        nevJegyText.setDisable(true);
+        neptunJegyText.setText(hallgato.getNeptun_kod());
+        neptunJegyText.setDisable(true);
+        ObservableList<String> targyak = FXCollections.observableArrayList(felvettTargyakBoxhoz());
+        TantargyComboBox.setItems(targyak);
+
+    }
+
+    public void leckekonyvlekerdez(ActionEvent actionEvent){
+
+        Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunbelk.getText());
+        long hallgato_id = hallgato.getId();
+
+        List<Tantargy> tantargyak = hallgato.getTantargyak();
+
+        ObservableList<Leckekonyv> leckekonyv = FXCollections.observableArrayList();
+
+        for(var tantargy : tantargyak) {
+
+            long tantargy_id = tantargy.getId();
+
+           Jegy jegy = jegyRepository.selectHallgatoIDTantargyID(hallgato_id, tantargy_id);
+
+            leckekonyv.add(new Leckekonyv(hallgato.getNeptun_kod(), tantargy.getNev(), jegy.getJegy()));
+
+        }
+
+      neptunlkColumn.setCellValueFactory(new PropertyValueFactory<>("neptun_kod"));
+      targylkColumn.setCellValueFactory(new PropertyValueFactory<>("nev"));
+      jegylkColumn.setCellValueFactory(new PropertyValueFactory<>("jegy"));
+
+        leckekonyvtable.setItems(leckekonyv);
+
 
     }
 
@@ -290,17 +338,7 @@ public class LeckekonyvController implements Initializable{
         }
     }
 
-    public void lekerdez(ActionEvent actionEvent) {
-        Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
 
-        nevJegyText.setText(hallgato.getNev());
-        nevJegyText.setDisable(true);
-        neptunJegyText.setText(hallgato.getNeptun_kod());
-        neptunJegyText.setDisable(true);
-        ObservableList<String> targyak = FXCollections.observableArrayList(felvettTargyakBoxhoz());
-        TantargyComboBox.setItems(targyak);
-
-    }
 
     public List<String> felvettTargyakBoxhoz (){
         Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
@@ -322,6 +360,10 @@ public class LeckekonyvController implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
        jegybecombo.getItems().addAll("1","2", "3", "4", "5");
+        targylekerdez.setDefaultButton(true);
+        lekerdezJegyBtn.setDefaultButton(true);
+        leckekonyvbtn.setDefaultButton(true);
+
     }
 
 

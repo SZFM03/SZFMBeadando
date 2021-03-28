@@ -229,6 +229,9 @@ public class HallgatoController implements Initializable {
     private Button saveAdatButton;
 
     @FXML
+    private Button saveAdatButton1;
+
+    @FXML
     private Button loadAdatButton;
 
     @FXML
@@ -268,6 +271,12 @@ public class HallgatoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        loadKeresoButton.setDefaultButton(true);
+        addButton.setDefaultButton(true);
+        deleteTorlesButton.setDefaultButton(true);
+        saveAdatButton1.setDefaultButton(true);
+
+
     }
 
     private final HallgatoService hallgatoService = new HallgatoService(new HallgatoRepository());
@@ -292,7 +301,9 @@ public class HallgatoController implements Initializable {
         Hallgato hallgato = hallgatoService.lekerdezHallgato(keresoText.getText());
         long hallgato_id = hallgato.getId();
         List<Tantargy> tantargyak = hallgato.getTantargyak();
+
         List<Leckekonyv> leckekonyv = new ArrayList<>();
+
         for(var tantargy : tantargyak) {
             long tantargy_id = tantargy.getId();
             Jegy jegy = jegyRepository.selectHallgatoIDTantargyID(hallgato_id, tantargy_id);

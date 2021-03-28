@@ -14,4 +14,6 @@ public class JegyService {
     public void saveJegy(Jegy jegy) {
         jegyRepository.save(jegy);
     }
+
+
 }
