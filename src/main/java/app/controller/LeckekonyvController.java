@@ -240,8 +240,7 @@ public class LeckekonyvController implements Initializable{
 
         sulyozottatlag=(double) osszeg/kreditosszeg;
 
-        hallgatoatlag.setText(String.valueOf(sulyozottatlag));
-
+           hallgatoatlag.setText(String.format("%.2f", sulyozottatlag));
 
 
         if(sulyozottatlag<hatar){

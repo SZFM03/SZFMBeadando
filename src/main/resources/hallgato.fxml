@@ -77,10 +77,10 @@
                                                 <Font size="20.0" />
                                             </font>
                                         </Label>
-                                        <TextField fx:id="nevKeresoText" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="2" />
-                                        <TextField fx:id="neptunKeresoText" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                        <TextField fx:id="szuletesiEvKeresoText" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                        <TextField fx:id="keresoText" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                        <TextField fx:id="nevKeresoText" alignment="CENTER" editable="false" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="2" />
+                                        <TextField fx:id="neptunKeresoText" alignment="CENTER" editable="false" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                        <TextField fx:id="szuletesiEvKeresoText" alignment="CENTER" editable="false" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                        <TextField fx:id="keresoText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
                                  <GridPane.margin>
                                     <Insets top="5.0" />
                                  </GridPane.margin></TextField>
@@ -160,9 +160,9 @@
                                     <Insets right="71.0" top="10.0" />
                                  </GridPane.margin>
                                         </Button>
-                                        <TextField fx:id="nevAddText" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" />
-                                        <TextField fx:id="neptunAddText" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                        <TextField fx:id="szuletesiEvAddText" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <TextField fx:id="nevAddText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" />
+                                        <TextField fx:id="neptunAddText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <TextField fx:id="szuletesiEvAddText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                     </children>
                                 </GridPane>
                             </children></AnchorPane>
@@ -203,7 +203,7 @@
                                     <Insets bottom="5.0" />
                                  </GridPane.margin>
                                         </Label>
-                                        <TextField fx:id="neptunTorlesText" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                        <TextField fx:id="neptunTorlesText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                                     </children>
                                 </GridPane>
                             </children></AnchorPane>
@@ -252,9 +252,9 @@
                                                 <Insets right="15.0" />
                                             </padding>
                                         </Label>
-                                        <TextField fx:id="neptunbevitelText" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
-                                        <TextField fx:id="neptunadatText" maxWidth="250.0" minWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
-                                        <TextField fx:id="nevadatText" maxWidth="250.0" minWidth="250.0" prefHeight="25.0" prefWidth="250.0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                                        <TextField fx:id="neptunbevitelText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                                        <TextField fx:id="neptunadatText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+                                        <TextField fx:id="nevadatText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" prefHeight="25.0" prefWidth="250.0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin></TextField>
@@ -279,7 +279,7 @@
                                                 <Insets right="15.0" />
                                             </padding>
                                         </Label>
-                                        <TextField fx:id="szuletesievadatText" maxWidth="250.0" minWidth="250.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+                                        <TextField fx:id="szuletesievadatText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
                                     </children>
                                 </GridPane>
                             </children></AnchorPane>

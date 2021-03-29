@@ -101,9 +101,9 @@
                                     <Insets right="71.0" top="10.0" />
                                  </GridPane.margin>
                               </Button>
-                              <TextField fx:id="targykodAddText" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" />
-                              <TextField fx:id="targyneveAddText" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                              <TextField fx:id="kreditAddText" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                              <TextField fx:id="targykodAddText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" />
+                              <TextField fx:id="targyneveAddText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                              <TextField fx:id="kreditAddText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                            </children>
                         </GridPane>
                      </children>

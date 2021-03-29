@@ -23,13 +23,13 @@
                   <Font name="Segoe UI" size="25.0" />
               </font>
           </Label>
-          <TextField fx:id="usernameField" layoutX="909.0" layoutY="314.0" />
-          <PasswordField fx:id="passwordField" layoutX="909.0" layoutY="379.0" />
-          <Label fx:id="usernameLabel" layoutX="909.0" layoutY="287.0" text="Felhasználónév">
+          <TextField fx:id="usernameField" alignment="CENTER" layoutX="909.0" layoutY="314.0" />
+          <PasswordField fx:id="passwordField" alignment="CENTER" layoutX="909.0" layoutY="379.0" />
+          <Label fx:id="usernameLabel" layoutX="933.0" layoutY="283.0" text="Felhasználónév">
             <font>
                <Font size="15.0" />
             </font></Label>
-          <Label layoutX="909.0" layoutY="350.0" text="Jelszó">
+          <Label layoutX="962.0" layoutY="350.0" text="Jelszó">
             <font>
                <Font size="15.0" />
             </font></Label>
