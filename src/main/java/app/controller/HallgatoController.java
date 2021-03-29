@@ -397,7 +397,6 @@ public class HallgatoController implements Initializable {
                 szuletesiEvKeresoText.setDisable(true);
                 neptunKeresoText.setDisable(true);
 
-                keresoText.clear();
             } else if(keresoText.getText().isBlank()){
                 alert.alert("Kereső információ","Nem adtál meg Neptun-kódot!");
             }
