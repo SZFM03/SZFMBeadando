@@ -34,13 +34,13 @@
                     <content>
                         <AnchorPane fx:id="tfPane" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1200.0">
                             <children>
-                                <TextField fx:id="neptunkodbevitel" alignment="CENTER" layoutX="245.0" layoutY="43.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+                                <TextField fx:id="neptunkodbevitel" alignment="CENTER" layoutX="245.0" layoutY="43.0" />
                                 <Label layoutX="118.0" layoutY="43.0" text="Neptun-kód:">
                                     <font>
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <Button fx:id="targylekerdez" defaultButton="true" layoutX="351.0" layoutY="100.0" mnemonicParsing="false" onAction="#kereso" prefHeight="25.0" prefWidth="106.0" text="Lekérdez">
+                                <Button fx:id="targylekerdez" defaultButton="true" layoutX="272.0" layoutY="100.0" mnemonicParsing="false" onAction="#kereso" prefHeight="25.0" prefWidth="106.0" text="Lekérdez">
                            <font>
                               <Font size="15.0" />
                            </font></Button>
@@ -98,7 +98,7 @@
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <Button fx:id="töröl" layoutX="351.0" layoutY="504.0" mnemonicParsing="false" onAction="#töröl" text="Tárgy leadása">
+                                <Button fx:id="torol" layoutX="351.0" layoutY="504.0" mnemonicParsing="false" onAction="#töröl" text="Tárgy leadása">
                            <font>
                               <Font size="15.0" />
                            </font></Button>
@@ -197,7 +197,7 @@
                     <content>
                         <AnchorPane fx:id="lkPane" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1200.0">
                             <children>
-                                <Button fx:id="leckekonyvbtn" defaultButton="true" layoutX="148.0" layoutY="204.0" mnemonicParsing="false" onAction="#leckekonyvlekerdez" text="Betöltés">
+                                <Button fx:id="leckekonyvbtn" defaultButton="true" layoutX="168.0" layoutY="204.0" mnemonicParsing="false" onAction="#leckekonyvlekerdez" text="Betöltés">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -209,12 +209,12 @@
                                         <TableColumn fx:id="jegylkColumn" maxWidth="142.0" minWidth="142.0" prefWidth="142.0" text="Jegy" />
                                     </columns>
                                 </TableView>
-                        <Label layoutX="178.0" layoutY="107.0" text="Neptun kód:">
+                        <Label layoutX="160.0" layoutY="98.0" text="Neptun kód:">
                            <font>
-                              <Font size="15.0" />
+                              <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="neptunbelk" alignment="CENTER" layoutX="145.0" layoutY="143.0" />
+                        <TextField fx:id="neptunbelk" alignment="CENTER" layoutX="140.0" layoutY="143.0" />
                             </children>
                         </AnchorPane>
                     </content>
@@ -223,38 +223,38 @@
                <content>
                   <AnchorPane fx:id="lkPane1" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1200.0">
                      <children>
-                        <Label fx:id="besorolastext" layoutX="641.0" layoutY="283.0" text="Besorolás:">
+                        <Label fx:id="besorolastext" layoutX="627.0" layoutY="283.0" text="Besorolás:">
                            <font>
-                              <Font size="15.0" />
+                              <Font size="20.0" />
                            </font>
                         </Label>
-                        <Button fx:id="tanatlag" defaultButton="true" layoutX="146.0" layoutY="306.0" mnemonicParsing="false" onAction="#tanulmanyiatlag" text="Lekérdez">
+                        <Button fx:id="tanatlag" defaultButton="true" layoutX="168.0" layoutY="306.0" mnemonicParsing="false" onAction="#tanulmanyiatlag" text="Lekérdez">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Button>
-                        <Label layoutX="178.0" layoutY="107.0" text="Neptun kód:">
+                        <Label layoutX="160.0" layoutY="98.0" text="Neptun kód:">
                            <font>
-                              <Font size="15.0" />
+                              <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="neptunatlag" alignment="CENTER" layoutX="145.0" layoutY="143.0" />
-                        <Label layoutX="88.0" layoutY="200.0" text="Adja meg a tanulmányi átlaghatárt (x.y):">
+                        <TextField fx:id="neptunatlag" alignment="CENTER" layoutX="140.0" layoutY="143.0" />
+                        <Label layoutX="49.0" layoutY="197.0" text="Adja meg a tanulmányi átlaghatárt (x.y):">
                            <font>
-                              <Font size="15.0" />
+                              <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="atlaghatar" alignment="CENTER" layoutX="143.0" layoutY="235.0" promptText="0.0" />
-                        <Label layoutX="584.0" layoutY="200.0" text="Hallgató tanulmányi átlaga:">
+                        <TextField fx:id="atlaghatar" alignment="CENTER" layoutX="140.0" layoutY="235.0" promptText="0.0" />
+                        <Label layoutX="564.0" layoutY="197.0" text="Hallgató tanulmányi átlaga:">
                            <font>
-                              <Font size="15.0" />
+                              <Font size="20.0" />
                            </font>
                         </Label>
                         <TextField fx:id="hallgatoatlag" alignment="CENTER" editable="false" layoutX="600.0" layoutY="235.0" />
                         <TextField fx:id="besorolas" alignment="CENTER" editable="false" layoutX="600.0" layoutY="326.0" />
-                        <Label layoutX="627.0" layoutY="107.0" text="Hallgató neve:">
+                        <Label layoutX="613.0" layoutY="98.0" text="Hallgató neve:">
                            <font>
-                              <Font size="15.0" />
+                              <Font size="20.0" />
                            </font>
                         </Label>
                         <TextField fx:id="hallgneve" alignment="CENTER" editable="false" layoutX="601.0" layoutY="143.0" />
