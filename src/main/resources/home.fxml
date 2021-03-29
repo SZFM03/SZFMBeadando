@@ -33,11 +33,11 @@
             <font>
                <Font size="15.0" />
             </font></Label>
-          <Button fx:id="registerButton" layoutX="909.0" layoutY="520.0" mnemonicParsing="false" onAction="#register" text="Regisztrálás">
+          <Button fx:id="registerButton" layoutX="934.0" layoutY="520.0" mnemonicParsing="false" onAction="#register" text="Regisztrálás">
             <font>
                <Font size="15.0" />
             </font></Button>
-          <Button fx:id="loginButton" layoutX="909.0" layoutY="472.0" mnemonicParsing="false" onAction="#login" text="Belépés">
+          <Button fx:id="loginButton" layoutX="934.0" layoutY="472.0" mnemonicParsing="false" onAction="#login" text="Belépés">
             <font>
                <Font size="15.0" />
             </font></Button>
