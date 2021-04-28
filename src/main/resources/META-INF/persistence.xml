@@ -6,9 +6,9 @@
         <class>app.entity.User</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11398881"/>
-            <property name="javax.persistence.jdbc.user" value="sql11398881"/>
-            <property name="javax.persistence.jdbc.password" value="MNeVSY77jr"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11408966"/>
+            <property name="javax.persistence.jdbc.user" value="sql11408966"/>
+            <property name="javax.persistence.jdbc.password" value="pCBgDULwwT"/>
             <property name="javax.persistence.schema-generation.database.action" value="none"/>
             <property name="hibernate.hbm2ddl.auto" value="validate"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
