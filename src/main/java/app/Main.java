@@ -8,6 +8,7 @@ public class Main {
     //test4
     //test5
     //test6
+    //test7
 
     public static void main(String[] args) {
         Application.launch(HallgatoiAdatbazisKezeloRendszer.class, args);
