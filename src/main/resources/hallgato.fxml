@@ -16,12 +16,12 @@
 
 <AnchorPane id="AnchorPane" fx:id="hallgatoPane" maxHeight="700.0" maxWidth="1200.0" minHeight="700.0" minWidth="1200.0" prefHeight="700.0" prefWidth="1200.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.HallgatoController">
     <children>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="32.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ffab0d;" text="Hallgatói Adminisztrációs Központ" textAlignment="CENTER" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+        <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ffab0d;" text="Debreceni Egyetem" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="Segoe UI" size="25.0" />
             </font>
         </Label>
-        <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ffab0d;" text="Debreceni Egyetem" textAlignment="CENTER" textFill="WHITE">
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="32.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ffab0d;" text="Hallgatói Adminisztrációs Központ" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="Segoe UI" size="25.0" />
             </font>
