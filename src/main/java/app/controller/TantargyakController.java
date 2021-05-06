@@ -146,6 +146,7 @@ public class TantargyakController implements Initializable {
 
     public void lekerdezMindenTantargy(ActionEvent actionEvent) {
         try {
+
             ObservableList<Tantargy> getTantargy = FXCollections.observableArrayList();
             List<Tantargy> tantargy = tantargyakService.MindenTantargy();
             getTantargy.addAll(tantargy);
