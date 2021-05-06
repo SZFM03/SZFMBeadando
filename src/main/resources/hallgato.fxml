@@ -16,12 +16,12 @@
 
 <AnchorPane id="AnchorPane" fx:id="hallgatoPane" maxHeight="700.0" maxWidth="1200.0" minHeight="700.0" minWidth="1200.0" prefHeight="700.0" prefWidth="1200.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.HallgatoController">
     <children>
-        <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ffab0d;" text="Debreceni Egyetem" textAlignment="CENTER" textFill="WHITE">
+        <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #19b4cf;" text="Debreceni Egyetem" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="Segoe UI" size="25.0" />
             </font>
         </Label>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="32.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ffab0d;" text="Hallgatói Adminisztrációs Központ" textAlignment="CENTER" textFill="WHITE">
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="32.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #19b4cf;" text="Hallgatói Adminisztrációs Központ" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="Segoe UI" size="25.0" />
             </font>
@@ -49,9 +49,9 @@
                                             <font>
                                                 <Font size="15.0" />
                                             </font>
-                                 <GridPane.margin>
-                                    <Insets left="30.0" top="10.0" />
-                                 </GridPane.margin>
+                                            <GridPane.margin>
+                                                <Insets left="30.0" top="10.0" />
+                                            </GridPane.margin>
                                         </Button>
                                         <Label fx:id="nevKeresoLabel" text="Név:" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                                             <padding>
@@ -81,16 +81,16 @@
                                         <TextField fx:id="neptunKeresoText" alignment="CENTER" editable="false" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                         <TextField fx:id="szuletesiEvKeresoText" alignment="CENTER" editable="false" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                                         <TextField fx:id="keresoText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                                 <GridPane.margin>
-                                    <Insets top="5.0" />
-                                 </GridPane.margin></TextField>
+                                            <GridPane.margin>
+                                                <Insets top="5.0" />
+                                            </GridPane.margin></TextField>
                                         <Label fx:id="neptunLabel" prefHeight="32.0" prefWidth="246.0" text="Adja meg a Neptun-kódot:" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                                             <font>
                                                 <Font size="20.0" />
                                             </font>
-                                 <GridPane.margin>
-                                    <Insets bottom="7.0" />
-                                 </GridPane.margin>
+                                            <GridPane.margin>
+                                                <Insets bottom="7.0" />
+                                            </GridPane.margin>
                                         </Label>
                                         <Button fx:id="loadKeresoButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#kereso" text="Betölt" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                                             <font>
@@ -126,9 +126,9 @@
                                             <GridPane.margin>
                                                 <Insets />
                                             </GridPane.margin>
-                                 <padding>
-                                    <Insets right="15.0" />
-                                 </padding>
+                                            <padding>
+                                                <Insets right="15.0" />
+                                            </padding>
                                         </Label>
                                         <Label fx:id="neptunAddLabel" text="Neptun-kód:" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                                             <font>
@@ -137,9 +137,9 @@
                                             <GridPane.margin>
                                                 <Insets />
                                             </GridPane.margin>
-                                 <padding>
-                                    <Insets right="15.0" />
-                                 </padding>
+                                            <padding>
+                                                <Insets right="15.0" />
+                                            </padding>
                                         </Label>
                                         <Label fx:id="szuletesiEvAddLabel" text="Születési év:" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                                             <font>
@@ -148,17 +148,17 @@
                                             <GridPane.margin>
                                                 <Insets />
                                             </GridPane.margin>
-                                 <padding>
-                                    <Insets right="15.0" />
-                                 </padding>
+                                            <padding>
+                                                <Insets right="15.0" />
+                                            </padding>
                                         </Label>
                                         <Button fx:id="addButton" mnemonicParsing="false" onAction="#register" prefHeight="48.0" prefWidth="190.0" text="Hozzáad" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                             <font>
                                                 <Font size="15.0" />
                                             </font>
-                                 <GridPane.margin>
-                                    <Insets right="71.0" top="10.0" />
-                                 </GridPane.margin>
+                                            <GridPane.margin>
+                                                <Insets right="71.0" top="10.0" />
+                                            </GridPane.margin>
                                         </Button>
                                         <TextField fx:id="nevAddText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" />
                                         <TextField fx:id="neptunAddText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
@@ -188,9 +188,9 @@
                                             <font>
                                                 <Font size="15.0" />
                                             </font>
-                                 <GridPane.margin>
-                                    <Insets top="40.0" />
-                                 </GridPane.margin>
+                                            <GridPane.margin>
+                                                <Insets top="40.0" />
+                                            </GridPane.margin>
                                         </Button>
                                         <Label fx:id="neptunTorlesLabel" text="Neptun-kód:" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                                             <font>
@@ -199,9 +199,9 @@
                                             <padding>
                                                 <Insets right="15.0" />
                                             </padding>
-                                 <GridPane.margin>
-                                    <Insets bottom="5.0" />
-                                 </GridPane.margin>
+                                            <GridPane.margin>
+                                                <Insets bottom="5.0" />
+                                            </GridPane.margin>
                                         </Label>
                                         <TextField fx:id="neptunTorlesText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                                     </children>
@@ -232,9 +232,9 @@
                                             <font>
                                                 <Font size="20.0" />
                                             </font>
-                                 <GridPane.margin>
-                                    <Insets left="15.0" />
-                                 </GridPane.margin>
+                                            <GridPane.margin>
+                                                <Insets left="15.0" />
+                                            </GridPane.margin>
                                         </Label>
                                         <Label fx:id="neptunAdatLabel" text="Neptun-kód:" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                                             <font>
@@ -255,9 +255,9 @@
                                         <TextField fx:id="neptunbevitelText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
                                         <TextField fx:id="neptunadatText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
                                         <TextField fx:id="nevadatText" alignment="CENTER" maxWidth="250.0" minWidth="250.0" prefHeight="25.0" prefWidth="250.0" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
-                                 <GridPane.margin>
-                                    <Insets />
-                                 </GridPane.margin></TextField>
+                                            <GridPane.margin>
+                                                <Insets />
+                                            </GridPane.margin></TextField>
                                         <Button fx:id="saveAdatButton" mnemonicParsing="false" onAction="#modosit" text="Módosít" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                             <font>
                                                 <Font size="15.0" />
@@ -267,9 +267,9 @@
                                             <font>
                                                 <Font size="15.0" />
                                             </font>
-                                 <GridPane.margin>
-                                    <Insets />
-                                 </GridPane.margin>
+                                            <GridPane.margin>
+                                                <Insets />
+                                            </GridPane.margin>
                                         </Button>
                                         <Label fx:id="neptunAdatLabel1" text="Név:" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                                             <font>
@@ -290,18 +290,18 @@
                         <AnchorPane fx:id="mindenHallPane" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1200.0">
                             <children>
                                 <Button fx:id="hallgatobetoltes" layoutX="512.0" layoutY="546.0" maxHeight="32.0" maxWidth="180.0" minHeight="32.0" minWidth="180.0" mnemonicParsing="false" onAction="#lekerdezMindenHallgato" prefHeight="32.0" prefWidth="180.0" text="Hallgatók betöltése">
-                           <font>
-                              <Font size="15.0" />
-                           </font></Button>
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font></Button>
                                 <TableView fx:id="hallgatotabla" layoutX="329.0" layoutY="31.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="486.0" prefWidth="474.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="30.0">
                                     <columns>
                                         <TableColumn fx:id="oszlopnev" maxWidth="305.0" minWidth="305.0" prefWidth="305.0" text="Név" />
                                         <TableColumn fx:id="neptunoszlop" maxWidth="153.0" minWidth="153.0" prefWidth="153.0" text="Neptun-kód" />
                                         <TableColumn fx:id="szuletesievoszlop" maxWidth="142.0" minWidth="142.0" prefWidth="142.0" text="Születési év" />
                                     </columns>
-                           <columnResizePolicy>
-                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                           </columnResizePolicy>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
                                 </TableView>
                             </children>
                         </AnchorPane>
@@ -310,12 +310,12 @@
             </tabs>
         </TabPane>
         <Button fx:id="visszabtn" layoutX="872.0" layoutY="649.0" maxHeight="32.0" maxWidth="144.0" minHeight="32.0" minWidth="144.0" mnemonicParsing="false" onMouseClicked="#vButtonAction" prefHeight="32.0" prefWidth="144.0" text="Vissza a főoldalra">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
+            <font>
+                <Font size="15.0" />
+            </font></Button>
         <Button fx:id="kilep" layoutX="1027.0" layoutY="649.0" maxHeight="32.0" maxWidth="144.0" minHeight="32.0" minWidth="144.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="32.0" prefWidth="144.0" text="Kilépés">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
+            <font>
+                <Font size="15.0" />
+            </font></Button>
     </children>
 </AnchorPane>
