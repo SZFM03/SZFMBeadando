@@ -150,8 +150,8 @@ public class TantargyakController implements Initializable {
             List<Tantargy> tantargy = tantargyakService.MindenTantargy();
             getTantargy.addAll(tantargy);
             targynTantargyColumn.setCellValueFactory(new PropertyValueFactory<>("nev"));
-            targykTantargyColumn.setCellValueFactory(new PropertyValueFactory<>("kreditszam"));
-            kreditTantargyColumn.setCellValueFactory(new PropertyValueFactory<>("kod"));
+            targykTantargyColumn.setCellValueFactory(new PropertyValueFactory<>("kod"));
+            kreditTantargyColumn.setCellValueFactory(new PropertyValueFactory<>("kreditszam"));
             tantargyTable.setItems(getTantargy);
             if(getTantargy.isEmpty()){
                 alert.alert("Minden tantárgy információ", "Nincs az adatbázisban egy tantárgy sem!");
