@@ -70,14 +70,15 @@
 }
 
 #visszabtn {
-    -fx-pref-width: 144px;
+    -fx-pref-width: 170px;
 }
 
 #leckekonyvKeresoButton {
-    -fx-pref-width: 200px;
+    -fx-pref-width: 205px;
 }
 
 #kilep {
+    -fx-pref-width: 105px;
     -fx-background-color:
             #fcb75b,
             linear-gradient(#fcfbfa, #fcf2e8),
@@ -85,19 +86,14 @@
 }
 
 #listafrissitese {
-    -fx-pref-width: 144px;
+    -fx-pref-width: 150px;
 }
 
 #torol {
-    -fx-pref-width: 144px;
+    -fx-pref-width: 150px;
 }
-
-#targyaklistazasa {
-    -fx-pref-width: 144px;
-}
-
-#targyhozzaadas {
-    -fx-pref-width: 144px;
+#targylekerdez {
+    -fx-pref-width: 115px;
 }
 
 .tab-pane .tab-header-area .tab-header-background {

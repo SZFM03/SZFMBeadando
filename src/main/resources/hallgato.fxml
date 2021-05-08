@@ -152,7 +152,7 @@
                                                 <Insets right="15.0" />
                                             </padding>
                                         </Label>
-                                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#register" prefHeight="48.0" prefWidth="190.0" text="Hozzáad" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#register" text="Hozzáad" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                             <font>
                                                 <Font size="15.0" />
                                             </font>
@@ -289,7 +289,7 @@
                     <content>
                         <AnchorPane fx:id="mindenHallPane" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1200.0">
                             <children>
-                                <Button fx:id="hallgatobetoltes" layoutX="512.0" layoutY="546.0" maxHeight="32.0" maxWidth="180.0" minHeight="32.0" minWidth="180.0" mnemonicParsing="false" onAction="#lekerdezMindenHallgato" prefHeight="32.0" prefWidth="180.0" text="Hallgatók betöltése">
+                                <Button fx:id="hallgatobetoltes" layoutX="512.0" layoutY="546.0" mnemonicParsing="false" onAction="#lekerdezMindenHallgato" text="Hallgatók betöltése">
                                     <font>
                                         <Font size="15.0" />
                                     </font></Button>
@@ -309,11 +309,11 @@
                 </Tab>
             </tabs>
         </TabPane>
-        <Button fx:id="visszabtn" layoutX="872.0" layoutY="649.0" maxHeight="32.0" maxWidth="144.0" minHeight="32.0" minWidth="144.0" mnemonicParsing="false" onMouseClicked="#vButtonAction" prefHeight="32.0" prefWidth="144.0" text="Vissza a főoldalra">
+        <Button fx:id="visszabtn" layoutX="834.0" layoutY="649.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#vButtonAction" text="Vissza a főoldalra">
             <font>
                 <Font size="15.0" />
             </font></Button>
-        <Button fx:id="kilep" layoutX="1027.0" layoutY="649.0" maxHeight="32.0" maxWidth="144.0" minHeight="32.0" minWidth="144.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="32.0" prefWidth="144.0" text="Kilépés">
+        <Button fx:id="kilep" layoutX="1027.0" layoutY="649.0" maxHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#logout" text="Kilépés">
             <font>
                 <Font size="15.0" />
             </font></Button>

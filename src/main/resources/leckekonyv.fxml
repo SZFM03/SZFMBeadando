@@ -40,7 +40,7 @@
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <Button fx:id="targylekerdez" defaultButton="true" layoutX="272.0" layoutY="100.0" mnemonicParsing="false" onAction="#kereso" prefHeight="25.0" prefWidth="106.0" text="Lekérdez">
+                                <Button fx:id="targylekerdez" defaultButton="true" layoutX="272.0" layoutY="100.0" mnemonicParsing="false" onAction="#kereso" text="Lekérdez">
                                     <font>
                                         <Font size="15.0" />
                                     </font></Button>
@@ -50,7 +50,7 @@
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <Button fx:id="targyaklistazasa" layoutX="700.0" layoutY="504.0" mnemonicParsing="false" onAction="#lekerdezMindenTantargy" prefHeight="24.0" prefWidth="176.0" text="Tárgyak listázása">
+                                <Button fx:id="targyaklistazasa" layoutX="700.0" layoutY="504.0" mnemonicParsing="false" onAction="#lekerdezMindenTantargy" text="Tárgyak listázása">
                                     <font>
                                         <Font size="15.0" />
                                     </font></Button>
@@ -67,11 +67,11 @@
                                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                     </columnResizePolicy>
                                 </TableView>
-                                <Button fx:id="listafrissitese" layoutX="175.0" layoutY="504.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="176.0" text="Lista frissítése">
+                                <Button fx:id="listafrissitese" layoutX="175.0" layoutY="504.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Lista frissítése">
                                     <font>
                                         <Font size="15.0" />
                                     </font></Button>
-                                <Button fx:id="targyhozzaadas" layoutX="884.0" layoutY="504.0" mnemonicParsing="false" onAction="#kivalasztottadatatadasa" prefHeight="24.0" prefWidth="176.0" text="Tárgy hozzáadása">
+                                <Button fx:id="targyhozzaadas" layoutX="884.0" layoutY="504.0" mnemonicParsing="false" onAction="#kivalasztottadatatadasa" text="Tárgy hozzáadása">
                                     <font>
                                         <Font size="15.0" />
                                     </font></Button>
@@ -197,7 +197,7 @@
                     <content>
                         <AnchorPane fx:id="lkPane" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1200.0">
                             <children>
-                                <Button fx:id="leckekonyvbtn" defaultButton="true" layoutX="168.0" layoutY="204.0" mnemonicParsing="false" onAction="#leckekonyvlekerdez" text="Betöltés">
+                                <Button fx:id="leckekonyvbtn" defaultButton="true" layoutX="158.0" layoutY="204.0" mnemonicParsing="false" onAction="#leckekonyvlekerdez" text="Betöltés">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -264,11 +264,11 @@
                 </Tab>
             </tabs>
         </TabPane>
-        <Button fx:id="visszabtn" layoutX="872.0" layoutY="649.0" maxHeight="32.0" maxWidth="144.0" minHeight="24.0" minWidth="144.0" mnemonicParsing="false" onMouseClicked="#vButtonAction" prefHeight="24.0" prefWidth="144.0" text="Vissza a főoldalra">
+        <Button fx:id="visszabtn" layoutX="834.0" layoutY="649.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#vButtonAction" text="Vissza a főoldalra">
             <font>
                 <Font size="15.0" />
             </font></Button>
-        <Button fx:id="kilep" layoutX="1027.0" layoutY="649.0" maxHeight="32.0" maxWidth="144.0" minHeight="24.0" minWidth="144.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="24.0" prefWidth="144.0" text="Kilépés">
+        <Button fx:id="kilep" layoutX="1027.0" layoutY="649.0" mnemonicParsing="false" onMouseClicked="#logout" text="Kilépés">
             <font>
                 <Font size="15.0" />
             </font></Button>
