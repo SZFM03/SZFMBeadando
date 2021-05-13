@@ -34,7 +34,7 @@
                             <children>
                                 <Button fx:id="loadTantargyakButton" layoutX="527.0" layoutY="546.0" mnemonicParsing="false" onAction="#lekerdezMindenTantargy" text="Betöltés">
                                     <font>
-                                        <Font size="15.0" />
+                                        <Font name="Segoe UI" size="15.0" />
                                     </font>
                                 </Button>
                                 <TableView fx:id="tantargyTable" layoutX="471.0" layoutY="122.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="486.0" prefWidth="474.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="30.0">
@@ -71,7 +71,7 @@
                                     <children>
                                         <Label fx:id="targykodAddLabel" text="Tárgykód:" GridPane.halignment="RIGHT">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                             <padding>
                                                 <Insets right="15.0" />
@@ -79,7 +79,7 @@
                                         </Label>
                                         <Label fx:id="targyneveAddLabel" text="Tárgy neve:" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                             <padding>
                                                 <Insets right="15.0" />
@@ -87,7 +87,7 @@
                                         </Label>
                                         <Label fx:id="kreditAddLabel" text="Kredit:" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                             <padding>
                                                 <Insets right="15.0" />
@@ -95,7 +95,7 @@
                                         </Label>
                                         <Button fx:id="tantargyAddButton" mnemonicParsing="false" onAction="#registertantargy" text="Hozzáad" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                             <font>
-                                                <Font size="15.0" />
+                                                <Font name="Segoe UI" size="15.0" />
                                             </font>
                                             <GridPane.margin>
                                                 <Insets right="71.0" top="10.0" />
@@ -114,11 +114,11 @@
         </TabPane>
         <Button fx:id="kilep" layoutX="1027.0" layoutY="649.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="25.0" prefWidth="144.0" text="Kilépés">
             <font>
-                <Font size="15.0" />
+                <Font name="Segoe UI" size="15.0" />
             </font></Button>
         <Button fx:id="visszabtn" layoutX="834.0" layoutY="649.0" mnemonicParsing="false" onMouseClicked="#vButtonAction" prefHeight="25.0" prefWidth="144.0" text="Vissza a főoldalra">
             <font>
-                <Font size="15.0" />
+                <Font name="Segoe UI" size="15.0" />
             </font></Button>
     </children>
 </AnchorPane>

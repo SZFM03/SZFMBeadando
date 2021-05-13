@@ -47,7 +47,7 @@
                                     <children>
                                         <Button fx:id="leckekonyvKeresoButton" mnemonicParsing="false" onMouseClicked="#lButtonAction" text="Tovább a leckekönyvre" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                             <font>
-                                                <Font size="15.0" />
+                                                <Font name="Segoe UI" size="15.0" />
                                             </font>
                                             <GridPane.margin>
                                                 <Insets left="30.0" top="10.0" />
@@ -58,7 +58,7 @@
                                                 <Insets right="15.0" />
                                             </padding>
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                         </Label>
                                         <Label fx:id="neptunKeresoLabel" text="Neptun-kód:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
@@ -66,7 +66,7 @@
                                                 <Insets right="15.0" />
                                             </padding>
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                         </Label>
                                         <Label fx:id="szuletesiEvKeresoLabel" text="Születési év:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
@@ -74,7 +74,7 @@
                                                 <Insets right="15.0" />
                                             </padding>
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                         </Label>
                                         <TextField fx:id="nevKeresoText" alignment="CENTER" editable="false" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" GridPane.columnIndex="2" />
@@ -86,7 +86,7 @@
                                             </GridPane.margin></TextField>
                                         <Label fx:id="neptunLabel" prefHeight="32.0" prefWidth="246.0" text="Adja meg a Neptun-kódot:" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                             <GridPane.margin>
                                                 <Insets bottom="7.0" />
@@ -94,7 +94,7 @@
                                         </Label>
                                         <Button fx:id="loadKeresoButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#kereso" text="Betölt" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                                             <font>
-                                                <Font size="15.0" />
+                                                <Font name="Segoe UI" size="15.0" />
                                             </font>
                                         </Button>
                                     </children>
@@ -121,7 +121,7 @@
                                     <children>
                                         <Label fx:id="nevAddLabel" text="Név:" GridPane.halignment="RIGHT">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                             <GridPane.margin>
                                                 <Insets />
@@ -132,7 +132,7 @@
                                         </Label>
                                         <Label fx:id="neptunAddLabel" text="Neptun-kód:" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                             <GridPane.margin>
                                                 <Insets />
@@ -143,7 +143,7 @@
                                         </Label>
                                         <Label fx:id="szuletesiEvAddLabel" text="Születési év:" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                             <GridPane.margin>
                                                 <Insets />
@@ -154,7 +154,7 @@
                                         </Label>
                                         <Button fx:id="addButton" mnemonicParsing="false" onAction="#register" text="Hozzáad" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
                                             <font>
-                                                <Font size="15.0" />
+                                                <Font name="Segoe UI" size="15.0" />
                                             </font>
                                             <GridPane.margin>
                                                 <Insets right="71.0" top="10.0" />
@@ -186,7 +186,7 @@
                                     <children>
                                         <Button fx:id="deleteTorlesButton" mnemonicParsing="false" onAction="#deleteTorles" text="Törlés" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                             <font>
-                                                <Font size="15.0" />
+                                                <Font name="Segoe UI" size="15.0" />
                                             </font>
                                             <GridPane.margin>
                                                 <Insets top="40.0" />
@@ -194,7 +194,7 @@
                                         </Button>
                                         <Label fx:id="neptunTorlesLabel" text="Neptun-kód:" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                             <padding>
                                                 <Insets right="15.0" />
@@ -230,7 +230,7 @@
                                     <children>
                                         <Label fx:id="nevAdatLabel" text="Neptun-kód:" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                             <GridPane.margin>
                                                 <Insets left="15.0" />
@@ -238,7 +238,7 @@
                                         </Label>
                                         <Label fx:id="neptunAdatLabel" text="Neptun-kód:" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                             <padding>
                                                 <Insets right="15.0" />
@@ -246,7 +246,7 @@
                                         </Label>
                                         <Label fx:id="szuletesiEvAdatLabel" text="Születési év:" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                             <padding>
                                                 <Insets right="15.0" />
@@ -260,12 +260,12 @@
                                             </GridPane.margin></TextField>
                                         <Button fx:id="saveAdatButton" mnemonicParsing="false" onAction="#modosit" text="Módosít" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP">
                                             <font>
-                                                <Font size="15.0" />
+                                                <Font name="Segoe UI" size="15.0" />
                                             </font>
                                         </Button>
                                         <Button fx:id="saveAdatButton1" mnemonicParsing="false" onAction="#lekerdez" text="Lekérdez" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                             <font>
-                                                <Font size="15.0" />
+                                                <Font name="Segoe UI" size="15.0" />
                                             </font>
                                             <GridPane.margin>
                                                 <Insets />
@@ -273,7 +273,7 @@
                                         </Button>
                                         <Label fx:id="neptunAdatLabel1" text="Név:" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                             <padding>
                                                 <Insets right="15.0" />
@@ -291,7 +291,7 @@
                             <children>
                                 <Button fx:id="hallgatobetoltes" layoutX="512.0" layoutY="546.0" mnemonicParsing="false" onAction="#lekerdezMindenHallgato" text="Hallgatók betöltése">
                                     <font>
-                                        <Font size="15.0" />
+                                        <Font name="Segoe UI" size="15.0" />
                                     </font></Button>
                                 <TableView fx:id="hallgatotabla" layoutX="329.0" layoutY="31.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="486.0" prefWidth="474.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="30.0">
                                     <columns>
@@ -311,11 +311,11 @@
         </TabPane>
         <Button fx:id="visszabtn" layoutX="834.0" layoutY="649.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#vButtonAction" text="Vissza a főoldalra">
             <font>
-                <Font size="15.0" />
+                <Font name="Segoe UI" size="15.0" />
             </font></Button>
         <Button fx:id="kilep" layoutX="1027.0" layoutY="649.0" maxHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#logout" text="Kilépés">
             <font>
-                <Font size="15.0" />
+                <Font name="Segoe UI" size="15.0" />
             </font></Button>
     </children>
 </AnchorPane>

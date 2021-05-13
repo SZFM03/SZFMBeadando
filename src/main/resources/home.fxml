@@ -27,19 +27,19 @@
             <PasswordField fx:id="passwordField" alignment="CENTER" layoutX="909.0" layoutY="379.0" />
             <Label fx:id="usernameLabel" layoutX="933.0" layoutY="283.0" text="Felhasználónév">
                 <font>
-                    <Font size="15.0" />
+                    <Font name="Segoe UI" size="15.0" />
                 </font></Label>
             <Label layoutX="962.0" layoutY="350.0" text="Jelszó">
                 <font>
-                    <Font size="15.0" />
+                    <Font name="Segoe UI" size="15.0" />
                 </font></Label>
-            <Button fx:id="registerButton" layoutX="934.0" layoutY="520.0" mnemonicParsing="false" onAction="#register" text="Regisztrálás">
+            <Button fx:id="registerButton" layoutX="920.0" layoutY="520.0" mnemonicParsing="false" onAction="#register" text="Regisztrálás">
                 <font>
-                    <Font size="15.0" />
+                    <Font name="Segoe UI" size="15.0" />
                 </font></Button>
-            <Button fx:id="loginButton" layoutX="944.0" layoutY="472.0" mnemonicParsing="false" onAction="#login" text="Belépés">
+            <Button fx:id="loginButton" layoutX="931.0" layoutY="472.0" mnemonicParsing="false" onAction="#login" text="Belépés">
                 <font>
-                    <Font size="15.0" />
+                    <Font name="Segoe UI" size="15.0" />
                 </font></Button>
             <ImageView fitHeight="406.0" fitWidth="600.0" layoutX="57.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
                 <image>

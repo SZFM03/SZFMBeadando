@@ -60,6 +60,7 @@
     -fx-padding: 3 30 3 30;
     -fx-text-fill: black;
     -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI";
 }
 
 #loginButton {
