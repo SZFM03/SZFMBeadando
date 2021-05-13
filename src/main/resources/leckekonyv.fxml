@@ -43,7 +43,8 @@
                                 <Button fx:id="targylekerdez" defaultButton="true" layoutX="272.0" layoutY="100.0" mnemonicParsing="false" onAction="#kereso" text="Lekérdez">
                                     <font>
                                         <Font name="Segoe UI" size="15.0" />
-                                    </font></Button>
+                                    </font>
+                                </Button>
                                 <TextField fx:id="hallgatoTargyfelvetelText" alignment="CENTER" editable="false" layoutX="794.0" layoutY="43.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
                                 <Label layoutX="649.0" layoutY="43.0" text="Hallgató neve:">
                                     <font>

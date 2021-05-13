@@ -93,10 +93,6 @@
 #torol {
     -fx-pref-width: 150px;
 }
-#targylekerdez {
-    -fx-pref-width: 115px;
-}
-
 .tab-pane .tab-header-area .tab-header-background {
     -fx-opacity: 0;
 }
@@ -139,4 +135,5 @@
 .text-field{
     -fx-pref-width: 150;
     -fx-pref-height: 26;
+    -fx-font-family: "Segoe UI";
 }
