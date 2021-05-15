@@ -125,7 +125,7 @@ public class TantargyakController implements Initializable {
     public void registertantargy(ActionEvent actionEvent) {
         try {
             if (!targykodAddText.getText().isBlank() && !targyneveAddText.getText().isBlank() && !kreditAddText.getText().isBlank()) {
-                tantargyakService.saveTantargyak(new Tantargy(targyneveAddText.getText(), targykodAddText.getText(), kreditAddText.getText()));
+                tantargyakService.saveTantargyak(new Tantargy(targyneveAddText.getText(), targykodAddText.getText(), Integer.parseInt(kreditAddText.getText())));
 
                 alert.alert("Tantárgy hozzáadása információ", "Sikeresen hozzáadtál egy tantárgyat!");
 
@@ -138,10 +138,15 @@ public class TantargyakController implements Initializable {
             alert.alert("Tantárgy hozzáadása információ", "Nem adtad meg a tárgy nevét!");
         } else if (kreditAddText.getText().isBlank()){
             alert.alert("Tantárgy hozzáadása információ", "Nem adtad meg a kreditszámot!");
+        } else if (!kreditAddText.getText().matches("[0-9]+") && kreditAddText.getText().length() >= 1){
+            alert.alert("Tantárgy hozzáadása információ", "Kreditnek csak számot lehet megadni!");
+            kreditAddText.clear();
         }
-        targykodAddText.clear();
-        targyneveAddText.clear();
-        kreditAddText.clear();
+        else {
+            targykodAddText.clear();
+            targyneveAddText.clear();
+            kreditAddText.clear();
+        }
     }
 
     public void lekerdezMindenTantargy(ActionEvent actionEvent) {

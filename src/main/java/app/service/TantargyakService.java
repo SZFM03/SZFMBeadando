@@ -19,9 +19,7 @@ public class TantargyakService {
 
 
     public List<Tantargy> MindenTantargy(){
-
         return tantargyakRepository.selectMindenTantargy();
-
     }
 
 }

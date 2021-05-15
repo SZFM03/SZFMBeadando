@@ -1,7 +1,5 @@
 package app.entity;
 
-import org.hibernate.annotations.NaturalId;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +21,7 @@ public class Tantargy {
     private String kod;
 
     @Column(nullable = false)
-    private String kreditszam;
+    private Integer kreditszam;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "tantargyak")
     private List<Hallgato> hallgatok = new ArrayList<>();
@@ -47,13 +45,13 @@ public class Tantargy {
     public Tantargy() {
     }
 
-    public Tantargy(String nev, String kod, String kreditszam) {
+    public Tantargy(String nev, String kod, Integer kreditszam) {
         this.nev = nev;
         this.kod = kod;
         this.kreditszam = kreditszam;
     }
 
-    public Tantargy(Long id, String nev, String kod, String kreditszam, List<Hallgato> hallgatok) {
+    public Tantargy(Long id, String nev, String kod, Integer kreditszam, List<Hallgato> hallgatok) {
         this.id = id;
         this.nev = nev;
         this.kod = kod;
@@ -61,7 +59,7 @@ public class Tantargy {
         this.hallgatok = hallgatok;
     }
 
-    public Tantargy(Long id, String nev, String kod, String kreditszam) {
+    public Tantargy(Long id, String nev, String kod, Integer kreditszam) {
         this.id = id;
         this.nev = nev;
         this.kod = kod;
@@ -105,11 +103,11 @@ public class Tantargy {
         this.kod = kod;
     }
 
-    public String getKreditszam() {
+    public Integer getKreditszam() {
         return kreditszam;
     }
 
-    public void setKreditszam(String kreditszam) {
+    public void setKreditszam(Integer kreditszam) {
         this.kreditszam = kreditszam;
     }
 

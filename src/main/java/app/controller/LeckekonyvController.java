@@ -20,8 +20,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -230,11 +228,11 @@ public class LeckekonyvController implements Initializable{
            Jegy jegy = jegyRepository.selectHallgatoIDTantargyID(hallgato_id, tantargy_id);
 
 
-           szorzat=Integer.parseInt(tantargy.getKreditszam())*jegy.getJegy();
+           szorzat=tantargy.getKreditszam()*jegy.getJegy();
 
            osszeg+=szorzat;
 
-           kreditosszeg+=Integer.parseInt(tantargy.getKreditszam());
+           kreditosszeg+=tantargy.getKreditszam();
 
         }
 
