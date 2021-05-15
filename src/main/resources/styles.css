@@ -1,97 +1,98 @@
 #BasePane {
-    -fx-background-color: linear-gradient(to bottom right, #ffab0d, #FFFFFF, #FFFFFF, #004735);
+    -fx-background-color: linear-gradient(to right, #70e1f5, #ffffff, #ffd194);
 }
 
 #fooldalPane {
-    -fx-background-color: linear-gradient(to bottom right, #ffab0d, #FFFFFF, #FFFFFF, #004735);
+    -fx-background-color: linear-gradient(to right, #70e1f5, #ffffff, #ffd194);
 }
 
 #keresoPane {
-    -fx-background-color: linear-gradient(to bottom right, #ffab0d, #FFFFFF, #FFFFFF, #004735);
+    -fx-background-color: linear-gradient(to right, #70e1f5, #ffffff, #ffd194);
 }
 
 #hallgatoHozzaadPane {
-    -fx-background-color: linear-gradient(to bottom right, #ffab0d, #FFFFFF, #FFFFFF, #004735);
+    -fx-background-color: linear-gradient(to right, #70e1f5, #ffffff, #ffd194);
 }
 
 #hallgatoTorlesPane {
-    -fx-background-color: linear-gradient(to bottom right, #ffab0d, #FFFFFF, #FFFFFF, #004735);
+    -fx-background-color: linear-gradient(to right, #70e1f5, #ffffff, #ffd194);
 }
 
 #hallAdModPane {
-    -fx-background-color: linear-gradient(to bottom right, #ffab0d, #FFFFFF, #FFFFFF, #004735);
+    -fx-background-color: linear-gradient(to right, #70e1f5, #ffffff, #ffd194);
 }
 
 #mindenHallPane {
-    -fx-background-color: linear-gradient(to bottom right, #ffab0d, #FFFFFF, #FFFFFF, #004735);
+    -fx-background-color: linear-gradient(to right, #70e1f5, #ffffff, #ffd194);
 }
 
 #lkPane {
-    -fx-background-color: linear-gradient(to bottom right, #ffab0d, #FFFFFF, #FFFFFF, #004735);
+    -fx-background-color: linear-gradient(to right, #70e1f5, #ffffff, #ffd194);
 }
 
 #tfPane {
-    -fx-background-color: linear-gradient(to bottom right, #ffab0d, #FFFFFF, #FFFFFF, #004735);
+    -fx-background-color: linear-gradient(to right, #70e1f5, #ffffff, #ffd194);
 }
 
 #jbPane {
-    -fx-background-color: linear-gradient(to bottom right, #ffab0d, #FFFFFF, #FFFFFF, #004735);
+    -fx-background-color: linear-gradient(to right, #70e1f5, #ffffff, #ffd194);
 }
 
 #tgyakPane {
-    -fx-background-color: linear-gradient(to bottom right, #ffab0d, #FFFFFF, #FFFFFF, #004735);
+    -fx-background-color: linear-gradient(to right, #70e1f5, #ffffff, #ffd194);
 }
 
 #thozPane {
-    -fx-background-color: linear-gradient(to bottom right, #ffab0d, #FFFFFF, #FFFFFF, #004735);
+    -fx-background-color: linear-gradient(to right, #70e1f5, #ffffff, #ffd194);
 }
 
 #lkPane1 {
-    -fx-background-color: linear-gradient(to bottom right, #ffab0d, #FFFFFF, #FFFFFF, #004735);
+    -fx-background-color: linear-gradient(to right, #70e1f5, #ffffff, #ffd194);
 }
 
 .button {
-    -fx-text-fill: white;
-    -fx-background-color: #004735;
-    -fx-border-radius: 15px;
-    -fx-background-radius: 15px;
-    -fx-pref-height: 32px;
-    -fx-pref-width: 100px;
-  }
+    -fx-background-color:
+            #3c7fb1,
+            linear-gradient(#fafdfe, #e8f5fc),
+            linear-gradient(#eaf6fd 0%, #d9f0fc 49%, #bee6fd 50%, #a7d9f5 100%);
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 3,2,1;
+    -fx-padding: 3 30 3 30;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI";
+}
 
 #loginButton {
-    -fx-background-color: #ffab0d;
+    -fx-background-color:
+            #fcb75b,
+            linear-gradient(#fcfbfa, #fcf2e8),
+            linear-gradient(#fcf4e8 0%, #fcf0dc 49%, #fce5bd 50%, #ffd194 100%);
 }
 
 #visszabtn {
-    -fx-pref-width: 144px;
+    -fx-pref-width: 170px;
 }
 
 #leckekonyvKeresoButton {
-    -fx-pref-width: 200px;
+    -fx-pref-width: 205px;
 }
 
 #kilep {
-    -fx-background-color: #ffab0d;
-
+    -fx-pref-width: 105px;
+    -fx-background-color:
+            #fcb75b,
+            linear-gradient(#fcfbfa, #fcf2e8),
+            linear-gradient(#fcf4e8 0%, #fcf0dc 49%, #fce5bd 50%, #ffd194 100%);
 }
 
 #listafrissitese {
-    -fx-pref-width: 144px;
+    -fx-pref-width: 150px;
 }
 
 #torol {
-    -fx-pref-width: 144px;
+    -fx-pref-width: 150px;
 }
-
-#targyaklistazasa {
-    -fx-pref-width: 144px;
-}
-
-#targyhozzaadas {
-    -fx-pref-width: 144px;
-}
-
 .tab-pane .tab-header-area .tab-header-background {
     -fx-opacity: 0;
 }
@@ -112,17 +113,17 @@
 
 .tab-pane .tab:selected
 {
-    -fx-background-color: #004735;
+    -fx-background-color: #d4d2d4;
 }
 
-.tab .tab-label { 
+.tab .tab-label {
     -fx-alignment: CENTER;
     -fx-text-fill: #828282;
     -fx-font-size: 12px;
     -fx-font-weight: bold;
 }
 
-.tab:selected .tab-label { 
+.tab:selected .tab-label {
     -fx-alignment: CENTER;
     -fx-text-fill: #FFFFFF;
 }
@@ -134,4 +135,5 @@
 .text-field{
     -fx-pref-width: 150;
     -fx-pref-height: 26;
+    -fx-font-family: "Segoe UI";
 }

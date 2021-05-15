@@ -18,12 +18,12 @@
 
 <AnchorPane fx:id="leckekonyvPane" maxHeight="700.0" maxWidth="1200.0" minHeight="700.0" minWidth="1200.0" prefHeight="700.0" prefWidth="1200.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.LeckekonyvController">
     <children>
-        <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ffab0d;" text="Debreceni Egyetem" textAlignment="CENTER" textFill="WHITE">
+        <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #19b4cf;" text="Debreceni Egyetem" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="Segoe UI" size="25.0" />
             </font>
         </Label>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="32.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #ffab0d;" text="Hallgatói Adminisztrációs Központ" textAlignment="CENTER" textFill="WHITE">
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="32.0" maxHeight="32.0" maxWidth="1200.0" minHeight="32.0" minWidth="1200.0" prefHeight="32.0" prefWidth="1200.0" style="-fx-background-color: #19b4cf;" text="Hallgatói Adminisztrációs Központ" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="Segoe UI" size="25.0" />
             </font>
@@ -37,23 +37,24 @@
                                 <TextField fx:id="neptunkodbevitel" alignment="CENTER" layoutX="245.0" layoutY="43.0" />
                                 <Label layoutX="118.0" layoutY="43.0" text="Neptun-kód:">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font name="Segoe UI" size="20.0" />
                                     </font>
                                 </Label>
-                                <Button fx:id="targylekerdez" defaultButton="true" layoutX="272.0" layoutY="100.0" mnemonicParsing="false" onAction="#kereso" prefHeight="25.0" prefWidth="106.0" text="Lekérdez">
-                           <font>
-                              <Font size="15.0" />
-                           </font></Button>
+                                <Button fx:id="targylekerdez" defaultButton="true" layoutX="272.0" layoutY="100.0" mnemonicParsing="false" onAction="#kereso" text="Lekérdez">
+                                    <font>
+                                        <Font name="Segoe UI" size="15.0" />
+                                    </font>
+                                </Button>
                                 <TextField fx:id="hallgatoTargyfelvetelText" alignment="CENTER" editable="false" layoutX="794.0" layoutY="43.0" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
                                 <Label layoutX="649.0" layoutY="43.0" text="Hallgató neve:">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font name="Segoe UI" size="20.0" />
                                     </font>
                                 </Label>
-                                <Button fx:id="targyaklistazasa" layoutX="700.0" layoutY="504.0" mnemonicParsing="false" onAction="#lekerdezMindenTantargy" prefHeight="24.0" prefWidth="176.0" text="Tárgyak listázása">
-                           <font>
-                              <Font size="15.0" />
-                           </font></Button>
+                                <Button fx:id="targyaklistazasa" layoutX="700.0" layoutY="504.0" mnemonicParsing="false" onAction="#lekerdezMindenTantargy" text="Tárgyak listázása">
+                                    <font>
+                                        <Font name="Segoe UI" size="15.0" />
+                                    </font></Button>
                                 <TableView fx:id="targyfelvetelTable2" layoutX="649.0" layoutY="184.0" maxWidth="484.0" minWidth="200.0" prefHeight="293.0" prefWidth="432.0">
                                     <columns>
                                         <TableColumn fx:id="targykodfelvetel" maxWidth="270.0" minWidth="34.0" prefWidth="135.0" text="Tárgykód" />
@@ -67,14 +68,14 @@
                                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                     </columnResizePolicy>
                                 </TableView>
-                                <Button fx:id="listafrissitese" layoutX="175.0" layoutY="504.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="176.0" text="Lista frissítése">
-                           <font>
-                              <Font size="15.0" />
-                           </font></Button>
-                                <Button fx:id="targyhozzaadas" layoutX="884.0" layoutY="504.0" mnemonicParsing="false" onAction="#kivalasztottadatatadasa" prefHeight="24.0" prefWidth="176.0" text="Tárgy hozzáadása">
-                           <font>
-                              <Font size="15.0" />
-                           </font></Button>
+                                <Button fx:id="listafrissitese" layoutX="175.0" layoutY="504.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" text="Lista frissítése">
+                                    <font>
+                                        <Font name="Segoe UI" size="15.0" />
+                                    </font></Button>
+                                <Button fx:id="targyhozzaadas" layoutX="884.0" layoutY="504.0" mnemonicParsing="false" onAction="#kivalasztottadatatadasa" text="Tárgy hozzáadása">
+                                    <font>
+                                        <Font name="Segoe UI" size="15.0" />
+                                    </font></Button>
                                 <TableView fx:id="targyfelvetelTable1" editable="true" layoutX="118.0" layoutY="184.0" maxWidth="657.0" minWidth="200.0" prefHeight="293.0" prefWidth="432.0">
                                     <columns>
                                         <TableColumn fx:id="targykod" maxWidth="270.0" minWidth="34.0" prefWidth="135.0" text="Tárgykód" />
@@ -90,18 +91,18 @@
                                 </TableView>
                                 <Label layoutX="118.0" layoutY="137.0" text="Felvett tantárgyak">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font name="Segoe UI" size="20.0" />
                                     </font>
                                 </Label>
                                 <Label layoutX="649.0" layoutY="137.0" text="További tárgyak felvétele">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font name="Segoe UI" size="20.0" />
                                     </font>
                                 </Label>
                                 <Button fx:id="torol" layoutX="351.0" layoutY="504.0" mnemonicParsing="false" onAction="#töröl" text="Tárgy leadása">
-                           <font>
-                              <Font size="15.0" />
-                           </font></Button>
+                                    <font>
+                                        <Font name="Segoe UI" size="15.0" />
+                                    </font></Button>
                             </children></AnchorPane>
                     </content>
                 </Tab>
@@ -124,13 +125,13 @@
                                         <RowConstraints maxHeight="445.20000000000005" minHeight="10.0" prefHeight="207.60001220703128" vgrow="SOMETIMES" />
                                     </rowConstraints>
                                     <children>
-                              <ComboBox fx:id="jegybecombo" onAction="#jegycombo" prefWidth="150.0" promptText="Válassz" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                                 <GridPane.margin>
-                                    <Insets top="20.0" />
-                                 </GridPane.margin></ComboBox>
+                                        <ComboBox fx:id="jegybecombo" onAction="#jegycombo" prefWidth="150.0" promptText="Válassz" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                            <GridPane.margin>
+                                                <Insets top="20.0" />
+                                            </GridPane.margin></ComboBox>
                                         <Label text="Neptun-kód:" GridPane.halignment="RIGHT">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                         </Label>
                                         <TextField fx:id="neptunJegylkText" alignment="CENTER" GridPane.columnIndex="1">
@@ -140,7 +141,7 @@
                                         </TextField>
                                         <Button fx:id="lekerdezJegyBtn" defaultButton="true" mnemonicParsing="false" onAction="#lekerdez" text="Lekérdez" GridPane.columnIndex="2" GridPane.halignment="CENTER">
                                             <font>
-                                                <Font size="15.0" />
+                                                <Font name="Segoe UI" size="15.0" />
                                             </font>
                                             <GridPane.margin>
                                                 <Insets />
@@ -148,22 +149,22 @@
                                         </Button>
                                         <Label text="Név:" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                         </Label>
                                         <Label text="Neptun-kód:" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                         </Label>
                                         <Label text="Tárgynév:" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                         </Label>
                                         <Label text="Jegy:" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                             <font>
-                                                <Font size="20.0" />
+                                                <Font name="Segoe UI" size="20.0" />
                                             </font>
                                         </Label>
                                         <TextField fx:id="nevJegyText" alignment="CENTER" editable="false" GridPane.rowIndex="3" GridPane.valignment="TOP">
@@ -178,16 +179,16 @@
                                         </TextField>
                                         <Button fx:id="modositJegyBtn" mnemonicParsing="false" onAction="#jegyHozzaad" text="Módosít" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
                                             <font>
-                                                <Font size="15.0" />
+                                                <Font name="Segoe UI" size="15.0" />
                                             </font>
-                                 <GridPane.margin>
-                                    <Insets top="35.0" />
-                                 </GridPane.margin>
+                                            <GridPane.margin>
+                                                <Insets top="35.0" />
+                                            </GridPane.margin>
                                         </Button>
-                              <ComboBox fx:id="TantargyComboBox" prefWidth="200.0" promptText="Válassz" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                                 <GridPane.margin>
-                                    <Insets top="20.0" />
-                                 </GridPane.margin></ComboBox>
+                                        <ComboBox fx:id="TantargyComboBox" prefWidth="200.0" promptText="Válassz" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                                            <GridPane.margin>
+                                                <Insets top="20.0" />
+                                            </GridPane.margin></ComboBox>
                                     </children>
                                 </GridPane>
                             </children></AnchorPane>
@@ -197,9 +198,9 @@
                     <content>
                         <AnchorPane fx:id="lkPane" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1200.0">
                             <children>
-                                <Button fx:id="leckekonyvbtn" defaultButton="true" layoutX="168.0" layoutY="204.0" mnemonicParsing="false" onAction="#leckekonyvlekerdez" text="Betöltés">
+                                <Button fx:id="leckekonyvbtn" defaultButton="true" layoutX="158.0" layoutY="204.0" mnemonicParsing="false" onAction="#leckekonyvlekerdez" text="Betöltés">
                                     <font>
-                                        <Font size="15.0" />
+                                        <Font name="Segoe UI" size="15.0" />
                                     </font>
                                 </Button>
                                 <TableView fx:id="leckekonyvtable" layoutX="423.0" layoutY="32.0" maxHeight="1.7976931348623157E308" AnchorPane.bottomAnchor="88.0" AnchorPane.leftAnchor="423.0" AnchorPane.rightAnchor="177.0" AnchorPane.topAnchor="32.0">
@@ -209,68 +210,68 @@
                                         <TableColumn fx:id="jegylkColumn" maxWidth="142.0" minWidth="142.0" prefWidth="142.0" text="Jegy" />
                                     </columns>
                                 </TableView>
-                        <Label layoutX="160.0" layoutY="98.0" text="Neptun kód:">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="neptunbelk" alignment="CENTER" layoutX="140.0" layoutY="143.0" />
+                                <Label layoutX="160.0" layoutY="98.0" text="Neptun kód:">
+                                    <font>
+                                        <Font name="Segoe UI" size="20.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="neptunbelk" alignment="CENTER" layoutX="140.0" layoutY="143.0" />
                             </children>
                         </AnchorPane>
                     </content>
                 </Tab>
-            <Tab fx:id="leckekonyvTab1" text="Tanulmányi átlag">
-               <content>
-                  <AnchorPane fx:id="lkPane1" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1200.0">
-                     <children>
-                        <Label fx:id="besorolastext" layoutX="627.0" layoutY="283.0" text="Besorolás:">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <Button fx:id="tanatlag" defaultButton="true" layoutX="168.0" layoutY="306.0" mnemonicParsing="false" onAction="#tanulmanyiatlag" text="Lekérdez">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Button>
-                        <Label layoutX="160.0" layoutY="98.0" text="Neptun kód:">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="neptunatlag" alignment="CENTER" layoutX="140.0" layoutY="143.0" />
-                        <Label layoutX="49.0" layoutY="197.0" text="Adja meg a tanulmányi átlaghatárt (x.y):">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="atlaghatar" alignment="CENTER" layoutX="140.0" layoutY="235.0" promptText="0.0" />
-                        <Label layoutX="564.0" layoutY="197.0" text="Hallgató tanulmányi átlaga:">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="hallgatoatlag" alignment="CENTER" editable="false" layoutX="600.0" layoutY="235.0" />
-                        <TextField fx:id="besorolas" alignment="CENTER" editable="false" layoutX="600.0" layoutY="326.0" />
-                        <Label layoutX="613.0" layoutY="98.0" text="Hallgató neve:">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="hallgneve" alignment="CENTER" editable="false" layoutX="601.0" layoutY="143.0" />
-                     </children>
-                  </AnchorPane>
-               </content>
-            </Tab>
+                <Tab fx:id="leckekonyvTab1" text="Tanulmányi átlag">
+                    <content>
+                        <AnchorPane fx:id="lkPane1" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1200.0">
+                            <children>
+                                <Label fx:id="besorolastext" layoutX="627.0" layoutY="283.0" text="Besorolás:">
+                                    <font>
+                                        <Font name="Segoe UI" size="20.0" />
+                                    </font>
+                                </Label>
+                                <Button fx:id="tanatlag" defaultButton="true" layoutX="168.0" layoutY="306.0" mnemonicParsing="false" onAction="#tanulmanyiatlag" text="Lekérdez">
+                                    <font>
+                                        <Font name="Segoe UI" size="15.0" />
+                                    </font>
+                                </Button>
+                                <Label layoutX="160.0" layoutY="98.0" text="Neptun kód:">
+                                    <font>
+                                        <Font name="Segoe UI" size="20.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="neptunatlag" alignment="CENTER" layoutX="140.0" layoutY="143.0" />
+                                <Label layoutX="49.0" layoutY="197.0" text="Adja meg a tanulmányi átlaghatárt (x.y):">
+                                    <font>
+                                        <Font name="Segoe UI" size="20.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="atlaghatar" alignment="CENTER" layoutX="140.0" layoutY="235.0" promptText="0.0" />
+                                <Label layoutX="564.0" layoutY="197.0" text="Hallgató tanulmányi átlaga:">
+                                    <font>
+                                        <Font name="Segoe UI" size="20.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="hallgatoatlag" alignment="CENTER" editable="false" layoutX="600.0" layoutY="235.0" />
+                                <TextField fx:id="besorolas" alignment="CENTER" editable="false" layoutX="600.0" layoutY="326.0" />
+                                <Label layoutX="613.0" layoutY="98.0" text="Hallgató neve:">
+                                    <font>
+                                        <Font name="Segoe UI" size="20.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="hallgneve" alignment="CENTER" editable="false" layoutX="601.0" layoutY="143.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
             </tabs>
         </TabPane>
-        <Button fx:id="visszabtn" layoutX="872.0" layoutY="649.0" maxHeight="32.0" maxWidth="144.0" minHeight="24.0" minWidth="144.0" mnemonicParsing="false" onMouseClicked="#vButtonAction" prefHeight="24.0" prefWidth="144.0" text="Vissza a főoldalra">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
-        <Button fx:id="kilep" layoutX="1027.0" layoutY="649.0" maxHeight="32.0" maxWidth="144.0" minHeight="24.0" minWidth="144.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="24.0" prefWidth="144.0" text="Kilépés">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
+        <Button fx:id="visszabtn" layoutX="834.0" layoutY="649.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#vButtonAction" text="Vissza a főoldalra">
+            <font>
+                <Font name="Segoe UI" size="15.0" />
+            </font></Button>
+        <Button fx:id="kilep" layoutX="1027.0" layoutY="649.0" mnemonicParsing="false" onMouseClicked="#logout" text="Kilépés">
+            <font>
+                <Font name="Segoe UI" size="15.0" />
+            </font></Button>
     </children>
 </AnchorPane>
