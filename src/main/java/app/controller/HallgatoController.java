@@ -14,13 +14,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.RowConstraints;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -34,52 +33,12 @@ public class HallgatoController implements Initializable {
     public TableColumn oszlopnev;
     public TableColumn neptunoszlop;
     public TableColumn szuletesievoszlop;
+
     @FXML
     private Button visszabtn;
-    @FXML
-    private AnchorPane hallgatoPane;
-
-    @FXML
-    private TabPane hallgatoTabPane;
-
-    @FXML
-    private Tab keresoTab;
-
-    @FXML
-    private GridPane keresoTablazat;
-
-    @FXML
-    private ColumnConstraints kereso0oszlopTablazat;
-
-    @FXML
-    private ColumnConstraints kersso1oszlopTablazat;
-
-    @FXML
-    private ColumnConstraints kereso2oszlopTablazat;
-
-    @FXML
-    private RowConstraints kereso0SorTablazat;
-
-    @FXML
-    private RowConstraints kereso1SorTablazat;
-
-    @FXML
-    private RowConstraints kereso2SorTablazat;
-
-    @FXML
-    private RowConstraints kereso3SorTablazat;
 
     @FXML
     private Button leckekonyvKeresoButton;
-
-    @FXML
-    private Label nevKeresoLabel;
-
-    @FXML
-    private Label neptunKeresoLabel;
-
-    @FXML
-    private Label szuletesiEvKeresoLabel;
 
     @FXML
     private TextField nevKeresoText;
@@ -94,46 +53,8 @@ public class HallgatoController implements Initializable {
     private TextField keresoText;
 
     @FXML
-    private Label neptunLabel;
-
-    @FXML
     private Button loadKeresoButton;
 
-    @FXML
-    private Tab addTab;
-
-    @FXML
-    private GridPane addTablazat;
-
-    @FXML
-    private ColumnConstraints adat0oszlopTablazat;
-
-    @FXML
-    private ColumnConstraints adat1oszlopTablazat2;
-
-    @FXML
-    private ColumnConstraints adat2oszlopTablazat;
-
-    @FXML
-    private RowConstraints add0SorTalazat;
-
-    @FXML
-    private RowConstraints add1SorTablazat;
-
-    @FXML
-    private RowConstraints add2SorTablazat;
-
-    @FXML
-    private RowConstraints add3SorTablazat;
-
-    @FXML
-    private Label nevAddLabel;
-
-    @FXML
-    private Label neptunAddLabel;
-
-    @FXML
-    private Label szuletesiEvAddLabel;
 
     @FXML
     private Button addButton;
@@ -148,91 +69,13 @@ public class HallgatoController implements Initializable {
     private TextField szuletesiEvAddText;
 
     @FXML
-    private Button loadAddButton;
-
-    @FXML
-    private Tab torlesTab;
-
-    @FXML
-    private GridPane torlesTablazat;
-
-    @FXML
-    private ColumnConstraints torles0oszlopTablazat;
-
-    @FXML
-    private ColumnConstraints torles1oszlopTablazat;
-
-    @FXML
-    private ColumnConstraints torles2oszlopTablazat;
-
-    @FXML
-    private RowConstraints torles0SorTablazat;
-
-    @FXML
-    private RowConstraints torles1SorTablazat;
-
-    @FXML
-    private RowConstraints torles2SorTablazat;
-
-    @FXML
     private Button deleteTorlesButton;
-
-    @FXML
-    private Label neptunTorlesLabel;
 
     @FXML
     private TextField neptunTorlesText;
 
     @FXML
-    private Button loadTorlesButton;
-
-    @FXML
-    private Tab adatTab;
-
-    @FXML
-    private GridPane adatTabkazat;
-
-    @FXML
-    private ColumnConstraints adat1oszlopTablazat;
-
-    @FXML
-    private RowConstraints adat0SorTablazat;
-
-    @FXML
-    private RowConstraints adat1SorTablazat;
-
-    @FXML
-    private RowConstraints adat2SorTablazat;
-
-    @FXML
-    private RowConstraints adat3SorTablazat;
-
-    @FXML
-    private Label nevAdatLabel;
-
-    @FXML
-    private Label neptunAdatLabel;
-
-    @FXML
-    private Label szuletesiEvAdatLabel;
-
-    @FXML
-    private TextField nevAdatText;
-
-    @FXML
-    private TextField neptunAdatText;
-
-    @FXML
-    private TextField szuletesiEvAdatText;
-
-    @FXML
-    private Button saveAdatButton;
-
-    @FXML
     private Button saveAdatButton1;
-
-    @FXML
-    private Button loadAdatButton;
 
     @FXML
     private TextField neptunbevitelText;
@@ -248,21 +91,6 @@ public class HallgatoController implements Initializable {
 
     @FXML
     private Button kilep;
-
-    @FXML
-    void addAStudent(ActionEvent event) {
-
-    }
-
-    @FXML
-    void deleteAStudent(ActionEvent event) {
-
-    }
-
-    @FXML
-    void saveChanges(ActionEvent event) {
-
-    }
 
     private final KilepVisszalep oldalLeptetes = new KilepVisszalep();
 
