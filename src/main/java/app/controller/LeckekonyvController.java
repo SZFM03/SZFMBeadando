@@ -10,6 +10,7 @@ import app.repository.LeckekonyvRepository;
 import app.repository.TantargyakRepository;
 import app.service.HallgatoService;
 import app.service.JegyService;
+import app.service.LeckekonyvService;
 import app.service.TantargyakService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -124,6 +125,8 @@ public class LeckekonyvController implements Initializable {
 
     private final JegyRepository jegyRepository = new JegyRepository();
 
+    private final LeckekonyvService leckekonyvService = new LeckekonyvService(leckekonyvRepository, jegyRepository);
+
     public void vButtonAction(MouseEvent mouseEvent) {
         kilepes.kilepvisszalep(mouseEvent, visszabtn, "/fooldal.fxml");
     }
@@ -162,13 +165,13 @@ public class LeckekonyvController implements Initializable {
 
     public void lekerdez(ActionEvent actionEvent) {
         try {
-                Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
-                nevJegyText.setText(hallgato.getNev());
-                nevJegyText.setDisable(true);
-                neptunJegyText.setText(hallgato.getNeptun_kod());
-                neptunJegyText.setDisable(true);
-                ObservableList<String> targyak = FXCollections.observableArrayList(felvettTargyakBoxhoz());
-                TantargyComboBox.setItems(targyak);
+            Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
+            nevJegyText.setText(hallgato.getNev());
+            nevJegyText.setDisable(true);
+            neptunJegyText.setText(hallgato.getNeptun_kod());
+            neptunJegyText.setDisable(true);
+            ObservableList<String> targyak = FXCollections.observableArrayList(felvettTargyakBoxhoz());
+            TantargyComboBox.setItems(targyak);
 
         } catch (Exception e){
             alert.alert("Hiba!", "A megadott neptun-kód nem található az adatbázisban");
@@ -204,41 +207,22 @@ public class LeckekonyvController implements Initializable {
     public void tanulmanyiatlag(ActionEvent actionEvent) {
         Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunatlag.getText());
         hallgneve.setText(hallgato.getNev());
+        double sulyozottAtlag = leckekonyvService.sulyozottAtlag(hallgato);
         if (!atlaghatar.getText().isBlank()) {
             double hatar = Double.parseDouble(atlaghatar.getText());
+            hallgatoatlag.setText(String.format("%.2f", sulyozottAtlag));
 
-            hallgatoatlag.setText(String.format("%.2f", sulyozottAtlag()));
-
-            if (sulyozottAtlag() < hatar) {
+            if (sulyozottAtlag < hatar) {
                 besorolas.setText("Önköltséges");
             } else {
                 besorolas.setText("Államilag támogatott");
             }
         } else {
-            hallgatoatlag.setText(String.format("%.2f", sulyozottAtlag()));
+            hallgatoatlag.setText(String.format("%.2f", sulyozottAtlag));
         }
-
-    }
-
-    public double sulyozottAtlag() {
-        Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunatlag.getText());
-        long hallgato_id = hallgato.getId();
-        int osszeg = 0;
-        int szorzat = 0;
-        int kreditosszeg = 0;
-        List<Tantargy> tantargyak = hallgato.getTantargyak();
-        for (var tantargy : tantargyak) {
-            long tantargy_id = tantargy.getId();
-            Jegy jegy = jegyRepository.selectHallgatoIDTantargyID(hallgato_id, tantargy_id);
-            szorzat = tantargy.getKreditszam() * jegy.getJegy();
-            osszeg += szorzat;
-            kreditosszeg += tantargy.getKreditszam();
-        }
-        return (double) osszeg / kreditosszeg;
     }
 
     public void lekerdezMindenTantargy(ActionEvent actionEvent) {
-
         List<Tantargy> getTantargy = tantargyakLekerdez();
         ObservableList<Tantargy> getTantargy2 = FXCollections.observableArrayList();
         getTantargy2.addAll(getTantargy);

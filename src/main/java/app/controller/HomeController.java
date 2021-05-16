@@ -81,9 +81,6 @@ public class HomeController implements Initializable {
 
                     alert.alert(BELÉPÉSI_INFORMÁCIÓ,"A felhaszáló nincs regisztrálva, kérlek regisztrálj a belépéshez!");
 
-                   // usernameField.clear();
-                   // passwordField.clear();
-
                 }
             } else if (usernameField.getText().isBlank()) {
                 alert.alert(BELÉPÉSI_INFORMÁCIÓ,"Nem adtál meg felhasználónevet!");

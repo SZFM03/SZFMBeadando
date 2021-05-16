@@ -21,7 +21,7 @@ public class UserService {
         return userRepository.existsByNameAndPassword(user.getNev(), user.getJelszo());
     }
 
-    private void validateUser(User user) {
+    public String validateUser(User user) {
         if (user == null) {
            throw new RuntimeException("User cannot be null!");
         }
@@ -33,6 +33,7 @@ public class UserService {
         if (user.getJelszo().length() < 4) {
             throw new RuntimeException("Password must be longer than 3 chars!");
         }
+        return user.getJelszo();
     }
 
 }
