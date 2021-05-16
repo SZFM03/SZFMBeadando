@@ -10,7 +10,6 @@ import app.repository.LeckekonyvRepository;
 import app.repository.TantargyakRepository;
 import app.service.HallgatoService;
 import app.service.JegyService;
-import app.service.LeckekonyvService;
 import app.service.TantargyakService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -26,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class LeckekonyvController implements Initializable{
+public class LeckekonyvController implements Initializable {
 
     @FXML
     public ComboBox TantargyComboBox;
@@ -111,9 +110,6 @@ public class LeckekonyvController implements Initializable{
     @FXML
     private TableColumn jegylkColumn;
 
-    @FXML
-    private TableView<Tantargy> taview = new TableView<>();
-
     private final KilepVisszalep kilepes = new KilepVisszalep();
 
     private final TantargyakService tantargyakService = new TantargyakService(new TantargyakRepository());
@@ -132,13 +128,11 @@ public class LeckekonyvController implements Initializable{
         kilepes.kilepvisszalep(mouseEvent, visszabtn, "/fooldal.fxml");
     }
 
-    public void logout(MouseEvent mouseEvent){
+    public void logout(MouseEvent mouseEvent) {
         kilepes.kilepvisszalep(mouseEvent, kilep, "/home.fxml");
     }
 
     private final AlertS alert = new AlertS();
-
-    private final LeckekonyvService leckekonyvService = new LeckekonyvService(new LeckekonyvRepository());
 
     public void kereso(ActionEvent actionEvent) {
         try {
@@ -157,99 +151,90 @@ public class LeckekonyvController implements Initializable{
 
                 targyfelvetelTable1.setItems(getTantargy2);
 
-            } else if(neptunkodbevitel.getText().isBlank()){
-                alert.alert("Kereső információ","Nem adtál meg Neptun-kódot!");
+            } else if (neptunkodbevitel.getText().isBlank()) {
+                alert.alert("Kereső információ", "Nem adtál meg Neptun-kódot!");
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             alert.alert("Kereső információ", "A megadott neptun-kód nem található az adatbázisban!");
         }
 
     }
 
     public void lekerdez(ActionEvent actionEvent) {
-        Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
+        try {
+                Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
+                nevJegyText.setText(hallgato.getNev());
+                nevJegyText.setDisable(true);
+                neptunJegyText.setText(hallgato.getNeptun_kod());
+                neptunJegyText.setDisable(true);
+                ObservableList<String> targyak = FXCollections.observableArrayList(felvettTargyakBoxhoz());
+                TantargyComboBox.setItems(targyak);
 
-        nevJegyText.setText(hallgato.getNev());
-        nevJegyText.setDisable(true);
-        neptunJegyText.setText(hallgato.getNeptun_kod());
-        neptunJegyText.setDisable(true);
-        ObservableList<String> targyak = FXCollections.observableArrayList(felvettTargyakBoxhoz());
-        TantargyComboBox.setItems(targyak);
-
+        } catch (Exception e){
+            alert.alert("Hiba!", "A megadott neptun-kód nem található az adatbázisban");
+        }
     }
 
-    public void leckekonyvlekerdez(ActionEvent actionEvent){
+    public void leckekonyvlekerdez(ActionEvent actionEvent) {
+        try {
+            Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunbelk.getText());
+            long hallgato_id = hallgato.getId();
 
-        Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunbelk.getText());
-        long hallgato_id = hallgato.getId();
+            List<Tantargy> tantargyak = hallgato.getTantargyak();
 
-        List<Tantargy> tantargyak = hallgato.getTantargyak();
+            ObservableList<Leckekonyv> leckekonyv = FXCollections.observableArrayList();
 
-        ObservableList<Leckekonyv> leckekonyv = FXCollections.observableArrayList();
+            for (var tantargy : tantargyak) {
+                long tantargy_id = tantargy.getId();
+                Jegy jegy = jegyRepository.selectHallgatoIDTantargyID(hallgato_id, tantargy_id);
+                leckekonyv.add(new Leckekonyv(hallgato.getNeptun_kod(), tantargy.getNev(), jegy.getJegy()));
+            }
 
-        for(var tantargy : tantargyak) {
+            neptunlkColumn.setCellValueFactory(new PropertyValueFactory<>("neptun_kod"));
+            targylkColumn.setCellValueFactory(new PropertyValueFactory<>("nev"));
+            jegylkColumn.setCellValueFactory(new PropertyValueFactory<>("jegy"));
 
-            long tantargy_id = tantargy.getId();
-
-           Jegy jegy = jegyRepository.selectHallgatoIDTantargyID(hallgato_id, tantargy_id);
-
-            leckekonyv.add(new Leckekonyv(hallgato.getNeptun_kod(), tantargy.getNev(), jegy.getJegy()));
-
+            leckekonyvtable.setItems(leckekonyv);
+        } catch (Exception e){
+            alert.alert("Hiba!", "A megadott Neptun-kód nem szerepel az adatbázisban!");
         }
 
-      neptunlkColumn.setCellValueFactory(new PropertyValueFactory<>("neptun_kod"));
-      targylkColumn.setCellValueFactory(new PropertyValueFactory<>("nev"));
-      jegylkColumn.setCellValueFactory(new PropertyValueFactory<>("jegy"));
+    }
 
-        leckekonyvtable.setItems(leckekonyv);
+    public void tanulmanyiatlag(ActionEvent actionEvent) {
+        Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunatlag.getText());
+        hallgneve.setText(hallgato.getNev());
+        if (!atlaghatar.getText().isBlank()) {
+            double hatar = Double.parseDouble(atlaghatar.getText());
 
+            hallgatoatlag.setText(String.format("%.2f", sulyozottAtlag()));
+
+            if (sulyozottAtlag() < hatar) {
+                besorolas.setText("Önköltséges");
+            } else {
+                besorolas.setText("Államilag támogatott");
+            }
+        } else {
+            hallgatoatlag.setText(String.format("%.2f", sulyozottAtlag()));
+        }
 
     }
 
-       public void tanulmanyiatlag(ActionEvent actionEvent) {
-
+    public double sulyozottAtlag() {
         Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunatlag.getText());
         long hallgato_id = hallgato.getId();
-        hallgneve.setText(hallgato.getNev());
-
-        double hatar= Double.parseDouble(atlaghatar.getText());
-
-        int osszeg=0;
-        int szorzat=0;
+        int osszeg = 0;
+        int szorzat = 0;
         int kreditosszeg = 0;
-        double sulyozottatlag=0;
-
         List<Tantargy> tantargyak = hallgato.getTantargyak();
-
-        for(var tantargy : tantargyak) {
-
+        for (var tantargy : tantargyak) {
             long tantargy_id = tantargy.getId();
-
-           Jegy jegy = jegyRepository.selectHallgatoIDTantargyID(hallgato_id, tantargy_id);
-
-
-           szorzat=tantargy.getKreditszam()*jegy.getJegy();
-
-           osszeg+=szorzat;
-
-           kreditosszeg+=tantargy.getKreditszam();
-
+            Jegy jegy = jegyRepository.selectHallgatoIDTantargyID(hallgato_id, tantargy_id);
+            szorzat = tantargy.getKreditszam() * jegy.getJegy();
+            osszeg += szorzat;
+            kreditosszeg += tantargy.getKreditszam();
         }
-
-        sulyozottatlag=(double) osszeg/kreditosszeg;
-
-           hallgatoatlag.setText(String.format("%.2f", sulyozottatlag));
-
-
-        if(sulyozottatlag<hatar){
-
-            besorolas.setText("Önköltséges");
-        }else{
-
-
-            besorolas.setText("Államilag támogatott");
-        }
-
+        return (double) osszeg / kreditosszeg;
     }
 
     public void lekerdezMindenTantargy(ActionEvent actionEvent) {
@@ -267,7 +252,7 @@ public class LeckekonyvController implements Initializable{
     private List<Tantargy> tantargyakLekerdez() {
         try {
             List<Tantargy> tantargy = tantargyakService.MindenTantargy();
-            if(tantargy.isEmpty()){
+            if (tantargy.isEmpty()) {
                 alert.alert("Minden tantárgy információ", "Nincs az adatbázisban egy tantárgy sem!");
             }
             return new ArrayList<>(tantargy);
@@ -285,7 +270,7 @@ public class LeckekonyvController implements Initializable{
 
         List<Tantargy> hallgatoTantargyak = hallgato.getTantargyak();
 
-        if(!hallgatoTantargyak.contains(getTantargyak.get(0))){
+        if (!hallgatoTantargyak.contains(getTantargyak.get(0))) {
             String neptun_kod = neptunkodbevitel.getText();
 
             hallgatoRepository.saveTantargyak(neptun_kod, getTantargyak);
@@ -301,11 +286,9 @@ public class LeckekonyvController implements Initializable{
                 ObservableList<String> targyak = FXCollections.observableArrayList(felvettTargyakBoxhoz());
                 TantargyComboBox.setItems(targyak);
             }
-        }else{
+        } else {
             alert.alert("Tantárgy felvétel!", "Ez a tantárgy már hozzá van rendelve a hallgatóhoz!");
         }
-
-
     }
 
     public void töröl(ActionEvent actionEvent) {
@@ -314,11 +297,11 @@ public class LeckekonyvController implements Initializable{
         List<Tantargy> tantargyak = hallgato.getTantargyak();
         long hallgato_id = hallgato.getId();
         long tantargy_id = 0;
-        for(var tantargy : tantargyak) {
-        if (getTantargyakbe.get(0).getNev().equals(tantargy.getNev())){
-            tantargy_id = getTantargyakbe.get(0).getId();
-            break;
-             }
+        for (var tantargy : tantargyak) {
+            if (getTantargyakbe.get(0).getNev().equals(tantargy.getNev())) {
+                tantargy_id = getTantargyakbe.get(0).getId();
+                break;
+            }
         }
 
         hallgatoRepository.removeTantargyak(neptunkodbevitel.getText(), getTantargyakbe);
@@ -336,28 +319,29 @@ public class LeckekonyvController implements Initializable{
         }
     }
 
-
-
-    public List<String> felvettTargyakBoxhoz (){
+    public List<String> felvettTargyakBoxhoz() {
         Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
         List<Tantargy> tantargyak = hallgato.getTantargyak();
         List<String> tantargyNevLista = new ArrayList<>();
-        for(var tantargy : tantargyak){
+        for (var tantargy : tantargyak) {
             tantargyNevLista.add(tantargy.getNev());
         }
         return tantargyNevLista;
     }
 
 
-    public void jegycombo(){
+    public void jegycombo() {
+        try {
+            jegylabel.setText(jegybecombo.getValue().toString());
+        } catch (Exception e){
 
-         jegylabel.setText(jegybecombo.getValue().toString());
+        }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-       jegybecombo.getItems().addAll("1","2", "3", "4", "5");
+        jegybecombo.getItems().addAll("1", "2", "3", "4", "5");
         targylekerdez.setDefaultButton(true);
         lekerdezJegyBtn.setDefaultButton(true);
         leckekonyvbtn.setDefaultButton(true);
@@ -365,21 +349,27 @@ public class LeckekonyvController implements Initializable{
 
     }
 
-
     public void jegyHozzaad(ActionEvent actionEvent) {
-        Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
-        long hallgato_id = hallgato.getId();
-        String targyNev = (String) TantargyComboBox.getSelectionModel().getSelectedItem();
-        long tantargyID = 0;
+        try {
+            if (!neptunJegylkText.getText().isBlank()) {
+                Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunJegylkText.getText());
+                long hallgato_id = hallgato.getId();
+                String targyNev = (String) TantargyComboBox.getSelectionModel().getSelectedItem();
+                long tantargyID = 0;
 
-        for (var tantargy : hallgato.getTantargyak()){
-            if (tantargy.getNev().equals(targyNev)){
-                tantargyID = tantargy.getId();
+                for (var tantargy : hallgato.getTantargyak()) {
+                    if (tantargy.getNev().equals(targyNev)) {
+                        tantargyID = tantargy.getId();
+                    }
+                }
+
+                int jegy = Integer.parseInt(String.valueOf(jegybecombo.getSelectionModel().getSelectedItem()));
+                jegyRepository.updateJegy(hallgato_id, tantargyID, jegy);
+            } else if (neptunJegylkText.getText().isBlank()) {
+                alert.alert("Hiba!", "Nem adtál meg Neptun-kódot!");
             }
+        } catch (Exception e) {
+            alert.alert("Hiba!", "A megadott Neptun-kód nem szerepel az adatbázisban!");
         }
-
-        int jegy = Integer.parseInt(String.valueOf(jegybecombo.getSelectionModel().getSelectedItem()))  ;
-        jegyRepository.updateJegy(hallgato_id, tantargyID, jegy);
-
     }
 }
