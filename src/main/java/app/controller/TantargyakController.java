@@ -124,9 +124,15 @@ public class TantargyakController implements Initializable {
 
     public void registertantargy(ActionEvent actionEvent) {
         try {
-            if (!targykodAddText.getText().isBlank() && !targyneveAddText.getText().isBlank() && !kreditAddText.getText().isBlank()) {
-                tantargyakService.saveTantargyak(new Tantargy(targyneveAddText.getText(), targykodAddText.getText(), Integer.parseInt(kreditAddText.getText())));
 
+            if (!targykodAddText.getText().isBlank() && !targyneveAddText.getText().isBlank() && !kreditAddText.getText().isBlank()) {
+                Tantargy tantargy = new Tantargy(targyneveAddText.getText(), targykodAddText.getText(), Integer.parseInt(kreditAddText.getText()));
+                tantargyakService.saveTantargyak(tantargy);
+                boolean isNegativ = tantargyakService.pozitivKredit(tantargy);
+                if(isNegativ){
+                   // alert.alert("Tantárgy hozzáadása információ", "A kreditszám nem lehet negatív!");
+                    throw new IllegalArgumentException();
+                }
                 alert.alert("Tantárgy hozzáadása információ", "Sikeresen hozzáadtál egy tantárgyat!");
 
             }

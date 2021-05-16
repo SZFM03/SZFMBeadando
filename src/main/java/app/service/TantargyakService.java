@@ -22,4 +22,14 @@ public class TantargyakService {
         return tantargyakRepository.selectMindenTantargy();
     }
 
+    public boolean pozitivKredit(Tantargy tantargy){
+        boolean negativ = false;
+        if (tantargy.getKreditszam() < 0){
+            negativ = true;
+        }
+        return negativ;
+    }
+
+
+
 }

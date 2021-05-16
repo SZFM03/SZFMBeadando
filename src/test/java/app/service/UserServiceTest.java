@@ -20,7 +20,7 @@ public class UserServiceTest {
     private UserService userService;
 
     @Test
-    public void validateUser_MegfeleloKarakterSzam_HaMindenRendbenVan() {
+    public void validateUser_JelszoMegfeleloKarakterSzam_HaMindenRendbenVan() {
         // Given
         User user = new User("Teszt", "teszt");
 

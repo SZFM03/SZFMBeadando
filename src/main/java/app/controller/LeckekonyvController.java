@@ -205,20 +205,29 @@ public class LeckekonyvController implements Initializable {
     }
 
     public void tanulmanyiatlag(ActionEvent actionEvent) {
-        Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunatlag.getText());
-        hallgneve.setText(hallgato.getNev());
-        double sulyozottAtlag = leckekonyvService.sulyozottAtlag(hallgato);
-        if (!atlaghatar.getText().isBlank()) {
-            double hatar = Double.parseDouble(atlaghatar.getText());
-            hallgatoatlag.setText(String.format("%.2f", sulyozottAtlag));
+        try {
+            if(!neptunatlag.getText().isBlank()) {
+                Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunatlag.getText());
+                hallgneve.setText(hallgato.getNev());
+                double sulyozottAtlag = leckekonyvService.sulyozottAtlag(hallgato);
+                if (!atlaghatar.getText().isBlank()) {
+                    double hatar = Double.parseDouble(atlaghatar.getText());
+                    hallgatoatlag.setText(String.format("%.2f", sulyozottAtlag));
 
-            if (sulyozottAtlag < hatar) {
-                besorolas.setText("Önköltséges");
-            } else {
-                besorolas.setText("Államilag támogatott");
+                    if (sulyozottAtlag < hatar) {
+                        besorolas.setText("Önköltséges");
+                    } else {
+                        besorolas.setText("Államilag támogatott");
+                    }
+                } else {
+                    hallgatoatlag.setText(String.format("%.2f", sulyozottAtlag));
+                }
             }
-        } else {
-            hallgatoatlag.setText(String.format("%.2f", sulyozottAtlag));
+            else if (neptunatlag.getText().isBlank()){
+                alert.alert("Hiba!", "Nem adtál meg Neptun-kódot!");
+            }
+        }catch (Exception e){
+            alert.alert("Hiba!", "A megadott Neptun-kód nem szerepel az adatbázisban!");
         }
     }
 
