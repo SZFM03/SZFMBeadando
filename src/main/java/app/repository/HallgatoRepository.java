@@ -36,7 +36,7 @@ public class HallgatoRepository {
             Hallgato hallgato = selectHallgato(neptunKod);
 
             hallgato.setNev(nev);
-            hallgato.setSzuletesi_ev(ev);
+            hallgato.setSzuletesi_ev(Integer.parseInt(ev));
 
             entityManager.getTransaction().begin();
             entityManager.merge(hallgato);

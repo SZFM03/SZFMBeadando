@@ -33,7 +33,7 @@ public class LeckekonyvServiceTest {
                 new Tantargy(2L, "Webfejlesztés", "INDK-648", 6)
         );
 
-        Hallgato hallgato = new Hallgato(1L, "Test User", "1970", "ASD123", targyak);
+        Hallgato hallgato = new Hallgato(1L, "Test User", 1970, "ASD123", targyak);
 
         when(jegyRepository.selectHallgatoIDTantargyID(anyLong(), anyLong()))
                 .thenReturn(new Jegy(1L, 1L, 1L, 5))
@@ -51,7 +51,7 @@ public class LeckekonyvServiceTest {
     public void sulyozottAtlag_NullatAdVissza_HaNincsAHallgatonakTantargya() {
         // Given
         List<Tantargy> targyak = List.of();
-        Hallgato hallgato = new Hallgato(1L, "Test User", "1970", "ASD123", targyak);
+        Hallgato hallgato = new Hallgato(1L, "Test User", 1970, "ASD123", targyak);
 
         // When
         double sulyozottAtlag = leckekonyvService.sulyozottAtlag(hallgato);

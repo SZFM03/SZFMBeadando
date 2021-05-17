@@ -144,23 +144,29 @@ public class HallgatoController implements Initializable {
     public void register(ActionEvent actionEvent) {
         try {
             if (!nevAddText.getText().isBlank() && !neptunAddText.getText().isBlank() && !szuletesiEvAddText.getText().isBlank()) {
-                hallgatoService.saveHallgato(new Hallgato(nevAddText.getText(), szuletesiEvAddText.getText(), neptunAddText.getText()));
+                hallgatoService.saveHallgato(new Hallgato(nevAddText.getText(), Integer.parseInt(szuletesiEvAddText.getText()), neptunAddText.getText()));
 
                 alert.alert("Regisztrációs információ", "Sikeresen regisztráltál egy hallgatót!");
 
             }
         }catch (Exception e){
-            alert.alert("Regisztrációs információ", "Ez a Neptun-kód már foglalt!");
+            if (szuletesiEvAddText.getText().matches("[0-9]+") && szuletesiEvAddText.getText().length() >= 1) {
+                alert.alert("Regisztrációs információ", "Ez a Neptun-kód már foglalt!");
+            }
         } if(nevAddText.getText().isBlank()){
             alert.alert("Regisztrációs információ", "Nem adtál meg Nevet!");
         } else if (szuletesiEvAddText.getText().isBlank()){
             alert.alert("Regisztrációs információ","Nem adtál meg születési évet!");
         } else if(neptunAddText.getText().isBlank()){
             alert.alert("Regisztrációs informáicó", "Nem adtál meg Neptun-kódot!");
+        }else if (!szuletesiEvAddText.getText().matches("[0-9]+") && szuletesiEvAddText.getText().length() >= 1) {
+            alert.alert("Regisztrációs információ", "A születési év csak számokat tartalmazhat!");
+            szuletesiEvAddText.clear();
+        }else {
+            nevAddText.clear();
+            neptunAddText.clear();
+            szuletesiEvAddText.clear();
         }
-        nevAddText.clear();
-        neptunAddText.clear();
-        szuletesiEvAddText.clear();
     }
 
     public void deleteTorles(ActionEvent actionEvent) throws InterruptedException {
@@ -195,7 +201,7 @@ public class HallgatoController implements Initializable {
             if (!neptunbevitelText.getText().isBlank()) {
                 Hallgato hallgato = hallgatoService.lekerdezHallgato(neptunbevitelText.getText());
                 nevadatText.setText(hallgato.getNev());
-                szuletesievadatText.setText(hallgato.getSzuletesi_ev());
+                szuletesievadatText.setText(hallgato.getSzuletesi_ev().toString());
                 neptunadatText.setText(hallgato.getNeptun_kod());
                 neptunadatText.setDisable(true);
 
@@ -214,7 +220,7 @@ public class HallgatoController implements Initializable {
             if (!keresoText.getText().isBlank()) {
                 Hallgato hallgato = hallgatoService.lekerdezHallgato(keresoText.getText());
                 nevKeresoText.setText(hallgato.getNev());
-                szuletesiEvKeresoText.setText(hallgato.getSzuletesi_ev());
+                szuletesiEvKeresoText.setText(hallgato.getSzuletesi_ev().toString());
                 neptunKeresoText.setText(hallgato.getNeptun_kod());
                 nevKeresoText.setDisable(true);
                 szuletesiEvKeresoText.setDisable(true);

@@ -17,7 +17,7 @@ public class Hallgato {
     private String nev;
 
     @Column(nullable = false)
-    private String szuletesi_ev;
+    private Integer szuletesi_ev;
 
     @Column(unique = true, nullable = false)
     private String neptun_kod;
@@ -70,13 +70,13 @@ public class Hallgato {
     public Hallgato() {
     }
 
-    public Hallgato(String nev, String szuletesi_ev, String neptun_kod) {
+    public Hallgato(String nev, Integer szuletesi_ev, String neptun_kod) {
         this.nev = nev;
         this.szuletesi_ev = szuletesi_ev;
         this.neptun_kod = neptun_kod;
     }
 
-    public Hallgato(Long id, String nev, String szuletesi_ev, String neptun_kod, List<Tantargy> tantargyak) {
+    public Hallgato(Long id, String nev, Integer szuletesi_ev, String neptun_kod, List<Tantargy> tantargyak) {
         this.id = id;
         this.nev = nev;
         this.szuletesi_ev = szuletesi_ev;
@@ -84,7 +84,7 @@ public class Hallgato {
         this.tantargyak = tantargyak;
     }
 
-    public Hallgato(Long id, String nev, String szuletesi_ev, String neptun_kod) {
+    public Hallgato(Long id, String nev, Integer szuletesi_ev, String neptun_kod) {
         this.id = id;
         this.nev = nev;
         this.szuletesi_ev = szuletesi_ev;
@@ -107,11 +107,11 @@ public class Hallgato {
         this.nev = nev;
     }
 
-    public String getSzuletesi_ev() {
+    public Integer getSzuletesi_ev() {
         return szuletesi_ev;
     }
 
-    public void setSzuletesi_ev(String szuletesiev) {
+    public void setSzuletesi_ev(Integer szuletesiev) {
         this.szuletesi_ev = szuletesiev;
     }
 

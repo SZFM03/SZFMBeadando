@@ -123,32 +123,35 @@ public class TantargyakController implements Initializable {
     }
 
     public void registertantargy(ActionEvent actionEvent) {
+        boolean isNegativ = false;
         try {
 
             if (!targykodAddText.getText().isBlank() && !targyneveAddText.getText().isBlank() && !kreditAddText.getText().isBlank()) {
                 Tantargy tantargy = new Tantargy(targyneveAddText.getText(), targykodAddText.getText(), Integer.parseInt(kreditAddText.getText()));
-                tantargyakService.saveTantargyak(tantargy);
-                boolean isNegativ = tantargyakService.pozitivKredit(tantargy);
-                if(isNegativ){
-                   // alert.alert("Tantárgy hozzáadása információ", "A kreditszám nem lehet negatív!");
-                    throw new IllegalArgumentException();
+                isNegativ = tantargyakService.pozitivKredit(tantargy);
+                if (!isNegativ) {
+                    tantargyakService.saveTantargyak(tantargy);
+                    alert.alert("Tantárgy hozzáadása információ", "Sikeresen hozzáadtál egy tantárgyat!");
                 }
-                alert.alert("Tantárgy hozzáadása információ", "Sikeresen hozzáadtál egy tantárgyat!");
-
             }
         } catch (Exception e) {
-            System.err.println(e.getMessage());
+            if(kreditAddText.getText().matches("[0-9]+") && kreditAddText.getText().length() >= 1) {
+                alert.alert("Tantárgy hozzáadása információ", "A megadott tárgykód már foglalt!");
+            }
         } if (targykodAddText.getText().isBlank()){
             alert.alert("Tantárgy hozzáadása információ", "Nem adtál meg Tárgykódot!");
-        } else if(targyneveAddText.getText().isBlank()){
+        } if(targyneveAddText.getText().isBlank()){
             alert.alert("Tantárgy hozzáadása információ", "Nem adtad meg a tárgy nevét!");
-        } else if (kreditAddText.getText().isBlank()){
+        } if (kreditAddText.getText().isBlank()){
             alert.alert("Tantárgy hozzáadása információ", "Nem adtad meg a kreditszámot!");
-        } else if (!kreditAddText.getText().matches("[0-9]+") && kreditAddText.getText().length() >= 1){
-            alert.alert("Tantárgy hozzáadása információ", "Kreditnek csak számot lehet megadni!");
+        }if(isNegativ){
+            alert.alert("Tantárgy hozzáadása információ", "A kreditszám nem lehet negatív!");
             kreditAddText.clear();
-        }
-        else {
+        } else if (!kreditAddText.getText().matches("[0-9]+") && kreditAddText.getText().length() >= 1) {
+                alert.alert("Tantárgy hozzáadása információ", "Kreditnek csak számot lehet megadni!");
+                kreditAddText.clear();
+            }
+         else {
             targykodAddText.clear();
             targyneveAddText.clear();
             kreditAddText.clear();
