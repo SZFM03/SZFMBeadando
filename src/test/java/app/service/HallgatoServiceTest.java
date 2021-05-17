@@ -1,9 +1,7 @@
 package app.service;
 
 import app.entity.Hallgato;
-import app.entity.Tantargy;
 import app.repository.HallgatoRepository;
-import app.repository.TantargyakRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

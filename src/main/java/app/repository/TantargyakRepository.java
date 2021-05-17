@@ -3,7 +3,6 @@ package app.repository;
 import app.entity.Tantargy;
 import app.entitymanager.CustomEntityManager;
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import java.util.List;
 
 public class TantargyakRepository {
