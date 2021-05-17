@@ -1,7 +1,6 @@
 package app.service;
 
 import app.entity.Hallgato;
-import app.entity.Tantargy;
 import app.repository.HallgatoRepository;
 
 import java.util.List;
@@ -43,5 +42,12 @@ public class HallgatoService {
 
         return hallgatoRepository.selectMindenHallgato();
 
+    }
+    public boolean pozitivSzuletesiDatum(Hallgato hallgato){
+        boolean negativ = false;
+        if (hallgato.getSzuletesi_ev() < 0){
+            negativ = true;
+        }
+        return negativ;
     }
 }

@@ -142,12 +142,16 @@ public class HallgatoController implements Initializable {
     }
 
     public void register(ActionEvent actionEvent) {
+        boolean negativSzuletesiDatum = false;
         try {
+
             if (!nevAddText.getText().isBlank() && !neptunAddText.getText().isBlank() && !szuletesiEvAddText.getText().isBlank()) {
-                hallgatoService.saveHallgato(new Hallgato(nevAddText.getText(), Integer.parseInt(szuletesiEvAddText.getText()), neptunAddText.getText()));
-
-                alert.alert("Regisztrációs információ", "Sikeresen regisztráltál egy hallgatót!");
-
+                Hallgato hallgato = new Hallgato(nevAddText.getText(), Integer.parseInt(szuletesiEvAddText.getText()), neptunAddText.getText());
+                negativSzuletesiDatum = hallgatoService.pozitivSzuletesiDatum(hallgato);
+                if (!negativSzuletesiDatum) {
+                    hallgatoService.saveHallgato(hallgato);
+                    alert.alert("Regisztrációs információ", "Sikeresen regisztráltál egy hallgatót!");
+                }
             }
         }catch (Exception e){
             if (szuletesiEvAddText.getText().matches("[0-9]+") && szuletesiEvAddText.getText().length() >= 1) {
@@ -159,7 +163,11 @@ public class HallgatoController implements Initializable {
             alert.alert("Regisztrációs információ","Nem adtál meg születési évet!");
         } else if(neptunAddText.getText().isBlank()){
             alert.alert("Regisztrációs informáicó", "Nem adtál meg Neptun-kódot!");
-        }else if (!szuletesiEvAddText.getText().matches("[0-9]+") && szuletesiEvAddText.getText().length() >= 1) {
+        } if (negativSzuletesiDatum) {
+            alert.alert("Tantárgy hozzáadása információ", "A születési év nem lehet negatív");
+            szuletesiEvAddText.clear();
+        }
+        else if (!szuletesiEvAddText.getText().matches("[0-9]+") && szuletesiEvAddText.getText().length() >= 1) {
             alert.alert("Regisztrációs információ", "A születési év csak számokat tartalmazhat!");
             szuletesiEvAddText.clear();
         }else {
