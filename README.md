@@ -2,7 +2,7 @@
 
 A 3. csoport Szoftverfejlesztés mérnököknek c. tárgyhoz készített beadandója.
 
-### A szotfver leírása:
+### A szoftver leírása:
 Az alkalmazás egy ingyenes adatbáziskezelő fiókban tárolt hallgatók tanulmányi eredmények kezelésére szolgál.
 
 #### A Hallgatói adminisztrációs szoftver funkciói:
@@ -15,3 +15,4 @@ Az alkalmazás egy ingyenes adatbáziskezelő fiókban tárolt hallgatók tanulm
 - Tantárgy hozzáadása
 - Tantárgyak kilistázása
 - Jegybeírás
+- Súlyozott átlag számítás
