@@ -22,13 +22,13 @@ public class TantargyakServiceTest {
     @Test
     public void pozitivKredit_NegativKreditSzam_HaMindenRendbenVan() {
         // Given
-        Tantargy tantargy = new Tantargy(1L,"Programozás","ILFSA-22", -5);
+        Tantargy tantargy = new Tantargy(1L,"Programozás","ILFSA-22", 5);
 
         // When
         boolean kredit = tantargyakService.pozitivKredit(tantargy);
 
         // Then
-        assertEquals(true, kredit);
+        assertEquals(false, kredit);
     }
 
 }
