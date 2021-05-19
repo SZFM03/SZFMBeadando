@@ -79,7 +79,7 @@ public class HomeController implements Initializable {
                     }
                 } else {
 
-                    alert.alert(BELÉPÉSI_INFORMÁCIÓ,"A felhaszáló nincs regisztrálva, kérlek regisztrálj a belépéshez!");
+                    alert.alert(BELÉPÉSI_INFORMÁCIÓ,"Rossz felhasználónév vagy jelszó!");
 
                 }
             } else if (usernameField.getText().isBlank()) {
