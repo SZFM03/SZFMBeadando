@@ -22,7 +22,7 @@ public class HallgatoServiceTest {
     @Test
     public void pozitivSzuletesiDatum_NegativSzuletesiSzam_HaMindenRendbenVan() {
         // Given
-        Hallgato hallgato=new Hallgato("Hát Izsák",-1977,"RR6ZUI");
+        Hallgato hallgato=new Hallgato("Hát Izsák",1977,"RR6ZUI");
 
         // When
         boolean szuletesidatum = hallgatoService.pozitivSzuletesiDatum(hallgato);
@@ -30,17 +30,4 @@ public class HallgatoServiceTest {
         // Then
         assertEquals(false, szuletesidatum);
     }
-
-    @Test
-    public void pozitivSzuletesiDatum_NegativSzuletesiSzam_HaMindenRendbenVan2() {
-        // Given
-        Hallgato hallgato=new Hallgato("Mekk Elek",1977,"Meki16");
-
-        // When
-        boolean szuletesidatum = hallgatoService.pozitivSzuletesiDatum(hallgato);
-
-        // Then
-        assertEquals(false, szuletesidatum);
-    }
-
 }
